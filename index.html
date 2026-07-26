@@ -78,7 +78,19 @@
             height: auto;
         }
 
-        /* Spacious & Clean Desktop Header */
+        /* Language Fade & Hyphenation Stabilization */
+        [data-i18n], [data-i18n-html] {
+            transition: opacity 0.15s ease-in-out;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            word-break: break-word;
+        }
+
+        .i18n-fading {
+            opacity: 0 !important;
+        }
+
+        /* Spacious & Fixed-Grid Header Layout for Zero Shift */
         header {
             background-color: rgba(253, 251, 247, 0.92);
             backdrop-filter: blur(16px);
@@ -94,20 +106,23 @@
         .header-container {
             max-width: 1320px;
             margin: 0 auto;
-            padding: 20px 48px;
-            display: flex;
-            justify-content: space-between;
+            padding: 16px 48px;
+            display: grid;
+            grid-template-columns: 220px 1fr auto;
             align-items: center;
+            gap: 24px;
             width: 100%;
             box-sizing: border-box;
         }
 
         .logo-group {
+            grid-column: 1;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             text-decoration: none;
             color: var(--text-color);
+            min-width: 200px;
         }
 
         .logo {
@@ -125,12 +140,15 @@
             text-transform: uppercase;
             color: var(--text-muted);
             margin-top: 4px;
+            white-space: nowrap;
         }
 
         nav.desktop-nav {
+            grid-column: 2;
             display: flex;
             align-items: center;
-            gap: 36px;
+            justify-content: center;
+            gap: 28px;
         }
 
         nav.desktop-nav a {
@@ -141,9 +159,12 @@
             letter-spacing: 2px;
             font-weight: 500;
             position: relative;
-            padding: 4px 0;
+            padding: 4px 6px;
+            min-width: 80px;
+            text-align: center;
             transition: color 0.25s ease;
             cursor: pointer;
+            display: inline-block;
         }
 
         nav.desktop-nav a::after {
@@ -164,21 +185,25 @@
         }
 
         .header-actions {
+            grid-column: 3;
             display: flex;
             align-items: center;
-            gap: 22px;
+            gap: 16px;
+            justify-self: end;
         }
 
-        /* Language Switcher */
+        /* Fixed-Width Language Switcher Container */
         .lang-switcher {
             display: flex;
             align-items: center;
-            gap: 3px;
+            gap: 2px;
             background: rgba(255, 255, 255, 0.7);
             border: 1px solid var(--border-soft);
-            padding: 3px 5px;
+            padding: 3px;
             border-radius: var(--radius-pill);
             box-shadow: var(--shadow-subtle);
+            width: 108px;
+            justify-content: space-between;
         }
 
         .lang-btn {
@@ -186,8 +211,9 @@
             border: none;
             color: var(--text-muted);
             cursor: pointer;
-            padding: 5px 9px;
-            min-height: 38px;
+            padding: 0;
+            width: 32px;
+            height: 32px;
             min-width: 32px;
             border-radius: 14px;
             font-size: 0.72rem;
@@ -197,7 +223,6 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: auto;
             margin-top: 0;
         }
 
@@ -224,8 +249,9 @@
             font-weight: 500;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 8px 18px;
+            padding: 8px 16px;
             min-height: 42px;
+            min-width: 130px;
             border-radius: var(--radius-pill);
             box-shadow: var(--shadow-subtle);
             transition: all 0.25s var(--transition-smooth);
@@ -252,6 +278,7 @@
             align-items: center;
             justify-content: center;
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            flex-shrink: 0;
         }
 
         .cart-count-badge.pulse {
@@ -355,16 +382,16 @@
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: clamp(2rem, 5vw, 3.8rem);
             font-weight: 300;
-            line-height: 1.12;
+            line-height: 1.15;
             letter-spacing: -0.5px;
             margin-bottom: 24px;
             color: var(--text-color);
         }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: clamp(0.95rem, 2vw, 1.15rem);
             color: var(--text-muted);
             font-weight: 300;
             max-width: 720px;
@@ -1337,7 +1364,7 @@
             box-shadow: 0 10px 24px rgba(27, 54, 93, 0.25);
         }
 
-        /* Detail Modal / Lightbox */
+        /* Detail Modal / Lightbox Desktop Defaults */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -1679,7 +1706,7 @@
             width: 100%;
         }
 
-        /* Mobile 3-Column Grid & Compact Card Layout (< 768px) */
+        /* Mobile 3-Column Grid, Header, & Stacked Modal Overrides (< 768px) */
         @media (max-width: 768px) {
             nav.desktop-nav {
                 display: none !important;
@@ -1703,6 +1730,7 @@
                 grid-column: 2;
                 text-align: center;
                 justify-self: center;
+                min-width: auto;
             }
 
             .logo {
@@ -1725,18 +1753,22 @@
             .lang-switcher {
                 padding: 2px;
                 gap: 1px;
+                width: 90px;
             }
 
             .lang-btn {
-                padding: 3px 4px;
+                padding: 0;
                 font-size: 0.6rem;
                 min-width: 24px;
-                min-height: 30px;
+                width: 24px;
+                height: 28px;
+                min-height: 28px;
             }
 
             .cart-trigger {
                 padding: 4px 6px;
                 min-height: 32px;
+                min-width: auto;
                 font-size: 0.65rem;
                 gap: 3px;
             }
@@ -1845,6 +1877,66 @@
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+
+            /* Mobile Modal / Lightbox Stacked Layout Fixes (< 768px) */
+            .modal-card {
+                grid-template-columns: 1fr !important;
+                display: flex !important;
+                flex-direction: column !important;
+                width: 92vw !important;
+                max-height: 88vh !important;
+                border-radius: 20px !important;
+                overflow-y: auto !important;
+            }
+
+            .modal-image-col {
+                width: 100% !important;
+                padding: 24px 16px !important;
+                border-radius: 20px 20px 0 0 !important;
+                min-height: 250px !important;
+                background-color: var(--story-bg) !important;
+            }
+
+            .modal-image-col img {
+                max-height: 320px !important;
+                width: 100% !important;
+                object-fit: contain !important;
+            }
+
+            .modal-info-col {
+                padding: 20px 18px 28px !important;
+                width: 100% !important;
+            }
+
+            .modal-title {
+                font-size: 1.65rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 8px !important;
+            }
+
+            .modal-price {
+                font-size: 1.25rem !important;
+                margin-bottom: 12px !important;
+            }
+
+            .modal-close {
+                top: 10px !important;
+                right: 10px !important;
+                width: 38px !important;
+                height: 38px !important;
+                font-size: 1.1rem !important;
+                z-index: 20 !important;
+                background: rgba(255, 255, 255, 0.95) !important;
+            }
+
+            .specs-table {
+                font-size: 0.8rem !important;
+                margin-bottom: 16px !important;
+            }
+
+            .specs-table td {
+                padding: 6px 0 !important;
             }
         }
     </style>
@@ -3216,7 +3308,7 @@
             applyLanguage(currentLang);
         }
 
-        // Switch Language Trigger
+        // Switch Language Trigger with Smooth Opacity Transition
         function setLanguage(lang) {
             if (!['de', 'en', 'fr'].includes(lang)) return;
             currentLang = lang;
@@ -3227,38 +3319,45 @@
             updateWhatsAppLink();
         }
 
-        // Apply Language Dictionary to Elements
+        // Apply Language Dictionary with Fade Effect to Prevent Reflow Jumping
         function applyLanguage(lang) {
             document.documentElement.lang = lang;
 
-            ['de', 'en', 'fr'].forEach(l => {
-                const btn = document.getElementById(`lang-${l}`);
-                if (btn) {
-                    if (l === lang) btn.classList.add('active');
-                    else btn.classList.remove('active');
-                }
-            });
+            const targets = document.querySelectorAll('[data-i18n], [data-i18n-html]');
+            targets.forEach(elem => elem.classList.add('i18n-fading'));
 
-            document.querySelectorAll('[data-i18n]').forEach(elem => {
-                const key = elem.getAttribute('data-i18n');
-                if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
-                    elem.textContent = TRANSLATIONS[lang][key];
-                }
-            });
+            setTimeout(() => {
+                ['de', 'en', 'fr'].forEach(l => {
+                    const btn = document.getElementById(`lang-${l}`);
+                    if (btn) {
+                        if (l === lang) btn.classList.add('active');
+                        else btn.classList.remove('active');
+                    }
+                });
 
-            document.querySelectorAll('[data-i18n-html]').forEach(elem => {
-                const key = elem.getAttribute('data-i18n-html');
-                if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
-                    elem.innerHTML = TRANSLATIONS[lang][key];
-                }
-            });
+                document.querySelectorAll('[data-i18n]').forEach(elem => {
+                    const key = elem.getAttribute('data-i18n');
+                    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+                        elem.textContent = TRANSLATIONS[lang][key];
+                    }
+                });
 
-            document.querySelectorAll('[data-i18n-placeholder]').forEach(elem => {
-                const key = elem.getAttribute('data-i18n-placeholder');
-                if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
-                    elem.placeholder = TRANSLATIONS[lang][key];
-                }
-            });
+                document.querySelectorAll('[data-i18n-html]').forEach(elem => {
+                    const key = elem.getAttribute('data-i18n-html');
+                    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+                        elem.innerHTML = TRANSLATIONS[lang][key];
+                    }
+                });
+
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(elem => {
+                    const key = elem.getAttribute('data-i18n-placeholder');
+                    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+                        elem.placeholder = TRANSLATIONS[lang][key];
+                    }
+                });
+
+                targets.forEach(elem => elem.classList.remove('i18n-fading'));
+            }, 80);
         }
 
         // Update WhatsApp Link
@@ -3666,7 +3765,7 @@
         // Checkout Modal
         checkoutBtn.addEventListener('click', () => {
             if (cart.length === 0) {
-                showToast(currentLang === 'de' ? 'Ihr Warenkorb ist leer' : (currentLang === 'fr' ? 'Votre panier est vide' : 'Your cart is empty'));
+                showToast(currentLang === 'de' ? 'Ihr Warenkorb ist leer' : (currentLang === 'fr' ? 'Votre panier ist vide' : 'Your cart is empty'));
                 return;
             }
             closeCart();
