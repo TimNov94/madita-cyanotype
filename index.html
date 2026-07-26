@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madita | Swiss Cyanotype Art</title>
+    <style>
+        :root {
+            --bg-color: #FBF9F5;
+            --text-color: #1B365D;
+            --card-bg: #FFFFFF;
+            --border-color: #E5E2DC;
+            --accent-color: #1B365D;
+            --button-hover: #0d223f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header Navigation */
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 40px;
+            background-color: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cart-icon {
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 15px;
+            color: #556b82;
+        }
+
+        /* Main Section */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                padding: 15px 20px;
+            }
+            nav {
+                display: none; /* Mobile nav menu can be expanded later */
+            }
+        }
+
+        .category-column h3 {
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            background-color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .card-details {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .card-price {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: auto;
+            padding-top: 10px;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid var(--text-color);
+            background: transparent;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            background-color: var(--text-color);
+            color: #FFFFFF;
+        }
+
+        /* Story Section */
+        .story-section {
+            background-color: #F4F0EA;
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            margin-top: 60px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .story-section {
+                flex-direction: column;
+                padding: 20px;
+            }
+        }
+
+        .story-text h3 {
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .story-text p {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Originals</a>
+                <a href="#">Prints</a>
+            </nav>
+            <a href="#" class="logo">Madita</a>
+            <div>
+                <nav>
+                    <a href="#">Process</a>
+                    <a href="#">Our Story</a>
+                </nav>
+                <span class="cart-icon">🛒 (0)</span>
+            </div>
+        </div>
+        <div class="subtitle">Bringing Swiss Nature Home Through Cyanotype Art</div>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Fine Art Curations</h2>
+
+        <div class="gallery-grid">
+            <!-- Originals Column -->
+            <div class="category-column">
+                <h3>Originals (1-of-1)</h3>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x500/1B365D/FFFFFF?text=Alpine+Fern+Original" alt="Alpine Fern">
+                    <div class="card-title">Alpine Fern No. 1</div>
+                    <div class="card-details">30x40 cm | Original Cyanotype on textured paper</div>
+                    <div class="card-price">CHF 280</div>
+                    <button>View Details</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/500x350/1B365D/FFFFFF?text=Bernese+Peak+Original" alt="Bernese Peak">
+                    <div class="card-title">Bernese Peak Study</div>
+                    <div class="card-details">40x50 cm | Multi-layered cyanotype of mountain silhouettes</div>
+                    <div class="card-price">CHF 280</div>
+                    <button>View Details</button>
+                </div>
+            </div>
+
+            <!-- Prints Column -->
+            <div class="category-column">
+                <h3>Fine Art Prints</h3>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x500/1B365D/FFFFFF?text=The+Matterhorn+Print" alt="The Matterhorn">
+                    <div class="card-title">The Matterhorn, Blue</div>
+                    <div class="card-details">Giclée print on archival cotton paper</div>
+                    <select>
+                        <option>Select Size: A3 (CHF 75)</option>
+                        <option>Select Size: A2 (CHF 110)</option>
+                    </select>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x500/1B365D/FFFFFF?text=Lake+Geneva+Botanicals" alt="Lake Geneva Botanicals">
+                    <div class="card-title">Lake Geneva Botanicals</div>
+                    <div class="card-details">Grid composition print of collected Swiss leaves</div>
+                    <select>
+                        <option>Select Size: A3 (CHF 75)</option>
+                        <option>Select Size: A2 (CHF 110)</option>
+                    </select>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Story Section -->
+        <div class="story-section">
+            <div style="flex: 1;">
+                <img src="https://via.placeholder.com/500x350/E5E2DC/1B365D?text=Crafting+in+the+Alps" alt="Our Studio" style="width: 100%; height: auto;">
+            </div>
+            <div class="story-text" style="flex: 1;">
+                <h3>OUR STORY</h3>
+                <p>We combine a love for Swiss landscapes with the hand-made cyanotype process. Each piece, original or print, is created with care in our studio.</p>
+                <p>Follow our journey: <strong>@madita_cyanotypes</strong></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
