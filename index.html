@@ -1235,6 +1235,264 @@
             flex-shrink: 0;
         }
 
+        /* Interactive Bespoke Cyanotype Creation Studio */
+        .studio-workspace {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 40px;
+            margin-top: 36px;
+            align-items: start;
+            text-align: left;
+        }
+
+        .studio-controls-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .control-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-color);
+        }
+
+        .control-label-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .studio-count-badge {
+            font-size: 0.72rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .toggle-pill-group {
+            display: flex;
+            gap: 8px;
+            background: var(--bg-parchment);
+            padding: 5px;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--border-soft);
+        }
+
+        .studio-pill-btn {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 8px 12px;
+            font-size: 0.76rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            border-radius: var(--radius-pill);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .studio-pill-btn.active {
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(27, 54, 93, 0.15);
+        }
+
+        .botanical-selector-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        .botanical-item-btn {
+            background: var(--bg-parchment);
+            border: 1.5px solid var(--border-soft);
+            border-radius: 12px;
+            padding: 8px 4px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.25s ease;
+            margin-top: 0;
+        }
+
+        .botanical-item-btn:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .botanical-item-btn.selected {
+            border-color: var(--accent-gold);
+            background-color: rgba(197, 160, 89, 0.1);
+            box-shadow: 0 0 0 2px var(--accent-gold);
+        }
+
+        .botanical-item-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+
+        .botanical-item-name {
+            font-size: 0.65rem;
+            color: var(--text-color);
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        /* Studio Canvas Panel */
+        .studio-canvas-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .paper-sheet-wrapper {
+            background: rgba(0, 0, 0, 0.04);
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 420px;
+        }
+
+        .paper-sheet {
+            background-color: #FAF7F2;
+            border-radius: 6px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12), inset 0 0 20px rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .paper-sheet.format-a6 {
+            width: 240px;
+            height: 338px;
+        }
+
+        .paper-sheet.format-a5 {
+            width: 300px;
+            height: 424px;
+        }
+
+        .cyanotype-wash-layer {
+            position: absolute;
+            inset: 0;
+            transition: all 0.4s ease;
+        }
+
+        .cyanotype-wash-layer.wash-bleed {
+            background-color: #1B365D;
+            inset: 0;
+            border-radius: 0;
+        }
+
+        .cyanotype-wash-layer.wash-brush {
+            background-color: #1B365D;
+            inset: 22px 18px;
+            border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
+            transform: rotate(-1.5deg);
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .placed-plants-layer {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 20px;
+            z-index: 5;
+            flex-wrap: wrap;
+        }
+
+        .placed-plant-item {
+            width: 70px;
+            height: 70px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+            animation: plantAppear 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes plantAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.6) rotate(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .placed-plant-item:hover {
+            transform: scale(1.1) rotate(4deg);
+        }
+
+        .paper-watermark {
+            position: absolute;
+            bottom: 12px;
+            right: 14px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.72rem;
+            color: rgba(253, 251, 247, 0.45);
+            letter-spacing: 2px;
+            pointer-events: none;
+            z-index: 6;
+        }
+
+        .studio-summary-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-soft);
+            border-radius: 18px;
+            padding: 18px 24px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: var(--shadow-card);
+            align-items: center;
+            text-align: center;
+        }
+
+        .summary-details {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            line-height: 1.55;
+        }
+
         /* Minimal Footer for Dedicated Views */
         .category-minimal-footer {
             border-top: 1px solid var(--border-soft);
@@ -2309,14 +2567,80 @@
             </div>
         </section>
 
-        <!-- Custom Creation Showcase Banner -->
+        <!-- Custom Creation Interactive Studio Section -->
         <section class="custom-banner-section" id="customBannerSection">
             <div class="hero-tag" data-i18n="custom_section_tag">Unikat Auf Bestellung</div>
-            <h2 data-i18n="custom_section_title">Wunsch-Cyanotypie & Besondere Anfertigung</h2>
-            <p data-i18n="custom_section_desc">
-                Möchten Sie eine bestimmte Pflanze, ein besonderes Fundstück oder ein persönliches Format als sonnenbelichtetes Unikat in Bern anfertigen lassen?
+            <h2 data-i18n="studio_custom_title">Interaktives Cyanotypie-Atelier</h2>
+            <p data-i18n="studio_custom_desc">
+                Gestalten Sie Ihre persönliche Komposition: Wählen Sie Format, Pinselstrich-Belichtung und botanische Schweizer Motive.
             </p>
-            <button class="btn-primary" onclick="openCustomModal()" data-i18n="btn_custom_request">Persönliche Cyanotypie Anfragen</button>
+
+            <div class="studio-workspace">
+                <!-- Interactive Controls Panel (Left Column) -->
+                <div class="studio-controls-panel">
+                    
+                    <!-- 1. Format Toggle -->
+                    <div class="control-group">
+                        <label class="control-label" data-i18n="studio_format_label">1. Papier-Format</label>
+                        <div class="toggle-pill-group">
+                            <button class="studio-pill-btn active" id="btnFormatA6" onclick="setStudioFormat('A6')">
+                                <span data-i18n="studio_fmt_a6">A6 Postkarte (10.5x14.8 cm)</span>
+                            </button>
+                            <button class="studio-pill-btn" id="btnFormatA5" onclick="setStudioFormat('A5')">
+                                <span data-i18n="studio_fmt_a5">A5 Kunst-Druck (14.8x21 cm)</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Wash Style Selector -->
+                    <div class="control-group">
+                        <label class="control-label" data-i18n="studio_wash_label">2. Sonnen-Belichtungsart</label>
+                        <div class="toggle-pill-group">
+                            <button class="studio-pill-btn active" id="btnWashBleed" onclick="setStudioWash('bleed')">
+                                <span data-i18n="studio_wash_bleed">Vollflächig (Full Bleed)</span>
+                            </button>
+                            <button class="studio-pill-btn" id="btnWashBrush" onclick="setStudioWash('brush')">
+                                <span data-i18n="studio_wash_brush">Handgefertigter Pinselstrich</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 3. Botanical Elements Selector (10 Plants) -->
+                    <div class="control-group">
+                        <div class="control-label-row">
+                            <label class="control-label" data-i18n="studio_plants_label">3. Botanische Motive wählen (1–4 Stk.)</label>
+                            <span class="studio-count-badge" id="studioPlantCount">0 / 4</span>
+                        </div>
+                        <div class="botanical-selector-grid" id="botanicalSelectorGrid">
+                            <!-- 10 Demo Plants rendered by JS -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Canvas Preview Area (Right Column - The Paper Sheet) -->
+                <div class="studio-canvas-panel">
+                    <div class="paper-sheet-wrapper">
+                        <div class="paper-sheet format-a6" id="paperSheet">
+                            <!-- Blue wash background layer -->
+                            <div class="cyanotype-wash-layer wash-bleed" id="washLayer"></div>
+                            <!-- Placed Plants Canvas Layer -->
+                            <div class="placed-plants-layer" id="placedPlantsLayer"></div>
+                            <div class="paper-watermark">Madita Bern</div>
+                        </div>
+                    </div>
+
+                    <!-- Live Design Summary & Order Action -->
+                    <div class="studio-summary-card">
+                        <div class="summary-details" id="studioSummaryText">
+                            Format: <strong>A6 Postkarte</strong> | Belichtung: <strong>Vollflächig</strong> | Motive: <em>Keine gewählt</em>
+                        </div>
+                        <button class="btn-primary" onclick="triggerStudioOrderInquiry()" data-i18n="studio_btn_inquire">
+                            Individuelle Anfrage senden →
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Ultra-Clean Email Contact Section -->
@@ -2708,6 +3032,16 @@
                 custom_section_tag: "Unikat Auf Bestellung",
                 custom_section_title: "Wunsch-Cyanotypie & Besondere Anfertigung",
                 custom_section_desc: "Möchten Sie eine bestimmte Pflanze, ein besonderes Fundstück oder ein persönliches Format als sonnenbelichtetes Unikat in Bern anfertigen lassen?",
+                studio_custom_title: "Interaktives Cyanotypie-Atelier",
+                studio_custom_desc: "Gestalten Sie Ihre persönliche Komposition: Wählen Sie Format, Pinselstrich-Belichtung und botanische Schweizer Motive.",
+                studio_format_label: "1. Papier-Format",
+                studio_fmt_a6: "A6 Postkarte (10.5x14.8 cm)",
+                studio_fmt_a5: "A5 Kunst-Druck (14.8x21 cm)",
+                studio_wash_label: "2. Sonnen-Belichtungsart",
+                studio_wash_bleed: "Vollflächig (Full Bleed)",
+                studio_wash_brush: "Handgefertigter Pinselstrich",
+                studio_plants_label: "3. Botanische Motive wählen (1–4 Stk.)",
+                studio_btn_inquire: "Individuelle Anfrage senden →",
                 btn_custom_request: "Persönliche Cyanotypie Anfragen",
                 custom_modal_title: "Ihr Persönliches Pflanzenunikat Anfragen",
                 custom_motif_label: "Wunsch-Motiv / Pflanze",
@@ -2812,6 +3146,16 @@
                 custom_section_tag: "Custom Bespoke Creation",
                 custom_section_title: "Custom Cyanotype & Bespoke Artworks",
                 custom_section_desc: "Would you like a specific botanical piece, wild alpine plant, or custom paper size hand-crafted in our Bern studio under the Swiss sun?",
+                studio_custom_title: "Interactive Cyanotype Studio",
+                studio_custom_desc: "Design your bespoke composition: Choose paper format, sun exposure style, and Swiss botanical motifs.",
+                studio_format_label: "1. Paper Format",
+                studio_fmt_a6: "A6 Postcard (10.5x14.8 cm)",
+                studio_fmt_a5: "A5 Art Print (14.8x21 cm)",
+                studio_wash_label: "2. Sun Exposure Style",
+                studio_wash_bleed: "Full Bleed Coating",
+                studio_wash_brush: "Artisanal Brush Wash",
+                studio_plants_label: "3. Select Botanical Motifs (1–4 items)",
+                studio_btn_inquire: "Send Bespoke Inquiry →",
                 btn_custom_request: "Request Custom Creation",
                 custom_modal_title: "Request Your Bespoke Cyanotype",
                 custom_motif_label: "Preferred Motif / Botanical Plant",
@@ -2916,6 +3260,16 @@
                 custom_section_tag: "Création Sur Mesure",
                 custom_section_title: "Cyanotype Sur Mesure & Commande Spéciale",
                 custom_section_desc: "Souhaitez-vous une plante spécifique, un végétal sauvage ou un format personnalisé réalisé à la main dans notre atelier de Berne?",
+                studio_custom_title: "Atelier Interactif de Cyanotype",
+                studio_custom_desc: "Créez votre composition sur mesure: Choisissez le format, le style d'exposition et les motifs botaniques suisses.",
+                studio_format_label: "1. Format de Papier",
+                studio_fmt_a6: "A6 Carte Postale (10.5x14.8 cm)",
+                studio_fmt_a5: "A5 Tirage d'Art (14.8x21 cm)",
+                studio_wash_label: "2. Style d'Exposition Solaire",
+                studio_wash_bleed: "Plein Papier (Full Bleed)",
+                studio_wash_brush: "Pinceau Artisanal",
+                studio_plants_label: "3. Motifs Botaniques (1–4 éléments)",
+                studio_btn_inquire: "Envoyer la Demande Sur Mesure →",
                 btn_custom_request: "Demander une Création Sur Mesure",
                 custom_modal_title: "Demander Votre Cyanotype Personnalisé",
                 custom_motif_label: "Motif Souhaité / Plante",
@@ -3303,12 +3657,33 @@
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
 
+        // 10 Demo Botanical Elements for Interactive Studio
+        const STUDIO_PLANTS = [
+            { id: 'fern', name: { de: 'Alpenfarn', en: 'Alpine Fern', fr: 'Fougère Alpine' }, iconSvg: '<svg viewBox="0 0 100 100"><path fill="#FDFBF7" d="M50 90 Q48 70 45 50 Q43 30 40 10 Q46 25 55 35 Q45 40 35 38 Q48 50 60 58 Q48 62 38 60 Q50 72 65 78 Q48 80 35 76 Z"/></svg>' },
+            { id: 'pine', name: { de: 'Arvennadeln', en: 'Pine Needles', fr: 'Aiguilles de Pin' }, iconSvg: '<svg viewBox="0 0 100 100"><path fill="#FDFBF7" stroke="#FDFBF7" stroke-width="5" d="M50 90 L50 15 M50 70 L25 45 M50 60 L75 35 M50 45 L20 20 M50 35 L80 10"/></svg>' },
+            { id: 'edelweiss', name: { de: 'Edelweiss', en: 'Edelweiss', fr: 'Edelweiss' }, iconSvg: '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="10" fill="#C5A059"/><path fill="#FDFBF7" d="M50 20 L55 40 L75 35 L62 50 L80 62 L58 65 L60 85 L50 70 L40 85 L42 65 L20 62 L38 50 L25 35 L45 40 Z"/></svg>' },
+            { id: 'sage', name: { de: 'Alpensalbei', en: 'Alpine Sage', fr: 'Sauge Alpine' }, iconSvg: '<svg viewBox="0 0 100 100"><path fill="#FDFBF7" d="M50 90 L50 20 Q35 35 30 50 Q45 50 50 40 Q65 40 70 55 Q55 55 50 45 Q35 65 25 75 Q45 75 50 65 Z"/></svg>' },
+            { id: 'grass', name: { de: 'Berggeschmeid', en: 'Mountain Grass', fr: 'Herbe Alpine' }, iconSvg: '<svg viewBox="0 0 100 100"><path fill="none" stroke="#FDFBF7" stroke-width="5" stroke-linecap="round" d="M30 90 Q40 50 25 15 M50 90 Q50 40 55 10 M70 90 Q60 50 80 20 M40 90 Q45 60 35 30"/></svg>' },
+            { id: 'rye', name: { de: 'Wildroggen', en: 'Wild Rye', fr: 'Seigle Sauvage' }, iconSvg: '<svg viewBox="0 0 100 100"><path fill="none" stroke="#FDFBF7" stroke-width="4" d="M50 90 L50 20 M45 40 L55 30 M45 35 L55 25 M45 30 L55 20 M45 25 L55 15 M50 10 L50 5"/></svg>' },
+            { id: 'oak', name: { de: 'Eichenblatt', en: 'Oak Leaf', fr: 'Feuille de Chêne' }, iconSvg: '<svg viewBox="0 0 100 100"><path fill="#FDFBF7" d="M50 90 L50 80 Q30 75 35 65 Q25 55 35 45 Q28 35 40 25 Q50 15 50 10 Q50 15 60 25 Q72 35 65 45 Q75 55 65 65 Q70 75 50 80 Z"/></svg>' },
+            { id: 'clover', name: { de: 'Almenklee', en: 'Alpine Clover', fr: 'Trèfle Alpin' }, iconSvg: '<svg viewBox="0 0 100 100"><path fill="#FDFBF7" d="M50 90 L50 55 C35 55 25 40 40 35 C30 20 45 15 50 30 C55 15 70 20 60 35 C75 40 65 55 50 55 Z"/></svg>' },
+            { id: 'feather', name: { de: 'Federgras', en: 'Feather Grass', fr: 'Herbe Plume' }, iconSvg: '<svg viewBox="0 0 100 100"><path fill="none" stroke="#FDFBF7" stroke-width="4" stroke-linecap="round" d="M50 90 Q30 50 60 10 M48 70 Q30 55 42 45 M52 55 Q70 40 58 30 M50 38 Q35 25 48 18"/></svg>' },
+            { id: 'moss', name: { de: 'Mooszweig', en: 'Moss Branch', fr: 'Branche de Mousse' }, iconSvg: '<svg viewBox="0 0 100 100"><path fill="none" stroke="#FDFBF7" stroke-width="5" stroke-linecap="round" d="M35 90 Q50 60 40 20 M42 70 Q60 65 65 50 M38 45 Q20 40 22 25 M41 32 Q55 28 58 15"/></svg>' }
+        ];
+
+        let studioState = {
+            format: 'A6',
+            wash: 'bleed',
+            selectedPlants: []
+        };
+
         // Initialization
         document.addEventListener('DOMContentLoaded', () => {
             loadCartFromLocalStorage();
             initLanguage();
             initFilterNav();
             initEventListeners();
+            initStudio();
             updateCartUI();
             handleHashRoute();
         });
@@ -4070,6 +4445,129 @@
             } else {
                 header.classList.remove('header-scrolled');
             }
+        }
+
+        // Interactive Bespoke Studio Controller Engine
+        function initStudio() {
+            renderStudioPlants();
+            updateStudioSummary();
+        }
+
+        function setStudioFormat(fmt) {
+            studioState.format = fmt;
+            const btnA6 = document.getElementById('btnFormatA6');
+            const btnA5 = document.getElementById('btnFormatA5');
+            if (btnA6) btnA6.classList.toggle('active', fmt === 'A6');
+            if (btnA5) btnA5.classList.toggle('active', fmt === 'A5');
+
+            const paper = document.getElementById('paperSheet');
+            if (paper) {
+                paper.className = `paper-sheet format-${fmt.toLowerCase()}`;
+            }
+            updateStudioSummary();
+        }
+
+        function setStudioWash(washStyle) {
+            studioState.wash = washStyle;
+            const btnBleed = document.getElementById('btnWashBleed');
+            const btnBrush = document.getElementById('btnWashBrush');
+            if (btnBleed) btnBleed.classList.toggle('active', washStyle === 'bleed');
+            if (btnBrush) btnBrush.classList.toggle('active', washStyle === 'brush');
+
+            const washLayer = document.getElementById('washLayer');
+            if (washLayer) {
+                washLayer.className = `cyanotype-wash-layer wash-${washStyle}`;
+            }
+            updateStudioSummary();
+        }
+
+        function toggleStudioPlant(plantId) {
+            const idx = studioState.selectedPlants.indexOf(plantId);
+            if (idx >= 0) {
+                studioState.selectedPlants.splice(idx, 1);
+            } else {
+                if (studioState.selectedPlants.length >= 4) {
+                    showToast(currentLang === 'de' ? 'Maximal 4 Motive pro Papier' : (currentLang === 'fr' ? 'Maximum 4 motifs par papier' : 'Maximum 4 botanicals per paper'));
+                    return;
+                }
+                studioState.selectedPlants.push(plantId);
+            }
+            renderStudioPlants();
+            updateStudioSummary();
+        }
+
+        function renderStudioPlants() {
+            const grid = document.getElementById('botanicalSelectorGrid');
+            if (!grid) return;
+
+            grid.innerHTML = STUDIO_PLANTS.map(plant => {
+                const isSelected = studioState.selectedPlants.includes(plant.id);
+                const name = plant.name[currentLang] || plant.name.de;
+                return `
+                    <button class="botanical-item-btn ${isSelected ? 'selected' : ''}" onclick="toggleStudioPlant('${plant.id}')" title="${name}">
+                        <div class="botanical-item-icon">${plant.iconSvg}</div>
+                        <span class="botanical-item-name">${name}</span>
+                    </button>
+                `;
+            }).join('');
+
+            const placedLayer = document.getElementById('placedPlantsLayer');
+            if (placedLayer) {
+                placedLayer.innerHTML = studioState.selectedPlants.map(plantId => {
+                    const plant = STUDIO_PLANTS.find(p => p.id === plantId);
+                    if (!plant) return '';
+                    return `
+                        <div class="placed-plant-item" onclick="toggleStudioPlant('${plantId}')" title="${currentLang === 'de' ? 'Klicken zum Entfernen' : (currentLang === 'fr' ? 'Cliquer pour retirer' : 'Click to remove')}">
+                            ${plant.iconSvg}
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            const countBadge = document.getElementById('studioPlantCount');
+            if (countBadge) {
+                countBadge.innerText = `${studioState.selectedPlants.length} / 4`;
+            }
+        }
+
+        function updateStudioSummary() {
+            const summaryElem = document.getElementById('studioSummaryText');
+            if (!summaryElem) return;
+
+            const fmtName = studioState.format === 'A6' ? 'A6 Postkarte (10.5x14.8 cm)' : 'A5 Kunst-Druck (14.8x21 cm)';
+            const washName = studioState.wash === 'bleed' ? 
+                (currentLang === 'de' ? 'Vollflächig' : (currentLang === 'fr' ? 'Plein papier' : 'Full Bleed')) : 
+                (currentLang === 'de' ? 'Handgefertigter Pinselstrich' : (currentLang === 'fr' ? 'Pinceau artisanal' : 'Artisanal Brush Wash'));
+
+            const plantNames = studioState.selectedPlants.map(id => {
+                const p = STUDIO_PLANTS.find(item => item.id === id);
+                return p ? (p.name[currentLang] || p.name.de) : id;
+            });
+
+            const plantsStr = plantNames.length > 0 ? plantNames.join(', ') : (currentLang === 'de' ? 'Keine gewählt' : (currentLang === 'fr' ? 'Aucun motif' : 'None selected'));
+
+            summaryElem.innerHTML = `
+                Format: <strong>${fmtName}</strong> | Belichtung: <strong>${washName}</strong> <br> Motive: <em>${plantsStr}</em>
+            `;
+        }
+
+        function triggerStudioOrderInquiry() {
+            openCustomModal();
+
+            const motifInput = document.getElementById('customMotif');
+            const sizeInput = document.getElementById('customSize');
+            const notesInput = document.getElementById('customNotes');
+
+            const fmtName = studioState.format === 'A6' ? 'A6 Postkarten-Unikat' : 'A5 (14.8 x 21 cm)';
+            const washName = studioState.wash === 'bleed' ? 'Vollflächige Sonnenbelichtung' : 'Handgefertigter Pinselstrich';
+            const plantNames = studioState.selectedPlants.map(id => {
+                const p = STUDIO_PLANTS.find(item => item.id === id);
+                return p ? p.name.de : id;
+            }).join(', ');
+
+            if (motifInput) motifInput.value = plantNames || 'Individuelles Pflanzenmotiv';
+            if (sizeInput) sizeInput.value = fmtName;
+            if (notesInput) notesInput.value = `Im Studio gestaltet:\n- Format: ${fmtName}\n- Belichtung: ${washName}\n- Gewählte Pflanzen: ${plantNames || 'Nach Rücksprache'}`;
         }
     </script>
 </body>
