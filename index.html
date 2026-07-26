@@ -843,6 +843,7 @@
             gap: 60px;
             align-items: center;
             width: 100%;
+            margin-bottom: 60px;
         }
 
         .story-image-container {
@@ -895,11 +896,11 @@
             line-height: 1.8;
         }
 
-        /* Behind-the-Scenes Photo Grid & Reel Showcase */
+        /* Simplified Studio Preview Section Header */
         .bts-gallery-header {
             text-align: center;
-            margin-top: 70px;
-            margin-bottom: 36px;
+            margin-top: 40px;
+            margin-bottom: 30px;
         }
 
         .bts-gallery-header h3 {
@@ -910,52 +911,19 @@
             margin-bottom: 8px;
         }
 
-        .bts-grid {
+        /* High-End Studio Layout: Video Container + Photo Duo & Story Text */
+        .studio-preview-layout {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            margin-bottom: 45px;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 36px;
+            align-items: start;
             width: 100%;
             box-sizing: border-box;
         }
 
-        .bts-card {
-            background: #FFFFFF;
-            padding: 10px;
-            border-radius: 14px;
-            box-shadow: var(--shadow-card);
-            border: 1px solid var(--border-soft);
-            transition: transform 0.3s ease;
-        }
-
-        .bts-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .bts-card img {
-            width: 100%;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 10px;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .bts-card span {
-            font-size: 0.76rem;
-            font-weight: 600;
-            color: var(--text-color);
-            display: block;
-            text-align: center;
-            letter-spacing: 0.5px;
-        }
-
-        /* Crafting Reel Video Container */
         .video-container {
             position: relative;
-            max-width: 800px;
             width: 100%;
-            margin: 0 auto;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-elevated);
@@ -971,52 +939,72 @@
             object-fit: cover;
         }
 
-        /* Process Cards Desktop Grid */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-top: 60px;
+        .studio-duo-narrative {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
             width: 100%;
-            box-sizing: border-box;
         }
 
-        .process-card {
+        .photo-duo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            width: 100%;
+        }
+
+        .duo-photo-card {
             background: #FFFFFF;
-            padding: 32px 26px;
+            padding: 10px;
+            border-radius: 14px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-soft);
+            transition: transform 0.3s ease;
+        }
+
+        .duo-photo-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .duo-photo-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .duo-photo-card span {
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: var(--text-color);
+            display: block;
+            text-align: center;
+            line-height: 1.35;
+        }
+
+        .studio-narrative-box {
+            background: #FFFFFF;
+            padding: 26px 28px;
             border-radius: 20px;
             border: 1px solid var(--border-soft);
-            box-shadow: var(--shadow-card);
-            transition: transform 0.3s var(--transition-smooth);
-            width: 100%;
-            box-sizing: border-box;
+            box-shadow: var(--shadow-subtle);
         }
 
-        .process-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-elevated);
-        }
-
-        .process-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            color: rgba(197, 160, 89, 0.4);
-            font-weight: 600;
-            line-height: 1;
-            margin-bottom: 12px;
-        }
-
-        .process-card h4 {
+        .studio-narrative-box h4 {
             font-size: 1.25rem;
+            font-weight: 400;
             margin-bottom: 10px;
             letter-spacing: 0.5px;
             color: var(--text-color);
+            text-transform: uppercase;
         }
 
-        .process-card p {
+        .studio-narrative-box p {
             font-size: 0.9rem;
             color: var(--text-muted);
-            line-height: 1.7;
+            line-height: 1.75;
             margin: 0;
         }
 
@@ -1730,7 +1718,7 @@
             width: 100%;
         }
 
-        /* Mobile Process Cards (1-Column Stack), Modal & Header Overrides (< 768px) */
+        /* Mobile Responsive Overrides (< 768px) */
         @media (max-width: 768px) {
             nav.desktop-nav {
                 display: none !important;
@@ -1895,6 +1883,7 @@
             .story-grid {
                 grid-template-columns: 1fr !important;
                 gap: 24px !important;
+                margin-bottom: 30px !important;
             }
 
             .story-badge-floating {
@@ -1905,49 +1894,9 @@
                 max-width: 100%;
             }
 
-            .bts-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 10px !important;
-            }
-
-            .bts-card img {
-                height: 120px !important;
-            }
-
-            .video-container {
-                max-width: 100% !important;
-                overflow: hidden !important;
-                border-radius: 14px !important;
-            }
-
-            /* Full-Width 1-Column Process Cards Stack on Mobile (< 768px) */
-            .process-grid {
+            .studio-preview-layout {
                 grid-template-columns: 1fr !important;
-                gap: 16px !important;
-                margin-top: 30px !important;
-                width: 100% !important;
-            }
-
-            .process-card {
-                width: 100% !important;
-                box-sizing: border-box !important;
-                padding: 24px 20px !important;
-                border-radius: 16px !important;
-            }
-
-            .process-number {
-                font-size: 2.4rem !important;
-                margin-bottom: 8px !important;
-            }
-
-            .process-card h4 {
-                font-size: 1.2rem !important;
-                margin-bottom: 8px !important;
-            }
-
-            .process-card p {
-                font-size: 0.88rem !important;
-                line-height: 1.65 !important;
+                gap: 20px !important;
             }
 
             .contact-grid {
@@ -2156,7 +2105,7 @@
             </div>
         </div>
 
-        <!-- Story & Process Section -->
+        <!-- Story & Simplified Studio Showcase Section -->
         <section class="story-section" id="storySection">
             <div class="story-grid">
                 <div class="story-image-container">
@@ -2182,57 +2131,40 @@
                 </div>
             </div>
 
-            <!-- Behind-the-Scenes Photo Grid & Reel Showcase -->
+            <!-- Simplified High-End Studio Showcase: Process Video + Photo Duo & Story Text -->
             <div class="bts-gallery-header">
                 <h3 data-i18n="atelier_gallery_title">Ein Blick Hinter Die Kulissen</h3>
-                <p style="color: var(--text-muted);" data-i18n="atelier_gallery_sub">Authentische Schweizer Handarbeit – Vom Botaniksammeln bis zur Sonnenbelichtung</p>
+                <p style="color: var(--text-muted);" data-i18n="atelier_gallery_sub">Handgefertigte Sonnenbelichtung im Berner Atelier</p>
             </div>
 
-            <div class="bts-grid">
-                <div class="bts-card">
-                    <img src="images/alpine_fern.jpg" alt="Botanical foraging Swiss Alps" onerror="this.src='images/studio_process.jpg'">
-                    <span data-i18n="gallery_step1">1. Botanisches Sammeln im Berner Oberland</span>
-                </div>
-                <div class="bts-card">
-                    <img src="images/studio_process.jpg" alt="Emulsion coating Bern studio">
-                    <span data-i18n="gallery_step2">2. Auftragen der Licht-Emulsion im Atelier</span>
-                </div>
-                <div class="bts-card">
-                    <img src="images/matterhorn.jpg" alt="Solar UV exposure Swiss sun" onerror="this.src='images/studio_process.jpg'">
-                    <span data-i18n="gallery_step3">3. Natürliche Belichtung unter der Schweizer Sonne</span>
-                </div>
-                <div class="bts-card">
-                    <img src="images/lake_botanicals.jpg" alt="Alpine water rinsing" onerror="this.src='images/studio_process.jpg'">
-                    <span data-i18n="gallery_step4">4. Auswaschen in klarem Bergwasser</span>
-                </div>
-            </div>
-
-            <!-- Crafting Reel Video Container -->
-            <div class="video-container">
-                <video controls poster="images/studio_process.jpg" preload="none">
-                    <source src="video/process_crafting.mp4" type="video/mp4">
-                    Ihr Browser unterstützt dieses Video nicht.
-                </video>
-            </div>
-
-            <!-- 3 Step Process Cards (Full-Width Stack on Mobile) -->
-            <div class="process-grid">
-                <div class="process-card">
-                    <div class="process-number" data-i18n="proc_1_num">01</div>
-                    <h4 data-i18n="proc_1_title">Botanische Suche</h4>
-                    <p data-i18n="proc_1_desc">Sorgfältige Auswahl wilder Farne, Kiefernnadeln und Almenblumen im Berner Oberland und am Thunersee.</p>
+            <div class="studio-preview-layout">
+                <!-- Crafting Reel Video Container -->
+                <div class="video-container">
+                    <video controls poster="images/studio_process.jpg" preload="none">
+                        <source src="video/process_crafting.mp4" type="video/mp4">
+                        Ihr Browser unterstützt dieses Video nicht.
+                    </video>
                 </div>
 
-                <div class="process-card">
-                    <div class="process-number" data-i18n="proc_2_num">02</div>
-                    <h4 data-i18n="proc_2_title">Solar-UV-Belichtung</h4>
-                    <p data-i18n="proc_2_desc">Sensibilisierung von archivfestem Hahnemühle-Baumwollpapier und Belichtung unter natürlichem Sonnenlicht.</p>
-                </div>
+                <!-- Studio Photo Duo & Narrative Container -->
+                <div class="studio-duo-narrative">
+                    <div class="photo-duo-grid">
+                        <div class="duo-photo-card">
+                            <img src="images/alpine_fern.jpg" alt="Botanical foraging Swiss Alps" onerror="this.src='images/studio_process.jpg'">
+                            <span data-i18n="duo_photo1_caption">Botanisches Sammeln im Oberland</span>
+                        </div>
+                        <div class="duo-photo-card">
+                            <img src="images/lake_botanicals.jpg" alt="Alpine water rinsing" onerror="this.src='images/studio_process.jpg'">
+                            <span data-i18n="duo_photo2_caption">Auswaschen in klarem Bergwasser</span>
+                        </div>
+                    </div>
 
-                <div class="process-card">
-                    <div class="process-number" data-i18n="proc_3_num">03</div>
-                    <h4 data-i18n="proc_3_title">Auswaschung mit Alpenwasser</h4>
-                    <p data-i18n="proc_3_desc">Auswaschen unbelichteter Salze in klarem Wasser zur Enthüllung scharfer Indigo-Silhouetten.</p>
+                    <div class="studio-narrative-box">
+                        <h4 data-i18n="studio_narrative_title">Solare Druckkunst in Bern</h4>
+                        <p data-i18n="studio_narrative_text">
+                            Jedes Werk entsteht in entschleunigter Handarbeit. Von der Wanderung durch alpine Pfade über das vorsichtige Pressen botanischer Elemente bis hin zur exakten UV-Belichtung im Berner Sonnenlicht – wir vereinen historische Fotografie mit der Poesie Schweizer Landschaften.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2599,11 +2531,11 @@
                 story_p2: "Da Wetter und Sonnenintensität in den Bergen täglich wechseln, entwickelt sich kein Original identisch. Die tiefen Preussischblau-Töne (#1B365D) halten die Essenz eines einzelnen sonnenbeschienenen Moments im Berner Oberland fest.",
                 story_quote: "„Sonnenlicht und Eisensalze verwandeln die Natur in zeitloses Preussischblau.“",
                 atelier_gallery_title: "Ein Blick Hinter Die Kulissen",
-                atelier_gallery_sub: "Authentische Schweizer Handarbeit – Vom Botaniksammeln bis zur Sonnenbelichtung",
-                gallery_step1: "1. Botanisches Sammeln im Berner Oberland",
-                gallery_step2: "2. Auftragen der Licht-Emulsion im Atelier",
-                gallery_step3: "3. Natürliche Belichtung unter der Schweizer Sonne",
-                gallery_step4: "4. Auswaschen in klarem Bergwasser",
+                atelier_gallery_sub: "Handgefertigte Sonnenbelichtung im Berner Atelier",
+                duo_photo1_caption: "Botanisches Sammeln im Oberland",
+                duo_photo2_caption: "Auswaschen in klarem Bergwasser",
+                studio_narrative_title: "Solare Druckkunst in Bern",
+                studio_narrative_text: "Jedes Werk entsteht in entschleunigter Handarbeit. Von der Wanderung durch alpine Pfade über das vorsichtige Pressen botanischer Elemente bis hin zur exakten UV-Belichtung im Berner Sonnenlicht – wir vereinen historische Fotografie mit der Poesie Schweizer Landschaften.",
                 contact_title: "Kontakt & Atelier-Anfragen",
                 contact_sub: "Haben Sie Fragen zu unseren Unikaten, Versand oder Sonderanfertigungen? Wir freuen uns auf Ihre Nachricht per E-Mail.",
                 contact_name: "Ihr Name",
@@ -2614,15 +2546,6 @@
                 back_to_top: "Nach oben ↑",
                 category_footer_prompt: "Möchten Sie ein individuelles Unikat auf Bestellung?",
                 contact_us_short: "Kontaktieren Sie unser Atelier in Bern",
-                proc_1_num: "01",
-                proc_1_title: "Botanische Suche",
-                proc_1_desc: "Sorgfältige Auswahl wilder Farne, Kiefernnadeln und Almenblumen im Berner Oberland und am Thunersee.",
-                proc_2_num: "02",
-                proc_2_title: "Solar-UV-Belichtung",
-                proc_2_desc: "Sensibilisierung von archivfestem Hahnemühle-Baumwollpapier und Belichtung unter natürlichem Sonnenlicht.",
-                proc_3_num: "03",
-                proc_3_title: "Auswaschung mit Alpenwasser",
-                proc_3_desc: "Auswaschen unbelichteter Salze in klarem Wasser zur Enthüllung scharfer Indigo-Silhouetten.",
                 cart_title: "Ihr Warenkorb",
                 cart_empty: "Ihr Warenkorb ist leer.",
                 cart_subtotal: "Zwischensumme",
@@ -2710,11 +2633,11 @@
                 story_p2: "Because weather and sun intensities shift daily in the mountains, no two original prints develop identically. The resulting deep Prussian blue shades (#1B365D) hold the essence of a single sunlit moment in the Bernese Oberland.",
                 story_quote: "“Sunlight and iron salts turn nature into timeless Prussian Blue.”",
                 atelier_gallery_title: "Behind The Scenes",
-                atelier_gallery_sub: "Authentic Swiss Craftsmanship – From foraging botanicals to solar exposure",
-                gallery_step1: "1. Botanical Foraging in Bernese Oberland",
-                gallery_step2: "2. Emulsion Coating in Bern Studio",
-                gallery_step3: "3. Natural Solar Exposure",
-                gallery_step4: "4. Rinsing in Alpine Water",
+                atelier_gallery_sub: "Handcrafted solar exposure in Bern studio",
+                duo_photo1_caption: "Botanical Foraging in Oberland",
+                duo_photo2_caption: "Rinsing in Alpine Water",
+                studio_narrative_title: "Solar Printing Philosophy in Bern",
+                studio_narrative_text: "Every piece is crafted through mindful slow art. From foraging along alpine trails and carefully pressing botanical specimens to precision solar UV exposure in Bernese sunlight – we blend historic photography with Swiss nature poetry.",
                 contact_title: "Contact & Studio Inquiries",
                 contact_sub: "Have questions about our original pieces, shipping, or custom commissions? We look forward to hearing from you via email.",
                 contact_name: "Your Name",
@@ -2725,15 +2648,6 @@
                 back_to_top: "Back to Top ↑",
                 category_footer_prompt: "Looking for a custom 1-of-1 bespoke piece?",
                 contact_us_short: "Contact our studio in Bern",
-                proc_1_num: "01",
-                proc_1_title: "Botanical Foraging",
-                proc_1_desc: "Carefully selecting wild ferns, pine needles, and alpine blooms across the Bernese Oberland and Lake Thun trailways.",
-                proc_2_num: "02",
-                proc_2_title: "Solar UV Exposure",
-                proc_2_desc: "Sensitizing archival Hahnemühle cotton paper with chemical emulsion and exposing under natural sunlight.",
-                proc_3_num: "03",
-                proc_3_title: "Alpine Water Rinsing",
-                proc_3_desc: "Washing away unexposed iron salts in clear water to reveal sharp indigo silhouettes and Prussian Blue depth.",
                 cart_title: "Your Cart",
                 cart_empty: "Your shopping cart is empty.",
                 cart_subtotal: "Subtotal",
@@ -2821,11 +2735,11 @@
                 story_p2: "En raison des variations quotidiennes du soleil en montagne, deux tirages originaux ne se développent jamais à l'identique. Les teintes intenses de bleu de Prusse (#1B365D) immortalisent un instant précis dans l'Oberland bernois.",
                 story_quote: "« La lumière du soleil et les sels de fer transforment la nature en un bleu de Prusse intemporel. »",
                 atelier_gallery_title: "Coulisses de l'Atelier",
-                atelier_gallery_sub: "Artisanat Suisse Authentique – De la cueillette à l'exposition solaire",
-                gallery_step1: "1. Cueillette dans l'Oberland bernois",
-                gallery_step2: "2. Application de l'émulsion en atelier",
-                gallery_step3: "3. Exposition solaire naturelle",
-                gallery_step4: "4. Rinçage à l'eau claire des Alpes",
+                atelier_gallery_sub: "Exposition solaire artisanale à l'atelier de Berne",
+                duo_photo1_caption: "Cueillette dans l'Oberland",
+                duo_photo2_caption: "Rinçage à l'eau claire des Alpes",
+                studio_narrative_title: "Art de l'Impression Solaire",
+                studio_narrative_text: "Chaque tirage naît d'un travail artisanal minutieux. De la marche sur les sentiers alpins au pressage délicat des végétaux jusqu'à l'exposition sous le soleil bernois.",
                 contact_title: "Contact & Atelier",
                 contact_sub: "Une question sur nos originaux, la livraison ou une commande personnalisée? Écrivez-nous par e-mail.",
                 contact_name: "Votre Nom",
@@ -2836,15 +2750,6 @@
                 back_to_top: "Haut de page ↑",
                 category_footer_prompt: "Vous souhaitez une pièce unique sur mesure?",
                 contact_us_short: "Contactez notre atelier à Berne",
-                proc_1_num: "01",
-                proc_1_title: "Cueillette Botanique",
-                proc_1_desc: "Sélection minutieuse de fougères sauvages, d'aiguilles de pin et de fleurs alpines dans l'Oberland bernois.",
-                proc_2_num: "02",
-                proc_2_title: "Exposition Solaire UV",
-                proc_2_desc: "Sensibilisation du papier coton Hahnemühle et exposition sous le soleil naturel des Alpes.",
-                proc_3_num: "03",
-                proc_3_title: "Rinçage à l'Eau Alpine",
-                proc_3_desc: "Lavage des sels non exposés dans l'eau claire pour révéler des silhouettes d'indigo intenses.",
                 cart_title: "Votre Panier",
                 cart_empty: "Votre panier est vide.",
                 cart_subtotal: "Sous-total",
