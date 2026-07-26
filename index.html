@@ -27,7 +27,6 @@
             --accent-light: #EBF1F8;
             --accent-sold: #78899A;
             --accent-order: #D97706;
-            --whatsapp-green: #25D366;
             --button-hover: #0D223F;
             
             --shadow-subtle: 0 4px 20px rgba(27, 54, 93, 0.03);
@@ -907,6 +906,7 @@
             gap: 18px;
             margin-bottom: 45px;
             width: 100%;
+            box-sizing: border-box;
         }
 
         .bts-card {
@@ -944,12 +944,14 @@
         .video-container {
             position: relative;
             max-width: 800px;
+            width: 100%;
             margin: 0 auto;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-elevated);
             background: #11223A;
             border: 1px solid var(--border-soft);
+            box-sizing: border-box;
         }
 
         .video-container video {
@@ -957,6 +959,55 @@
             height: auto;
             display: block;
             object-fit: cover;
+        }
+
+        /* Process Cards Desktop Grid */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 60px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .process-card {
+            background: #FFFFFF;
+            padding: 32px 26px;
+            border-radius: 20px;
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s var(--transition-smooth);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .process-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .process-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: rgba(197, 160, 89, 0.4);
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .process-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            color: var(--text-color);
+        }
+
+        .process-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 0;
         }
 
         /* Custom Creation Showcase Banner */
@@ -971,6 +1022,8 @@
             box-shadow: var(--shadow-card);
             position: relative;
             overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .custom-banner-section h2 {
@@ -1024,74 +1077,35 @@
             line-height: 1.8;
         }
 
-        .whatsapp-btn {
-            background-color: var(--whatsapp-green);
-            color: #FFFFFF;
-            padding: 15px 30px;
-            min-height: 48px;
-            border-radius: var(--radius-pill);
-            text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.28);
-            transition: all 0.3s var(--transition-smooth);
-            width: fit-content;
-        }
-
-        .whatsapp-btn:hover {
-            background-color: #20BA5A;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 26px rgba(37, 211, 102, 0.38);
-        }
-
-        /* Process Cards */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-top: 60px;
-            width: 100%;
-        }
-
-        .process-card {
-            background: #FFFFFF;
-            padding: 32px 26px;
-            border-radius: 20px;
+        .direct-email-box {
+            background: var(--bg-parchment);
             border: 1px solid var(--border-soft);
-            box-shadow: var(--shadow-card);
-            transition: transform 0.3s var(--transition-smooth);
-            width: 100%;
+            padding: 20px 24px;
+            border-radius: 16px;
+            display: inline-flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 10px;
         }
 
-        .process-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-elevated);
-        }
-
-        .process-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            color: rgba(197, 160, 89, 0.4);
+        .direct-email-box span {
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-gold);
             font-weight: 600;
-            line-height: 1;
-            margin-bottom: 12px;
         }
 
-        .process-card h4 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
+        .direct-email-box a {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
 
-        .process-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.7;
+        .direct-email-box a:hover {
+            color: var(--accent-gold);
         }
 
         /* Minimal Footer for Dedicated Views */
@@ -1706,7 +1720,7 @@
             width: 100%;
         }
 
-        /* Mobile 3-Column Grid, Header, & Stacked Modal Overrides (< 768px) */
+        /* Mobile Process Cards (1-Column Stack), Modal & Header Overrides (< 768px) */
         @media (max-width: 768px) {
             nav.desktop-nav {
                 display: none !important;
@@ -1778,7 +1792,7 @@
             }
 
             .container {
-                padding: 0 10px;
+                padding: 0 12px;
             }
 
             .hero {
@@ -1820,7 +1834,6 @@
                 border-radius: 8px !important;
             }
 
-            /* Hide bulky inline controls on 3-column mobile grid cards to save space */
             .card-details, .size-select-wrapper, .card-buttons, .lead-time-banner {
                 display: none !important;
             }
@@ -1860,10 +1873,15 @@
             }
 
             .story-section {
-                padding: 20px 12px;
+                padding: 24px 14px;
                 margin-top: 15px;
                 margin-bottom: 30px;
-                border-radius: 16px;
+                border-radius: 18px;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
             }
 
             .story-badge-floating {
@@ -1874,12 +1892,72 @@
                 max-width: 100%;
             }
 
+            .bts-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
+            }
+
+            .bts-card img {
+                height: 120px !important;
+            }
+
+            .video-container {
+                max-width: 100% !important;
+                overflow: hidden !important;
+                border-radius: 14px !important;
+            }
+
+            /* Full-Width 1-Column Process Cards Stack on Mobile (< 768px) */
+            .process-grid {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+                margin-top: 30px !important;
+                width: 100% !important;
+            }
+
+            .process-card {
+                width: 100% !important;
+                box-sizing: border-box !important;
+                padding: 24px 20px !important;
+                border-radius: 16px !important;
+            }
+
+            .process-number {
+                font-size: 2.4rem !important;
+                margin-bottom: 8px !important;
+            }
+
+            .process-card h4 {
+                font-size: 1.2rem !important;
+                margin-bottom: 8px !important;
+            }
+
+            .process-card p {
+                font-size: 0.88rem !important;
+                line-height: 1.65 !important;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+                gap: 28px !important;
+            }
+
+            .contact-section {
+                padding: 30px 18px !important;
+                border-radius: 20px !important;
+            }
+
+            .custom-banner-section {
+                padding: 36px 18px !important;
+                border-radius: 20px !important;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
 
-            /* Mobile Modal / Lightbox Stacked Layout Fixes (< 768px) */
+            /* Mobile Modal Stacked Layout Fixes (< 768px) */
             .modal-card {
                 grid-template-columns: 1fr !important;
                 display: flex !important;
@@ -2090,7 +2168,7 @@
                 </div>
             </div>
 
-            <!-- Behind-The-Scenes Photos & Video Showcase -->
+            <!-- Behind-the-Scenes Photo Grid & Reel Showcase -->
             <div class="bts-gallery-header">
                 <h3 data-i18n="atelier_gallery_title">Ein Blick Hinter Die Kulissen</h3>
                 <p style="color: var(--text-muted);" data-i18n="atelier_gallery_sub">Authentische Schweizer Handarbeit – Vom Botaniksammeln bis zur Sonnenbelichtung</p>
@@ -2115,7 +2193,7 @@
                 </div>
             </div>
 
-            <!-- Crafting Video Reel Container -->
+            <!-- Crafting Reel Video Container -->
             <div class="video-container">
                 <video controls poster="images/studio_process.jpg" preload="none">
                     <source src="video/process_crafting.mp4" type="video/mp4">
@@ -2123,7 +2201,7 @@
                 </video>
             </div>
 
-            <!-- 3 Step Process Cards -->
+            <!-- 3 Step Process Cards (Full-Width Stack on Mobile) -->
             <div class="process-grid">
                 <div class="process-card">
                     <div class="process-number" data-i18n="proc_1_num">01</div>
@@ -2155,23 +2233,20 @@
             <button class="btn-primary" onclick="openCustomModal()" data-i18n="btn_custom_request">Persönliche Cyanotypie Anfragen</button>
         </section>
 
-        <!-- Contact Section & Business WhatsApp Integration -->
+        <!-- Ultra-Clean Email Contact Section (No WhatsApp) -->
         <section class="contact-section" id="contactSection">
             <div class="contact-grid">
                 <div class="contact-info">
                     <div class="hero-tag" style="text-align: left;" data-i18n="nav_contact">Kontakt & Atelier</div>
                     <h2 data-i18n="contact_title">Kontakt & Atelier-Anfragen</h2>
                     <p data-i18n="contact_sub">
-                        Haben Sie Fragen zu unseren Unikaten, Versand oder Sonderanfertigungen? Wir freuen uns auf Ihre Nachricht.
+                        Haben Sie Fragen zu unseren Unikaten, Versand oder Sonderanfertigungen? Wir freuen uns auf Ihre Nachricht per E-Mail.
                     </p>
 
-                    <a href="https://wa.me/41790000000?text=Hallo%20Madita%20Atelier,%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Cyanotypie-Kunstwerke." 
-                       target="_blank" rel="noopener" class="whatsapp-btn" id="whatsappLink">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.485 1.332 5.001l-1.416 5.166 5.289-1.385c1.464.798 3.116 1.218 4.781 1.218h.004c5.504 0 9.987-4.479 9.989-9.986 0-2.668-1.037-5.176-2.922-7.062a9.923 9.923 0 0 0-7.067-2.936zm.003 1.666c4.586 0 8.318 3.731 8.319 8.318 0 2.222-.865 4.312-2.436 5.882a8.27 8.27 0 0 1-5.882 2.437h-.003c-1.467 0-2.912-.392-4.18-1.135l-.3-.178-3.109.814.829-3.028-.195-.311a8.293 8.293 0 0 1-1.27-4.48c.001-4.586 3.733-8.319 8.32-8.319zm-3.642 4.148c-.225 0-.585.084-.891.419-.306.336-1.17 1.144-1.17 2.79 0 1.646 1.199 3.238 1.365 3.463.167.225 2.316 3.536 5.612 4.958.784.339 1.396.541 1.873.693.788.251 1.505.215 2.071.131.631-.094 1.94-.793 2.214-1.558.274-.764.274-1.419.192-1.558-.083-.139-.306-.223-.637-.389-.331-.167-1.94-.957-2.241-1.068-.301-.111-.52-.167-.738.167-.219.335-.847 1.068-1.039 1.291-.192.223-.383.251-.714.084-.331-.167-1.396-.515-2.66-1.642-.983-.877-1.647-1.96-1.841-2.293-.194-.334-.02-.514.145-.678.149-.148.331-.389.497-.584.166-.195.221-.334.331-.557.111-.223.056-.418-.028-.585-.083-.167-.738-1.782-1.011-2.438-.266-.64-.537-.553-.738-.563-.192-.01-.412-.01-.637-.01z"/>
-                        </svg>
-                        <span data-i18n="whatsapp_btn">Direkt per WhatsApp Schreiben</span>
-                    </a>
+                    <div class="direct-email-box">
+                        <span data-i18n="contact_email_label">Direkter Atelier-Kontakt:</span>
+                        <a href="mailto:hello@madita-cyanotype.ch">hello@madita-cyanotype.ch</a>
+                    </div>
                 </div>
 
                 <form id="contactForm" onsubmit="handleContactSubmit(event)">
@@ -2425,7 +2500,6 @@
                     <ul>
                         <li><a href="https://instagram.com/madita_cyanotypes" target="_blank" rel="noopener">Instagram @madita_cyanotypes</a></li>
                         <li><a href="mailto:hello@madita-cyanotype.ch">hello@madita-cyanotype.ch</a></li>
-                        <li><a href="https://wa.me/41790000000" target="_blank" rel="noopener">WhatsApp Business</a></li>
                     </ul>
                 </div>
 
@@ -2517,13 +2591,12 @@
                 gallery_step3: "3. Natürliche Belichtung unter der Schweizer Sonne",
                 gallery_step4: "4. Auswaschen in klarem Bergwasser",
                 contact_title: "Kontakt & Atelier-Anfragen",
-                contact_sub: "Haben Sie Fragen zu unseren Unikaten, Versand oder Sonderanfertigungen? Wir freuen uns auf Ihre Nachricht.",
+                contact_sub: "Haben Sie Fragen zu unseren Unikaten, Versand oder Sonderanfertigungen? Wir freuen uns auf Ihre Nachricht per E-Mail.",
                 contact_name: "Ihr Name",
                 contact_email: "Ihre E-Mail-Adresse",
+                contact_email_label: "Direkter Atelier-Kontakt:",
                 contact_message: "Ihre Nachricht",
                 contact_submit: "Nachricht Absenden",
-                whatsapp_btn: "Direkt per WhatsApp Schreiben",
-                whatsapp_text: "Hallo Madita Atelier, ich interessiere mich für Ihre Cyanotypie-Kunstwerke.",
                 back_to_top: "Nach oben ↑",
                 category_footer_prompt: "Möchten Sie ein individuelles Unikat auf Bestellung?",
                 contact_us_short: "Kontaktieren Sie unser Atelier in Bern",
@@ -2629,13 +2702,12 @@
                 gallery_step3: "3. Natural Solar Exposure",
                 gallery_step4: "4. Rinsing in Alpine Water",
                 contact_title: "Contact & Studio Inquiries",
-                contact_sub: "Have questions about our original pieces, shipping, or custom commissions? We look forward to hearing from you.",
+                contact_sub: "Have questions about our original pieces, shipping, or custom commissions? We look forward to hearing from you via email.",
                 contact_name: "Your Name",
                 contact_email: "Your Email Address",
+                contact_email_label: "Direct Studio Email:",
                 contact_message: "Your Message",
                 contact_submit: "Send Message",
-                whatsapp_btn: "Message Us on WhatsApp",
-                whatsapp_text: "Hello Madita Studio, I am interested in your cyanotype artworks.",
                 back_to_top: "Back to Top ↑",
                 category_footer_prompt: "Looking for a custom 1-of-1 bespoke piece?",
                 contact_us_short: "Contact our studio in Bern",
@@ -2741,13 +2813,12 @@
                 gallery_step3: "3. Exposition solaire naturelle",
                 gallery_step4: "4. Rinçage à l'eau claire des Alpes",
                 contact_title: "Contact & Atelier",
-                contact_sub: "Une question sur nos originaux, la livraison ou une commande personnalisée? Écrivez-nous.",
+                contact_sub: "Une question sur nos originaux, la livraison ou une commande personnalisée? Écrivez-nous par e-mail.",
                 contact_name: "Votre Nom",
                 contact_email: "Adresse E-mail",
+                contact_email_label: "E-mail Direct de l'Atelier:",
                 contact_message: "Votre Message",
                 contact_submit: "Envoyer le Message",
-                whatsapp_btn: "Écrivez-nous sur WhatsApp",
-                whatsapp_text: "Bonjour Madita Atelier, je suis intéressé(e) par vos créations.",
                 back_to_top: "Haut de page ↑",
                 category_footer_prompt: "Vous souhaitez une pièce unique sur mesure?",
                 contact_us_short: "Contactez notre atelier à Berne",
@@ -2755,10 +2826,10 @@
                 proc_1_title: "Cueillette Botanique",
                 proc_1_desc: "Sélection minutieuse de fougères sauvages, d'aiguilles de pin et de fleurs alpines dans l'Oberland bernois.",
                 proc_2_num: "02",
-                proc_2_title: "Solar-UV-Belichtung",
+                proc_2_title: "Exposition Solaire UV",
                 proc_2_desc: "Sensibilisation du papier coton Hahnemühle et exposition sous le soleil naturel des Alpes.",
                 proc_3_num: "03",
-                proc_3_title: "Auswaschung mit Alpenwasser",
+                proc_3_title: "Rinçage à l'Eau Alpine",
                 proc_3_desc: "Lavage des sels non exposés dans l'eau claire pour révéler des silhouettes d'indigo intenses.",
                 cart_title: "Votre Panier",
                 cart_empty: "Votre panier est vide.",
@@ -3125,7 +3196,6 @@
             initFilterNav();
             initEventListeners();
             updateCartUI();
-            
             handleHashRoute();
         });
 
@@ -3316,7 +3386,6 @@
             applyLanguage(lang);
             switchView(currentView);
             updateCartUI();
-            updateWhatsAppLink();
         }
 
         // Apply Language Dictionary with Fade Effect to Prevent Reflow Jumping
@@ -3358,15 +3427,6 @@
 
                 targets.forEach(elem => elem.classList.remove('i18n-fading'));
             }, 80);
-        }
-
-        // Update WhatsApp Link
-        function updateWhatsAppLink() {
-            const waLink = document.getElementById('whatsappLink');
-            if (waLink && TRANSLATIONS[currentLang]) {
-                const text = encodeURIComponent(TRANSLATIONS[currentLang].whatsapp_text);
-                waLink.href = `https://wa.me/41790000000?text=${text}`;
-            }
         }
 
         // Filter Nav Event Handler
