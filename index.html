@@ -2472,7 +2472,7 @@
                 <a href="#originals" onclick="switchView('originals')" id="nav-link-originals" data-i18n="nav_originals">Originale</a>
                 <a href="#prints" onclick="switchView('prints')" id="nav-link-prints" data-i18n="nav_prints">Kunstdrucke</a>
                 <a href="#custom" onclick="switchView('custom')" id="nav-link-custom" data-i18n="nav_custom">Wunsch-Unikat</a>
-                <a href="#story" onclick="switchView('story')" id="nav-link-story" data-i18n="nav_story">Unser Atelier</a>
+                <a href="#story" onclick="switchView('story')" id="nav-link-story" data-i18n="nav_story">Unsere Geschichte</a>
                 <a href="#contact" onclick="switchView('contact')" id="nav-link-contact" data-i18n="nav_contact">Kontakt</a>
             </nav>
 
@@ -2518,7 +2518,7 @@
             <a href="#originals" onclick="switchView('originals')" class="mobile-link" data-i18n="nav_originals">Originale (1-of-1)</a>
             <a href="#prints" onclick="switchView('prints')" class="mobile-link" data-i18n="nav_prints">Kunstdrucke & Postkarten</a>
             <a href="#custom" onclick="switchView('custom')" class="mobile-link" data-i18n="nav_custom">Wunsch-Unikat</a>
-            <a href="#story" onclick="switchView('story')" class="mobile-link" data-i18n="nav_story">Unser Atelier</a>
+            <a href="#story" onclick="switchView('story')" class="mobile-link" data-i18n="nav_story">Unsere Geschichte</a>
             <a href="#contact" onclick="switchView('contact')" class="mobile-link" data-i18n="nav_contact">Kontakt</a>
         </div>
     </header>
@@ -2766,15 +2766,6 @@
 
         <!-- Minimal Footer for Dedicated Views -->
         <div class="category-minimal-footer" id="categoryFooter" style="display: none;">
-            <div class="swiss-shipping-bar">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="1" y="3" width="15" height="13"></rect>
-                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                </svg>
-                <span data-i18n="swiss_shipping_notice">Eingeschriebener Versand schweizweit ab CHF 6.80 (Die Post) | Kostenloser Versand ab CHF 150</span>
-            </div>
             <div class="category-footer-prompt">
                 <span data-i18n="category_footer_prompt">Möchten Sie ein individuelles Unikat auf Bestellung?</span> 
                 <a href="#custom" onclick="openCustomModal()" data-i18n="contact_us_short">Kontaktieren Sie unser Atelier in Bern</a>
@@ -3034,6 +3025,7 @@
                 <div class="footer-col">
                     <h4 data-i18n="footer_care">Kundenservice</h4>
                     <ul>
+                        <li><a href="#care" onclick="event.preventDefault(); openCareModal();" data-i18n="care_link">Kundenservice & Versand</a></li>
                         <li><a href="https://instagram.com/madita_cyanotypes" target="_blank" rel="noopener">Instagram @madita_cyanotypes</a></li>
                         <li><a href="mailto:hello@madita-cyanotype.ch">hello@madita-cyanotype.ch</a></li>
                     </ul>
@@ -3051,22 +3043,31 @@
                 </div>
             </div>
 
-            <div class="swiss-shipping-bar">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="1" y="3" width="15" height="13"></rect>
-                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                </svg>
-                <span data-i18n="swiss_shipping_notice">Eingeschriebener Versand schweizweit ab CHF 6.80 (Die Post) | Kostenloser Versand ab CHF 150</span>
-            </div>
-
             <div class="footer-bottom">
                 <div data-i18n="footer_rights">&copy; 2026 Madita Cyanotype Art. Handgefertigt in Bern, Schweiz.</div>
                 <div data-i18n="footer_tag">Alle Rechte vorbehalten. Für Sammler & Naturliebhaber.</div>
             </div>
         </div>
     </footer>
+
+    <!-- Customer Care / Kundenservice Modal -->
+    <div class="modal-overlay" id="careModalOverlay">
+        <div class="modal-card" style="max-width: 540px; grid-template-columns: 1fr;">
+            <button class="modal-close" id="careCloseBtn">&times;</button>
+            <div style="padding: 10px 6px;">
+                <div class="hero-tag" style="text-align: left;" data-i18n="footer_care">Kundenservice</div>
+                <h2 class="modal-title" style="font-size: 1.8rem; margin-bottom: 16px;" data-i18n="care_modal_title">Versand & Kundenservice</h2>
+                <div style="background-color: var(--story-bg); border: 1px solid var(--border-soft); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                    <p id="carePolicyText" style="font-size: 0.95rem; line-height: 1.7; color: var(--text-color);" data-i18n="care_policy_text">
+                        Der Versand erfolgt ausschliesslich innerhalb der Schweiz und Liechtenstein zu den Tarifen der Schweizerischen Post.
+                    </p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: center; justify-content: flex-end;">
+                    <button class="btn-editorial-link" onclick="closeCareModal()" data-i18n="back_to_home">← Zurück</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Vanilla JavaScript Implementation -->
     <script>
@@ -3078,8 +3079,11 @@
                 nav_originals: "Originale",
                 nav_prints: "Kunstdrucke",
                 nav_custom: "Wunsch-Unikat",
-                nav_story: "Unser Atelier",
+                nav_story: "Unsere Geschichte",
                 nav_contact: "Kontakt",
+                care_link: "Kundenservice & Versand",
+                care_modal_title: "Versand & Kundenservice",
+                care_policy_text: "Der Versand erfolgt ausschliesslich innerhalb der Schweiz und Liechtenstein zu den Tarifen der Schweizerischen Post.",
                 cart_label: "Warenkorb",
                 hero_tag: "Handgefertigt in Bern, Schweiz",
                 hero_title: "Alpine Stille & Sonnenlicht Festhalten",
@@ -3192,8 +3196,11 @@
                 nav_originals: "Originals",
                 nav_prints: "Prints",
                 nav_custom: "Custom Piece",
-                nav_story: "Our Studio",
+                nav_story: "Our Story",
                 nav_contact: "Contact",
+                care_link: "Customer Care & Shipping",
+                care_modal_title: "Shipping & Customer Care",
+                care_policy_text: "Shipping is exclusively within Switzerland and Liechtenstein at standard Swiss Post rates.",
                 cart_label: "Cart",
                 hero_tag: "Handcrafted in Bern, Switzerland",
                 hero_title: "Capturing Alpine Solitude & Sunlight",
@@ -3306,8 +3313,11 @@
                 nav_originals: "Originaux",
                 nav_prints: "Tirages",
                 nav_custom: "Sur Mesure",
-                nav_story: "Notre Atelier",
+                nav_story: "Notre Histoire",
                 nav_contact: "Contact",
+                care_link: "Service Client & Livraison",
+                care_modal_title: "Livraison & Service Client",
+                care_policy_text: "L'expédition s'effectue exclusivement en Suisse et au Liechtenstein aux tarifs de la Poste Suisse.",
                 cart_label: "Panier",
                 hero_tag: "Fait main à Berne, Suisse",
                 hero_title: "Capturer la Sérénité et la Lumière Alpine",
@@ -4432,6 +4442,23 @@
             document.body.style.overflow = '';
         }
 
+        // Customer Care Modal Controller
+        function openCareModal() {
+            const modal = document.getElementById('careModalOverlay');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeCareModal() {
+            const modal = document.getElementById('careModalOverlay');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
         function handleCompleteOrder() {
             cart = [];
             saveCartToLocalStorage();
@@ -4489,6 +4516,15 @@
                 if (e.target === bulkModalOverlay) closeBulkInquiryModal();
             });
 
+            const careCloseBtn = document.getElementById('careCloseBtn');
+            const careModalOverlay = document.getElementById('careModalOverlay');
+            if (careCloseBtn && careModalOverlay) {
+                careCloseBtn.addEventListener('click', closeCareModal);
+                careModalOverlay.addEventListener('click', (e) => {
+                    if (e.target === careModalOverlay) closeCareModal();
+                });
+            }
+
             document.addEventListener('click', (e) => {
                 const langWrapper = document.getElementById('langDropdownWrapper');
                 const langMenu = document.getElementById('langDropdownMenu');
@@ -4504,6 +4540,7 @@
                     closeCheckoutModal();
                     closeCustomModal();
                     closeBulkInquiryModal();
+                    closeCareModal();
                     const langMenu = document.getElementById('langDropdownMenu');
                     if (langMenu) langMenu.classList.remove('show');
                 }
