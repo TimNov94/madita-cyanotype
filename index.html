@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madita | Swiss Cyanotype Art & Fine Art Prints</title>
-    <meta name="description" content="Hand-crafted sun-exposed cyanotypes inspired by Swiss nature & alpine botanicals. Made with love in Bern, Switzerland. Original 1-of-1 artworks & archival giclée prints.">
+    <title>Madita | Schweizer Cyanotypie-Kunst & Kunstdrucke</title>
+    <meta name="description" content="Handgefertigte sonnenbelichtete Cyanotypien, inspiriert von der Schweizer Natur & alpinen Pflanzen. Mit Liebe in Bern hergestellt. 1-of-1 Originale & archivarische Kunstdrucke.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +18,8 @@
             --bg-hazy-blue: #F0F4F8;
             --text-color: #1B365D;
             --text-muted: #5A6E85;
-            --card-bg: rgba(255, 255, 255, 0.85);
-            --story-bg: rgba(250, 246, 239, 0.75);
+            --card-bg: rgba(255, 255, 255, 0.88);
+            --story-bg: rgba(250, 246, 239, 0.78);
             --border-soft: #EFECE6;
             --border-hover: rgba(27, 54, 93, 0.3);
             --accent-color: #1B365D;
@@ -28,13 +28,13 @@
             --button-hover: #0D223F;
             
             --shadow-subtle: 0 4px 20px rgba(27, 54, 93, 0.03);
-            --shadow-card: 0 12px 35px rgba(27, 54, 93, 0.05);
-            --shadow-elevated: 0 22px 50px rgba(27, 54, 93, 0.09);
+            --shadow-card: 0 14px 38px rgba(27, 54, 93, 0.05);
+            --shadow-elevated: 0 24px 55px rgba(27, 54, 93, 0.09);
             --shadow-mounted: inset 0 2px 6px rgba(0, 0, 0, 0.02), 0 8px 24px rgba(27, 54, 93, 0.06);
             
             --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-            --radius-card: 16px;
-            --radius-image: 12px;
+            --radius-card: 18px;
+            --radius-image: 14px;
             --radius-pill: 30px;
         }
 
@@ -48,19 +48,19 @@
             scroll-behavior: smooth;
         }
 
-        /* Anthroposophic Watercolor/Parchment Wash Background */
+        /* Ambient Serene Watercolor Background Wash */
         body {
             background-color: var(--bg-parchment);
             background: 
-                radial-gradient(ellipse at 15% 5%, rgba(240, 244, 248, 0.75) 0%, transparent 50%),
-                radial-gradient(circle at 85% 15%, rgba(250, 246, 239, 0.9) 0%, transparent 45%),
-                radial-gradient(circle at 25% 50%, rgba(253, 251, 247, 0.95) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 80%, rgba(240, 244, 248, 0.65) 0%, transparent 55%),
-                linear-gradient(180deg, #FDFBF7 0%, #FAF6EF 40%, #FDFBF7 100%);
+                radial-gradient(ellipse at 20% 0%, rgba(240, 244, 248, 0.85) 0%, transparent 60%),
+                radial-gradient(circle at 80% 12%, rgba(250, 246, 239, 0.95) 0%, transparent 50%),
+                radial-gradient(circle at 35% 45%, rgba(253, 251, 247, 0.98) 0%, transparent 65%),
+                radial-gradient(ellipse at 75% 85%, rgba(240, 244, 248, 0.75) 0%, transparent 60%),
+                linear-gradient(180deg, #FDFBF7 0%, #FAF6EF 35%, #F5F0E6 70%, #FDFBF7 100%);
             background-attachment: fixed;
             color: var(--text-color);
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.75;
+            line-height: 1.8;
             overflow-x: hidden;
         }
 
@@ -73,7 +73,7 @@
             background: linear-gradient(90deg, #162C4E 0%, #1B365D 50%, #162C4E 100%);
             color: #FDFBF7;
             text-align: center;
-            padding: 10px 16px;
+            padding: 9px 16px;
             font-size: 0.78rem;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -87,7 +87,7 @@
 
         /* Header Navigation */
         header {
-            background-color: rgba(253, 251, 247, 0.82);
+            background-color: rgba(253, 251, 247, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(239, 236, 230, 0.7);
@@ -169,7 +169,39 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 18px;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--border-soft);
+            padding: 4px 8px;
+            border-radius: var(--radius-pill);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 3px 7px;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            width: auto;
+            margin-top: 0;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            color: var(--accent-color);
+            font-weight: 700;
+            background-color: rgba(27, 54, 93, 0.08);
         }
 
         .cart-trigger {
@@ -180,7 +212,7 @@
             align-items: center;
             gap: 9px;
             color: var(--text-color);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 500;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -274,9 +306,9 @@
         /* Hero Showcase Section */
         .hero {
             position: relative;
-            padding: 110px 20px 80px;
+            padding: 120px 20px 90px;
             text-align: center;
-            max-width: 920px;
+            max-width: 940px;
             margin: 0 auto;
         }
 
@@ -286,10 +318,10 @@
             top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 480px;
-            height: 280px;
-            background: radial-gradient(ellipse at center, rgba(197, 160, 89, 0.08) 0%, rgba(240, 244, 248, 0.25) 50%, transparent 75%);
-            filter: blur(40px);
+            width: 520px;
+            height: 300px;
+            background: radial-gradient(ellipse at center, rgba(197, 160, 89, 0.09) 0%, rgba(240, 244, 248, 0.3) 50%, transparent 75%);
+            filter: blur(45px);
             z-index: -1;
             pointer-events: none;
         }
@@ -300,25 +332,25 @@
             text-transform: uppercase;
             color: var(--accent-gold);
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 4rem;
             font-weight: 300;
             line-height: 1.12;
             letter-spacing: -0.5px;
-            margin-bottom: 24px;
+            margin-bottom: 26px;
             color: var(--text-color);
         }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.18rem;
             color: var(--text-muted);
             font-weight: 300;
-            max-width: 700px;
-            margin: 0 auto 38px;
-            line-height: 1.8;
+            max-width: 720px;
+            margin: 0 auto 42px;
+            line-height: 1.85;
         }
 
         .hero-ctas {
@@ -331,7 +363,7 @@
         .btn-primary {
             background-color: var(--accent-color);
             color: #FFFFFF;
-            padding: 16px 34px;
+            padding: 16px 36px;
             border: 1px solid var(--accent-color);
             font-size: 0.82rem;
             letter-spacing: 2px;
@@ -355,9 +387,9 @@
         }
 
         .btn-secondary {
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.75);
             color: var(--text-color);
-            padding: 16px 34px;
+            padding: 16px 36px;
             border: 1px solid var(--border-soft);
             font-size: 0.82rem;
             letter-spacing: 2px;
@@ -392,12 +424,12 @@
             display: flex;
             justify-content: center;
             gap: 14px;
-            margin-bottom: 60px;
+            margin-bottom: 65px;
             flex-wrap: wrap;
         }
 
         .filter-btn {
-            background: rgba(255, 255, 255, 0.65);
+            background: rgba(255, 255, 255, 0.7);
             border: 1px solid var(--border-soft);
             color: var(--text-muted);
             padding: 11px 24px;
@@ -423,11 +455,11 @@
         /* Section Headers */
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 65px;
         }
 
         .section-header h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 300;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -436,25 +468,25 @@
 
         .section-header p {
             color: var(--text-muted);
-            font-size: 0.98rem;
+            font-size: 1rem;
             letter-spacing: 1px;
         }
 
-        /* Gallery Grid Layout with Airy Asymmetric Feel */
+        /* Gallery Grid Layout */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 48px;
-            margin-bottom: 110px;
+            gap: 52px;
+            margin-bottom: 120px;
         }
 
-        /* Soft & Organic Card Design (Breaking the Square Look) */
+        /* Soft Organic Card Design */
         .card {
             background: var(--card-bg);
             backdrop-filter: blur(8px);
             border: 1px solid var(--border-soft);
             border-radius: var(--radius-card);
-            padding: 24px;
+            padding: 26px;
             display: flex;
             flex-direction: column;
             box-shadow: var(--shadow-card);
@@ -474,10 +506,10 @@
             overflow: hidden;
             border-radius: var(--radius-image);
             background: #FFFFFF;
-            padding: 16px; /* Matting effect */
+            padding: 16px;
             box-shadow: var(--shadow-mounted);
             aspect-ratio: 4 / 3;
-            margin-bottom: 22px;
+            margin-bottom: 24px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -492,7 +524,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 8px;
             transition: transform 0.7s var(--transition-smooth);
             display: block;
         }
@@ -503,8 +535,8 @@
 
         .badge {
             position: absolute;
-            top: 26px;
-            left: 26px;
+            top: 28px;
+            left: 28px;
             background: rgba(253, 251, 247, 0.92);
             color: var(--accent-color);
             font-size: 0.68rem;
@@ -532,7 +564,7 @@
         }
 
         .card-title {
-            font-size: 1.5rem;
+            font-size: 1.55rem;
             font-weight: 400;
             letter-spacing: 0.5px;
             margin-bottom: 6px;
@@ -540,9 +572,9 @@
         }
 
         .card-details {
-            font-size: 0.86rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             line-height: 1.6;
         }
 
@@ -560,7 +592,7 @@
         }
 
         .card-price {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--text-color);
         }
@@ -573,7 +605,7 @@
             width: 100%;
             padding: 11px 16px;
             border: 1px solid var(--border-soft);
-            background-color: rgba(253, 251, 247, 0.8);
+            background-color: rgba(253, 251, 247, 0.85);
             color: var(--text-color);
             font-size: 0.78rem;
             letter-spacing: 1px;
@@ -635,7 +667,7 @@
             box-shadow: 0 8px 18px rgba(27, 54, 93, 0.22);
         }
 
-        /* Story & Crafting Section (Organic Waldorf Soft Section) */
+        /* Story & Crafting Section */
         .story-section {
             background: var(--story-bg);
             border-radius: 28px;
@@ -643,7 +675,7 @@
             box-shadow: var(--shadow-subtle);
             padding: 90px 60px;
             margin-top: 40px;
-            margin-bottom: 100px;
+            margin-bottom: 120px;
         }
 
         .story-grid {
@@ -676,7 +708,7 @@
             color: #FDFBF7;
             padding: 22px 28px;
             border-radius: 16px;
-            max-width: 240px;
+            max-width: 250px;
             box-shadow: var(--shadow-elevated);
         }
 
@@ -688,7 +720,7 @@
         }
 
         .story-text h2 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 300;
             letter-spacing: 1px;
             margin-bottom: 24px;
@@ -745,72 +777,7 @@
             line-height: 1.7;
         }
 
-        /* FAQ Accordion Section */
-        .faq-section {
-            padding: 60px 0 100px;
-            max-width: 860px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 14px;
-            margin-bottom: 16px;
-            border: 1px solid var(--border-soft);
-            box-shadow: var(--shadow-subtle);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item.open {
-            background: #FFFFFF;
-            box-shadow: var(--shadow-card);
-            border-color: rgba(197, 160, 89, 0.3);
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 24px 30px;
-            background: none;
-            border: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: left;
-            font-size: 1.15rem;
-            font-weight: 500;
-            color: var(--text-color);
-            cursor: pointer;
-            letter-spacing: 0.5px;
-            margin-top: 0;
-        }
-
-        .faq-question span.icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-            color: var(--accent-gold);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s var(--transition-smooth), padding 0.3s ease;
-            color: var(--text-muted);
-            font-size: 0.96rem;
-            line-height: 1.8;
-            padding: 0 30px;
-        }
-
-        .faq-item.open .faq-answer {
-            max-height: 300px;
-            padding-bottom: 26px;
-        }
-
-        .faq-item.open .faq-question span.icon {
-            transform: rotate(45deg);
-        }
-
-        /* Slide-over Shopping Cart Drawer */
+        /* Streamlined Slide-over Shopping Cart Drawer (Clean & Serene) */
         .cart-drawer-overlay {
             position: fixed;
             top: 0;
@@ -876,34 +843,10 @@
             margin-top: 0;
         }
 
-        .free-shipping-bar {
-            background-color: var(--accent-light);
-            padding: 14px 32px;
-            font-size: 0.82rem;
-            color: var(--text-color);
-            text-align: center;
-            border-bottom: 1px solid var(--border-soft);
-        }
-
-        .progress-bar-bg {
-            height: 5px;
-            background-color: var(--border-soft);
-            border-radius: 3px;
-            margin-top: 8px;
-            overflow: hidden;
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            background-color: var(--accent-gold);
-            width: 0%;
-            transition: width 0.4s ease;
-        }
-
         .cart-body {
             flex-grow: 1;
             overflow-y: auto;
-            padding: 28px 32px;
+            padding: 32px;
             display: flex;
             flex-direction: column;
             gap: 22px;
@@ -1413,9 +1356,9 @@
 </head>
 <body>
 
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-        Free Insured Shipping Across Switzerland on Orders Over <span>CHF 150</span>
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar" data-i18n-html="announcement">
+        Kostenloser versicherter Versand in der Schweiz ab <span>CHF 150</span>
     </div>
 
     <!-- Header Navigation -->
@@ -1433,21 +1376,27 @@
             </a>
 
             <nav class="desktop-nav">
-                <a href="#gallery">Gallery</a>
-                <a href="#originals">Originals</a>
-                <a href="#prints">Prints</a>
-                <a href="#story">Our Story</a>
-                <a href="#faq">Shipping & FAQ</a>
+                <a href="#gallery" data-i18n="nav_gallery">Galerie</a>
+                <a href="#originals" data-i18n="nav_originals">Originale</a>
+                <a href="#prints" data-i18n="nav_prints">Kunstdrucke</a>
+                <a href="#story" data-i18n="nav_story">Unser Atelier</a>
             </nav>
 
             <div class="header-actions">
+                <!-- Multi-Language Switcher -->
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('de')" id="lang-de">DE</button>
+                    <button class="lang-btn" onclick="setLanguage('fr')" id="lang-fr">FR</button>
+                    <button class="lang-btn" onclick="setLanguage('en')" id="lang-en">EN</button>
+                </div>
+
                 <button class="cart-trigger" id="cartTriggerBtn">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <path d="M16 10a4 4 0 0 1-8 0"></path>
                     </svg>
-                    <span>Cart</span>
+                    <span data-i18n="cart_label">Warenkorb</span>
                     <span class="cart-count-badge" id="cartCountBadge">0</span>
                 </button>
             </div>
@@ -1455,25 +1404,23 @@
 
         <!-- Mobile Navigation Menu -->
         <div class="mobile-menu" id="mobileMenu">
-            <a href="#gallery" class="mobile-link">Gallery</a>
-            <a href="#originals" class="mobile-link">Original 1-of-1 Artworks</a>
-            <a href="#prints" class="mobile-link">Fine Art Prints</a>
-            <a href="#story" class="mobile-link">Our Story & Craft</a>
-            <a href="#faq" class="mobile-link">Shipping & Care</a>
+            <a href="#gallery" class="mobile-link" data-i18n="nav_gallery">Galerie</a>
+            <a href="#originals" class="mobile-link" data-i18n="nav_originals">Originale</a>
+            <a href="#prints" class="mobile-link" data-i18n="nav_prints">Kunstdrucke</a>
+            <a href="#story" class="mobile-link" data-i18n="nav_story">Unser Atelier</a>
         </div>
     </header>
 
     <!-- Hero Showcase Section -->
     <section class="hero">
-        <div class="hero-tag">Handcrafted in Bern, Switzerland</div>
-        <h1>Capturing Alpine Solitude & Sunlight</h1>
-        <p>
-            Unique, sun-exposed cyanotypes and archival giclée prints created from pressed botanicals 
-            and mountain silhouettes collected throughout the Swiss Alps.
+        <div class="hero-tag" data-i18n="hero_tag">Handgefertigt in Bern, Schweiz</div>
+        <h1 data-i18n="hero_title">Alpine Stille & Sonnenlicht Festhalten</h1>
+        <p data-i18n="hero_sub">
+            Einzigartige, sonnenbelichtete Cyanotypien und archivarische Giclée-Drucke aus gepressten Pflanzen und Bergsilhouetten der Schweizer Alpen.
         </p>
         <div class="hero-ctas">
-            <a href="#originals" class="btn-primary">Explore 1-of-1 Originals</a>
-            <a href="#prints" class="btn-secondary">Browse Fine Art Prints</a>
+            <a href="#originals" class="btn-primary" data-i18n="btn_explore_orig">1-of-1 Originale entdecken</a>
+            <a href="#prints" class="btn-secondary" data-i18n="btn_browse_prints">Kunstdrucke durchstöbern</a>
         </div>
     </section>
 
@@ -1482,135 +1429,78 @@
         
         <!-- Filter Tabs -->
         <div class="filter-nav">
-            <button class="filter-btn active" data-filter="all">All Works</button>
-            <button class="filter-btn" data-filter="original">1-of-1 Originals</button>
-            <button class="filter-btn" data-filter="print">Fine Art Prints</button>
-            <button class="filter-btn" data-filter="botanical">Botanical Series</button>
-            <button class="filter-btn" data-filter="alpine">Alpine Landscapes</button>
+            <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Alle Werke</button>
+            <button class="filter-btn" data-filter="original" data-i18n="filter_original">1-of-1 Originale</button>
+            <button class="filter-btn" data-filter="print" data-i18n="filter_print">Kunstdrucke</button>
+            <button class="filter-btn" data-filter="botanical" data-i18n="filter_botanical">Botanische Serie</button>
+            <button class="filter-btn" data-filter="alpine" data-i18n="filter_alpine">Alpine Landschaften</button>
         </div>
 
         <!-- Gallery Section Header -->
         <div class="section-header">
-            <h2>The Fine Art Collection</h2>
-            <p>Each piece is individually printed or sun-exposed on museum-grade cotton paper</p>
+            <h2 data-i18n="collection_title">Die Kunstkollektion</h2>
+            <p data-i18n="collection_sub">Jedes Werk wird einzeln auf museumswürdigem Baumwollpapier belichtet oder gedruckt</p>
         </div>
 
         <div class="gallery-grid" id="productGrid">
             <!-- Dynamic JavaScript Product Injection Target -->
         </div>
 
-        <!-- Story & Process Section (Soft Organic Container) -->
+        <!-- Story & Process Section (Artisan Focus in Swiss Alps) -->
         <section class="story-section" id="story">
             <div class="story-grid">
                 <div class="story-image-container">
                     <img src="images/studio_process.jpg" alt="Madita Cyanotype Studio Process Bern" 
                          onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'450\' viewBox=\'0 0 600 450\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'24\' text-anchor=\'middle\'%3EMadita Studio Process, Bern%3C/text%3E%3C/svg%3E'">
                     <div class="story-badge-floating">
-                        <p>"Sunlight and iron salts turn nature into timeless Prussian Blue."</p>
+                        <p data-i18n="story_quote">„Sonnenlicht und Eisensalze verwandeln die Natur in zeitloses Preussischblau.“</p>
                     </div>
                 </div>
                 
                 <div class="story-text">
-                    <div class="hero-tag" style="text-align: left;">Behind The Craft</div>
-                    <h2>Our Story & Solar Process</h2>
-                    <p>
-                        Founded in Bern, <strong>Madita</strong> stems from a deep reverence for the quiet majesty of the Swiss landscape. 
-                        Using the 19th-century cyanotype technique, we coat heavy French and German rag papers with sunlight-sensitive iron solutions, 
-                        placing hand-foraged alpine flora under the intense UV rays of the Swiss sun.
+                    <div class="hero-tag" style="text-align: left;" data-i18n="story_tag">Hinter dem Handwerk</div>
+                    <h2 data-i18n="story_title">Unsere Geschichte & Der Sonnenprozess</h2>
+                    <p data-i18n="story_p1">
+                        In Bern gegründet, entspringt Madita einer tiefen Ehrfurcht vor der stillen Majestät der Schweizer Landschaft. 
+                        Mit der Cyanotypie-Technik des 19. Jahrhunderts beschichten wir schweres Baumwollpapier mit lichtempfindlichen Eisensalzen 
+                        und platzieren handgesammelte alpine Flora unter den UV-Strahlen der Schweizer Sonne.
                     </p>
-                    <p>
-                        Because weather and sun intensities shift daily in the mountains, no two original prints develop identically. 
-                        The resulting deep Prussian blue shades (#1B365D) hold the essence of a single sunlit moment in the Bernese Oberland.
+                    <p data-i18n="story_p2">
+                        Da Wetter und Sonnenintensität in den Bergen täglich wechseln, entwickelt sich kein Original identisch. 
+                        Die tiefen Preussischblau-Töne (#1B365D) halten die Essenz eines einzelnen sonnenbeschienenen Moments im Berner Oberland fest.
                     </p>
                 </div>
             </div>
 
-            <!-- 3 Step Organic Process Cards -->
+            <!-- 3 Step Process Cards -->
             <div class="process-grid">
                 <div class="process-card">
-                    <div class="process-number">01</div>
-                    <h4>Botanical Foraging</h4>
-                    <p>Carefully selecting wild ferns, pine needles, and alpine blooms across the Bernese Oberland and Lake Thun trailways.</p>
+                    <div class="process-number" data-i18n="proc_1_num">01</div>
+                    <h4 data-i18n="proc_1_title">Botanische Suche</h4>
+                    <p data-i18n="proc_1_desc">Sorgfältige Auswahl wilder Farne, Kiefernnadeln und Almenblumen im Berner Oberland und am Thunersee.</p>
                 </div>
 
                 <div class="process-card">
-                    <div class="process-number">02</div>
-                    <h4>Solar UV Exposure</h4>
-                    <p>Sensitizing archival Hahnemühle cotton paper with chemical emulsion and exposing under natural sunlight.</p>
+                    <div class="process-number" data-i18n="proc_2_num">02</div>
+                    <h4 data-i18n="proc_2_title">Solar-UV-Belichtung</h4>
+                    <p data-i18n="proc_2_desc">Sensibilisierung von archivfestem Hahnemühle-Baumwollpapier und Belichtung unter natürlichem Sonnenlicht.</p>
                 </div>
 
                 <div class="process-card">
-                    <div class="process-number">03</div>
-                    <h4>Alpine Water Rinsing</h4>
-                    <p>Washing away unexposed iron salts in clear water to reveal sharp indigo silhouettes and Prussian Blue depth.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section" id="faq">
-            <div class="section-header">
-                <h2>Shipping & Frequently Asked Questions</h2>
-                <p>Everything you need to know about delivery, framing, and artwork care</p>
-            </div>
-
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How are the artworks packaged and shipped?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        All original cyanotypes and fine art prints are carefully wrapped in acid-free glassine paper and shipped flat in heavy protective cardboard packaging (or sturdy reinforced tubes for A2 prints). We ship via Swiss Post priority with full insurance.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Do you offer framing options?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        To preserve artwork integrity during transit, our pieces are sold unframed. However, all our works are created in standard European sizes (30x40 cm, A4, A3, A2) so you can easily fit them into off-the-shelf oak or walnut frames from your local framer or standard stores.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How should I care for my cyanotype print?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        Cyanotypes are remarkably durable, but like any fine art piece, avoid hanging them in direct intense sunlight. If exposed to light over time and slight fading occurs, placing the artwork in a dark room for a few days naturally regenerates the rich Prussian Blue color!
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Do you ship internationally outside Switzerland?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        Yes! We ship worldwide across Europe, North America, and Asia with tracked international priority post (Flat rate CHF 18 outside CH).
-                    </div>
+                    <div class="process-number" data-i18n="proc_3_num">03</div>
+                    <h4 data-i18n="proc_3_title">Auswaschung mit Alpenwasser</h4>
+                    <p data-i18n="proc_3_desc">Auswaschen unbelichteter Salze in klarem Wasser zur Enthüllung scharfer Indigo-Silhouetten.</p>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Slide-over Shopping Cart Drawer -->
+    <!-- Slide-over Shopping Cart Drawer (Streamlined & Minimal) -->
     <div class="cart-drawer-overlay" id="cartOverlay">
         <div class="cart-drawer">
             <div class="cart-header">
-                <h3>Your Cart</h3>
+                <h3 data-i18n="cart_title">Ihr Warenkorb</h3>
                 <button class="cart-close-btn" id="cartCloseBtn">&times;</button>
-            </div>
-
-            <div class="free-shipping-bar" id="freeShippingNotice">
-                <span id="freeShippingText">Add CHF 150 for Free Delivery in CH</span>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" id="shippingProgressBar"></div>
-                </div>
             </div>
 
             <div class="cart-body" id="cartItemsList">
@@ -1619,10 +1509,10 @@
 
             <div class="cart-footer">
                 <div class="cart-summary-row">
-                    <span>Subtotal</span>
+                    <span data-i18n="cart_subtotal">Zwischensumme</span>
                     <span id="cartSubtotal">CHF 0.00</span>
                 </div>
-                <button class="btn-checkout" id="checkoutBtn">Proceed to Checkout</button>
+                <button class="btn-checkout" id="checkoutBtn" data-i18n="btn_checkout">Zur Kasse gehen</button>
             </div>
         </div>
     </div>
@@ -1636,37 +1526,37 @@
             </div>
             <div class="modal-info-col">
                 <div class="modal-badge" id="modalBadge">Original 1-of-1</div>
-                <h2 class="modal-title" id="modalTitle">Artwork Title</h2>
+                <h2 class="modal-title" id="modalTitle">Kunstwerk Titel</h2>
                 <div class="modal-price" id="modalPrice">CHF 280</div>
 
                 <table class="specs-table">
                     <tr>
-                        <td>Technique</td>
-                        <td id="modalTechnique">Sun-exposed Cyanotype</td>
+                        <td data-i18n="spec_technique">Technik</td>
+                        <td id="modalTechnique">Sonnenbelichtete Cyanotypie</td>
                     </tr>
                     <tr>
-                        <td>Paper</td>
-                        <td id="modalPaper">300gsm Hahnemühle FineArt Cotton</td>
+                        <td data-i18n="spec_paper">Papier</td>
+                        <td id="modalPaper">300g/m² Hahnemühle Baumwollkarton</td>
                     </tr>
                     <tr>
-                        <td>Dimensions</td>
+                        <td data-i18n="spec_dimensions">Masse</td>
                         <td id="modalDimensions">30 x 40 cm</td>
                     </tr>
                     <tr>
-                        <td>Origin</td>
-                        <td id="modalOrigin">Handcrafted in Bern, Switzerland</td>
+                        <td data-i18n="spec_origin">Herkunft</td>
+                        <td id="modalOrigin">Handgefertigt in Bern, Schweiz</td>
                     </tr>
                 </table>
 
                 <div class="form-group" id="modalSizeGroup" style="display: none;">
-                    <label for="modalSizeSelect">Choose Print Format</label>
+                    <label for="modalSizeSelect" data-i18n="modal_size_label">Druckformat wählen</label>
                     <select id="modalSizeSelect" class="size-select">
                         <!-- Options injected by JS -->
                     </select>
                 </div>
 
                 <div class="modal-actions">
-                    <button class="btn-primary" id="modalAddToCartBtn">Add to Cart</button>
+                    <button class="btn-primary" id="modalAddToCartBtn" data-i18n="add_to_cart">In den Warenkorb</button>
                 </div>
             </div>
         </div>
@@ -1677,38 +1567,37 @@
         <div class="modal-card" style="max-width: 600px; grid-template-columns: 1fr;">
             <button class="modal-close" id="checkoutCloseBtn">&times;</button>
             <div class="checkout-step" id="checkoutFormStep">
-                <h2 class="modal-title" style="font-size: 1.8rem; margin-bottom: 20px;">Shipping & Order Summary</h2>
+                <h2 class="modal-title" style="font-size: 1.8rem; margin-bottom: 20px;" data-i18n="checkout_title">Versand & Bestellübersicht</h2>
                 <form id="checkoutForm" onsubmit="event.preventDefault(); handleCompleteOrder();">
                     <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" class="form-control" required placeholder="e.g. Elena Rossi">
+                        <label data-i18n="checkout_name">Vollständiger Name</label>
+                        <input type="text" class="form-control" required placeholder="z. B. Elena Rossi">
                     </div>
                     <div class="form-group">
-                        <label>Email Address</label>
+                        <label data-i18n="checkout_email">E-Mail-Adresse</label>
                         <input type="email" class="form-control" required placeholder="elena@example.ch">
                     </div>
                     <div class="form-group">
-                        <label>Delivery Address</label>
+                        <label data-i18n="checkout_address">Lieferadresse</label>
                         <input type="text" class="form-control" required placeholder="Kramgasse 42, 3011 Bern">
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label>City</label>
+                            <label data-i18n="checkout_city">Ort</label>
                             <input type="text" class="form-control" required placeholder="Bern">
                         </div>
                         <div class="form-group">
-                            <label>Postal Code</label>
+                            <label data-i18n="checkout_zip">PLZ</label>
                             <input type="text" class="form-control" required placeholder="3011">
                         </div>
                     </div>
                     <div style="margin-top: 20px; padding: 18px; background-color: var(--story-bg); border-radius: 12px; margin-bottom: 20px;">
                         <div style="display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 4px;">
-                            <span>Total Payable:</span>
+                            <span data-i18n="checkout_total">Zu zahlender Betrag:</span>
                             <span id="checkoutTotalAmount">CHF 0.00</span>
                         </div>
-                        <span style="font-size: 0.78rem; color: var(--text-muted);">Includes insurance & standard Swiss delivery.</span>
                     </div>
-                    <button type="submit" class="btn-checkout">Complete Mock Order</button>
+                    <button type="submit" class="btn-checkout" data-i18n="checkout_submit">Testbestellung abschliessen</button>
                 </form>
             </div>
         </div>
@@ -1723,67 +1612,255 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h3>Madita</h3>
-                    <p>
-                        Handcrafted sun-exposed cyanotypes inspired by the wild botanicals and serene landscapes of Switzerland.
+                    <p data-i18n="footer_desc">
+                        Handgefertigte sonnenbelichtete Cyanotypien, inspiriert von den wilden Pflanzen und friedlichen Landschaften der Schweiz.
                     </p>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Navigate</h4>
+                    <h4 data-i18n="footer_nav">Navigation</h4>
                     <ul>
-                        <li><a href="#gallery">All Artworks</a></li>
-                        <li><a href="#originals">Originals (1-of-1)</a></li>
-                        <li><a href="#prints">Fine Art Prints</a></li>
-                        <li><a href="#story">Process & Studio</a></li>
+                        <li><a href="#gallery" data-i18n="nav_gallery">Galerie</a></li>
+                        <li><a href="#originals" data-i18n="nav_originals">Originale</a></li>
+                        <li><a href="#prints" data-i18n="nav_prints">Kunstdrucke</a></li>
+                        <li><a href="#story" data-i18n="nav_story">Unser Atelier</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Customer Care</h4>
+                    <h4 data-i18n="footer_care">Kundenservice</h4>
                     <ul>
-                        <li><a href="#faq">Shipping Information</a></li>
-                        <li><a href="#faq">Framing Advice</a></li>
                         <li><a href="https://instagram.com/madita_cyanotypes" target="_blank" rel="noopener">Instagram @madita_cyanotypes</a></li>
                         <li><a href="mailto:hello@madita-cyanotype.ch">hello@madita-cyanotype.ch</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Newsletter</h4>
-                    <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 14px;">Receive rare drop notices for 1-of-1 original releases.</p>
-                    <form onsubmit="event.preventDefault(); showToast('Subscribed to Madita journal!'); this.reset();">
+                    <h4 data-i18n="footer_newsletter">Newsletter</h4>
+                    <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 14px;" data-i18n="footer_news_sub">Erhalten Sie seltene Benachrichtigungen bei neuen Originalveröffentlichungen.</p>
+                    <form onsubmit="event.preventDefault(); showToast('Vielen Dank für Ihre Anmeldung!'); this.reset();">
                         <div class="newsletter-input-group">
-                            <input type="email" placeholder="Your email address" required>
-                            <button type="submit">Join</button>
+                            <input type="email" placeholder="Ihre E-Mail-Adresse" required>
+                            <button type="submit" data-i18n="footer_join">Beitreten</button>
                         </div>
                     </form>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 Madita Cyanotype Art. Handcrafted in Bern, Switzerland.</div>
-                <div>All rights reserved. Designed for collectors & nature lovers.</div>
+                <div data-i18n="footer_rights">&copy; 2026 Madita Cyanotype Art. Handgefertigt in Bern, Schweiz.</div>
+                <div data-i18n="footer_tag">Alle Rechte vorbehalten. Für Sammler & Naturliebhaber.</div>
             </div>
         </div>
     </footer>
 
     <!-- Vanilla JavaScript Implementation -->
     <script>
-        // Product Data Definition
+        // Multi-Language Translation Dictionaries (DE, EN, FR)
+        const TRANSLATIONS = {
+            de: {
+                announcement: "Kostenloser versicherter Versand in der Schweiz ab <span>CHF 150</span>",
+                nav_gallery: "Galerie",
+                nav_originals: "Originale",
+                nav_prints: "Kunstdrucke",
+                nav_story: "Unser Atelier",
+                cart_label: "Warenkorb",
+                hero_tag: "Handgefertigt in Bern, Schweiz",
+                hero_title: "Alpine Stille & Sonnenlicht Festhalten",
+                hero_sub: "Einzigartige, sonnenbelichtete Cyanotypien und archivarische Giclée-Drucke aus gepressten Pflanzen und Bergsilhouetten der Schweizer Alpen.",
+                btn_explore_orig: "1-of-1 Originale entdecken",
+                btn_browse_prints: "Kunstdrucke durchstöbern",
+                filter_all: "Alle Werke",
+                filter_original: "1-of-1 Originale",
+                filter_print: "Kunstdrucke",
+                filter_botanical: "Botanische Serie",
+                filter_alpine: "Alpine Landschaften",
+                collection_title: "Die Kunstkollektion",
+                collection_sub: "Jedes Werk wird einzeln auf museumswürdigem Baumwollpapier belichtet oder gedruckt",
+                quick_view: "Schnellansicht",
+                add_to_cart: "In den Warenkorb",
+                story_tag: "Hinter dem Handwerk",
+                story_title: "Unsere Geschichte & Der Sonnenprozess",
+                story_p1: "In Bern gegründet, entspringt Madita einer tiefen Ehrfurcht vor der stillen Majestät der Schweizer Landschaft. Mit der Cyanotypie-Technik des 19. Jahrhunderts beschichten wir schweres Baumwollpapier mit lichtempfindlichen Eisensalzen und platzieren handgesammelte alpine Flora unter den UV-Strahlen der Schweizer Sonne.",
+                story_p2: "Da Wetter und Sonnenintensität in den Bergen täglich wechseln, entwickelt sich kein Original identisch. Die tiefen Preussischblau-Töne (#1B365D) halten die Essenz eines einzelnen sonnenbeschienenen Moments im Berner Oberland fest.",
+                story_quote: "„Sonnenlicht und Eisensalze verwandeln die Natur in zeitloses Preussischblau.“",
+                proc_1_num: "01",
+                proc_1_title: "Botanische Suche",
+                proc_1_desc: "Sorgfältige Auswahl wilder Farne, Kiefernnadeln und Almenblumen im Berner Oberland und am Thunersee.",
+                proc_2_num: "02",
+                proc_2_title: "Solar-UV-Belichtung",
+                proc_2_desc: "Sensibilisierung von archivfestem Hahnemühle-Baumwollpapier und Belichtung unter natürlichem Sonnenlicht.",
+                proc_3_num: "03",
+                proc_3_title: "Auswaschung mit Alpenwasser",
+                proc_3_desc: "Auswaschen unbelichteter Salze in klarem Wasser zur Enthüllung scharfer Indigo-Silhouetten.",
+                cart_title: "Ihr Warenkorb",
+                cart_empty: "Ihr Warenkorb ist leer.",
+                cart_subtotal: "Zwischensumme",
+                btn_checkout: "Zur Kasse gehen",
+                spec_technique: "Technik",
+                spec_paper: "Papier",
+                spec_dimensions: "Masse",
+                spec_origin: "Herkunft",
+                modal_size_label: "Druckformat wählen",
+                checkout_title: "Versand & Bestellübersicht",
+                checkout_name: "Vollständiger Name",
+                checkout_email: "E-Mail-Adresse",
+                checkout_address: "Lieferadresse",
+                checkout_city: "Ort",
+                checkout_zip: "PLZ",
+                checkout_total: "Zu zahlender Betrag:",
+                checkout_submit: "Testbestellung abschliessen",
+                footer_desc: "Handgefertigte sonnenbelichtete Cyanotypien, inspiriert von den wilden Pflanzen und friedlichen Landschaften der Schweiz.",
+                footer_nav: "Navigation",
+                footer_care: "Kundenservice",
+                footer_newsletter: "Newsletter",
+                footer_news_sub: "Erhalten Sie seltene Benachrichtigungen bei neuen Originalveröffentlichungen.",
+                footer_join: "Beitreten",
+                footer_rights: "© 2026 Madita Cyanotype Art. Handgefertigt in Bern, Schweiz.",
+                footer_tag: "Alle Rechte vorbehalten. Für Sammler & Naturliebhaber."
+            },
+            en: {
+                announcement: "Free Insured Shipping Across Switzerland on Orders Over <span>CHF 150</span>",
+                nav_gallery: "Gallery",
+                nav_originals: "Originals",
+                nav_prints: "Prints",
+                nav_story: "Our Studio",
+                cart_label: "Cart",
+                hero_tag: "Handcrafted in Bern, Switzerland",
+                hero_title: "Capturing Alpine Solitude & Sunlight",
+                hero_sub: "Unique, sun-exposed cyanotypes and archival giclée prints created from pressed botanicals and mountain silhouettes collected throughout the Swiss Alps.",
+                btn_explore_orig: "Explore 1-of-1 Originals",
+                btn_browse_prints: "Browse Fine Art Prints",
+                filter_all: "All Works",
+                filter_original: "1-of-1 Originals",
+                filter_print: "Fine Art Prints",
+                filter_botanical: "Botanical Series",
+                filter_alpine: "Alpine Landscapes",
+                collection_title: "The Fine Art Collection",
+                collection_sub: "Each piece is individually printed or sun-exposed on museum-grade cotton paper",
+                quick_view: "Quick View",
+                add_to_cart: "Add to Cart",
+                story_tag: "Behind The Craft",
+                story_title: "Our Story & Solar Process",
+                story_p1: "Founded in Bern, Madita stems from a deep reverence for the quiet majesty of the Swiss landscape. Using the 19th-century cyanotype technique, we coat heavy French and German rag papers with sunlight-sensitive iron solutions, placing hand-foraged alpine flora under the UV rays of the Swiss sun.",
+                story_p2: "Because weather and sun intensities shift daily in the mountains, no two original prints develop identically. The resulting deep Prussian blue shades (#1B365D) hold the essence of a single sunlit moment in the Bernese Oberland.",
+                story_quote: "“Sunlight and iron salts turn nature into timeless Prussian Blue.”",
+                proc_1_num: "01",
+                proc_1_title: "Botanical Foraging",
+                proc_1_desc: "Carefully selecting wild ferns, pine needles, and alpine blooms across the Bernese Oberland and Lake Thun trailways.",
+                proc_2_num: "02",
+                proc_2_title: "Solar UV Exposure",
+                proc_2_desc: "Sensitizing archival Hahnemühle cotton paper with chemical emulsion and exposing under natural sunlight.",
+                proc_3_num: "03",
+                proc_3_title: "Alpine Water Rinsing",
+                proc_3_desc: "Washing away unexposed iron salts in clear water to reveal sharp indigo silhouettes and Prussian Blue depth.",
+                cart_title: "Your Cart",
+                cart_empty: "Your shopping cart is empty.",
+                cart_subtotal: "Subtotal",
+                btn_checkout: "Proceed to Checkout",
+                spec_technique: "Technique",
+                spec_paper: "Paper",
+                spec_dimensions: "Dimensions",
+                spec_origin: "Origin",
+                modal_size_label: "Choose Print Format",
+                checkout_title: "Shipping & Order Summary",
+                checkout_name: "Full Name",
+                checkout_email: "Email Address",
+                checkout_address: "Delivery Address",
+                checkout_city: "City",
+                checkout_zip: "Postal Code",
+                checkout_total: "Total Payable:",
+                checkout_submit: "Complete Mock Order",
+                footer_desc: "Handcrafted sun-exposed cyanotypes inspired by the wild botanicals and serene landscapes of Switzerland.",
+                footer_nav: "Navigate",
+                footer_care: "Customer Care",
+                footer_newsletter: "Newsletter",
+                footer_news_sub: "Receive rare drop notices for 1-of-1 original releases.",
+                footer_join: "Join",
+                footer_rights: "© 2026 Madita Cyanotype Art. Handcrafted in Bern, Switzerland.",
+                footer_tag: "All rights reserved. Designed for collectors & nature lovers."
+            },
+            fr: {
+                announcement: "Livraison assurée gratuite en Suisse dès <span>CHF 150</span>",
+                nav_gallery: "Galerie",
+                nav_originals: "Originaux",
+                nav_prints: "Tirages",
+                nav_story: "Notre Atelier",
+                cart_label: "Panier",
+                hero_tag: "Fait main à Berne, Suisse",
+                hero_title: "Capturer la Sérénité et la Lumière Alpine",
+                hero_sub: "Cyanotypes uniques exposés au soleil et tirages d'art giclée créés à partir de botaniques pressées et de silhouettes de montagnes récoltées dans les Alpes suisses.",
+                btn_explore_orig: "Découvrir les Pièces Uniques",
+                btn_browse_prints: "Parcourir les Tirages d'Art",
+                filter_all: "Toutes les Œuvres",
+                filter_original: "Pièces Uniques (1-of-1)",
+                filter_print: "Tirages d'Art",
+                filter_botanical: "Série Botanique",
+                filter_alpine: "Paysages Alpins",
+                collection_title: "La Collection Beaux-Arts",
+                collection_sub: "Chaque pièce est individuellement imprimée ou exposée au soleil sur papier coton de qualité musée",
+                quick_view: "Aperçu Rapide",
+                add_to_cart: "Ajouter au Panier",
+                story_tag: "Derrière l'Artisanat",
+                story_title: "Notre Histoire & Processus Solaire",
+                story_p1: "Fondée à Berne, Madita découle d'une profonde réflexion sur la majesté sereine du paysage suisse. Utilisant la technique du cyanotype du XIXe siècle, nous enduisons de lourds papiers chiffon de solutions de fer sensibles au soleil.",
+                story_p2: "En raison des variations quotidiennes du soleil en montagne, deux tirages originaux ne se développent jamais à l'identique. Les teintes intenses de bleu de Prusse (#1B365D) immortalisent un instant précis dans l'Oberland bernois.",
+                story_quote: "« La lumière du soleil et les sels de fer transforment la nature en un bleu de Prusse intemporel. »",
+                proc_1_num: "01",
+                proc_1_title: "Cueillette Botanique",
+                proc_1_desc: "Sélection minutieuse de fougères sauvages, d'aiguilles de pin et de fleurs alpines dans l'Oberland bernois.",
+                proc_2_num: "02",
+                proc_2_title: "Exposition Solaire UV",
+                proc_2_desc: "Sensibilisation du papier coton Hahnemühle et exposition sous le soleil naturel des Alpes.",
+                proc_3_num: "03",
+                proc_3_title: "Rinçage à l'Eau des Alpes",
+                proc_3_desc: "Lavage des sels non exposés dans l'eau claire pour révéler des silhouettes d'indigo intenses.",
+                cart_title: "Votre Panier",
+                cart_empty: "Votre panier est vide.",
+                cart_subtotal: "Sous-total",
+                btn_checkout: "Commander",
+                spec_technique: "Technique",
+                spec_paper: "Papier",
+                spec_dimensions: "Dimensions",
+                spec_origin: "Origine",
+                modal_size_label: "Choisir le Format de Tirage",
+                checkout_title: "Livraison & Récapitulatif",
+                checkout_name: "Nom Complet",
+                checkout_email: "Adresse E-mail",
+                checkout_address: "Adresse de Livraison",
+                checkout_city: "Ville",
+                checkout_zip: "N° Postal",
+                checkout_total: "Total à Payer:",
+                checkout_submit: "Finaliser la Commande Test",
+                footer_desc: "Cyanotypes artisanaux exposés au soleil, inspirés par la nature sauvage et les paysages sereins de la Suisse.",
+                footer_nav: "Navigation",
+                footer_care: "Service Client",
+                footer_newsletter: "Lettre d'Information",
+                footer_news_sub: "Recevez les annonces rares des nouvelles parutions d'originaux.",
+                footer_join: "S'inscrire",
+                footer_rights: "© 2026 Madita Cyanotype Art. Fait main à Berne, Suisse.",
+                footer_tag: "Tous droits réservés. Pour collectionneurs et amoureux de la nature."
+            }
+        };
+
+        // Product Catalog Data with Multi-Language Support
         const PRODUCTS = [
             {
                 id: 'orig-1',
-                title: 'Alpine Fern No. 1',
                 category: 'original',
                 series: 'botanical',
-                type: '1-of-1 Original',
-                badge: '1-of-1 Original',
+                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' },
                 badgeClass: 'badge-gold',
-                details: '30x40 cm | Original Cyanotype on textured Hahnemühle cotton paper',
-                technique: 'Sun-exposed Prussian Blue Cyanotype',
-                paper: '300gsm Hahnemühle Mould-made Rag',
+                title: { de: 'Alpenfarn Nr. 1', en: 'Alpine Fern No. 1', fr: 'Fougère Alpine N° 1' },
+                details: {
+                    de: '30x40 cm | Original-Cyanotypie auf strukturiertem Hahnemühle-Baumwollkarton',
+                    en: '30x40 cm | Original Cyanotype on textured Hahnemühle cotton paper',
+                    fr: '30x40 cm | Cyanotype original sur papier coton Hahnemühle'
+                },
+                technique: { de: 'Sonnenbelichtete Preussischblau-Cyanotypie', en: 'Sun-exposed Prussian Blue Cyanotype', fr: 'Cyanotype bleu de Prusse exposé au soleil' },
+                paper: { de: '300g/m² Hahnemühle Baumwollkarton', en: '300gsm Hahnemühle Mould-made Rag', fr: 'Paper coton Hahnemühle 300g/m²' },
                 dimensions: '30 x 40 cm',
-                origin: 'Hand-pressed & developed in Bern, CH',
+                origin: { de: 'Handgefertigt & belichtet in Bern, CH', en: 'Hand-pressed & developed in Bern, CH', fr: 'Fait main & développé à Berne, CH' },
                 basePrice: 280,
                 image: 'images/alpine_fern.jpg',
                 fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cpath d=\'M200,450 C200,300 250,200 280,100 M200,350 C180,300 130,250 110,210 M200,280 C220,230 270,180 290,140\' stroke=\'%23FBF9F5\' stroke-width=\'4\' fill=\'none\'/%3E%3Ctext x=\'50%25\' y=\'92%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EAlpine Fern No. 1%3C/text%3E%3C/svg%3E',
@@ -1791,17 +1868,20 @@
             },
             {
                 id: 'orig-2',
-                title: 'Bernese Peak Study',
                 category: 'original',
                 series: 'alpine',
-                type: '1-of-1 Original',
-                badge: '1-of-1 Original',
+                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' },
                 badgeClass: 'badge-gold',
-                details: '40x50 cm | Multi-layered cyanotype of Eiger & Jungfrau silhouettes',
-                technique: 'Double Solar Exposure Cyanotype',
-                paper: '350gsm Heavyweight Arches Paper',
+                title: { de: 'Berner Gipfelstudie', en: 'Bernese Peak Study', fr: 'Étude des Sommets Bernois' },
+                details: {
+                    de: '40x50 cm | Mehrschichtige Cyanotypie der Eiger- & Jungfrau-Silhouetten',
+                    en: '40x50 cm | Multi-layered cyanotype of Eiger & Jungfrau silhouettes',
+                    fr: '40x50 cm | Cyanotype multicouche des silhouettes de l\'Eiger & Jungfrau'
+                },
+                technique: { de: 'Doppelte Solarbelichtung', en: 'Double Solar Exposure Cyanotype', fr: 'Cyanotype à double exposition solaire' },
+                paper: { de: '350g/m² Arches Büttenpapier', en: '350gsm Heavyweight Arches Paper', fr: 'Papier Arches 350g/m²' },
                 dimensions: '40 x 50 cm',
-                origin: 'Exposed outdoors in Mürren, Bernese Oberland',
+                origin: { de: 'Freiluftbelichtung in Mürren, Berner Oberland', en: 'Exposed outdoors in Mürren, Bernese Oberland', fr: 'Exposé en plein air à Mürren, Oberland bernois' },
                 basePrice: 320,
                 image: 'images/bernese_peak.jpg',
                 fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'350\' viewBox=\'0 0 500 350\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cpolygon points=\'50,300 180,120 310,300\' fill=\'%23162C4E\'/%3E%3Cpolygon points=\'200,300 320,80 450,300\' fill=\'%23224474\'/%3E%3Ctext x=\'50%25\' y=\'90%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EBernese Peak Study%3C/text%3E%3C/svg%3E',
@@ -1809,17 +1889,20 @@
             },
             {
                 id: 'orig-3',
-                title: 'Engadin Whispering Pines',
                 category: 'original',
                 series: 'botanical',
-                type: '1-of-1 Original',
-                badge: '1-of-1 Original',
+                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' },
                 badgeClass: 'badge-gold',
-                details: '30x40 cm | Wild Engadin pine needle impress on raw linen cotton paper',
-                technique: 'Direct Botanical Solar Exposure',
-                paper: '300gsm Handmade Linen Cotton Rag',
+                title: { de: 'Flüsternde Engadiner Kiefern', en: 'Engadin Whispering Pines', fr: 'Pins Murmurants de l\'Engadine' },
+                details: {
+                    de: '30x40 cm | Wilder Kiefernnadel-Abdruck auf rohem Leinen-Baumwollkarton',
+                    en: '30x40 cm | Wild Engadin pine needle impress on raw linen cotton paper',
+                    fr: '30x40 cm | Empreinte d\'aiguilles de pin sur papier lin et coton'
+                },
+                technique: { de: 'Direkte botanische Sonnenbelichtung', en: 'Direct Botanical Solar Exposure', fr: 'Exposition solaire botanique directe' },
+                paper: { de: '300g/m² Handgeschöpftes Leinenpapier', en: '300gsm Handmade Linen Cotton Rag', fr: 'Papier fait main lin & coton 300g/m²' },
                 dimensions: '30 x 40 cm',
-                origin: 'Collected in St. Moritz & crafted in Bern',
+                origin: { de: 'Gesammelt in St. Moritz, gefertigt in Bern', en: 'Collected in St. Moritz & crafted in Bern', fr: 'Récolté à Saint-Moritz, réalisé à Berne' },
                 basePrice: 295,
                 image: 'images/engadin_pine.jpg',
                 fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cline x1=\'200\' y1=\'400\' x2=\'200\' y2=\'100\' stroke=\'%23FBF9F5\' stroke-width=\'3\'/%3E%3Ctext x=\'50%25\' y=\'92%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EEngadin Whispering Pines%3C/text%3E%3C/svg%3E',
@@ -1827,17 +1910,20 @@
             },
             {
                 id: 'print-1',
-                title: 'The Matterhorn, Blue',
                 category: 'print',
                 series: 'alpine',
-                type: 'Fine Art Print',
-                badge: 'Bestseller',
+                badge: { de: 'Bestseller', en: 'Bestseller', fr: 'Succès' },
                 badgeClass: '',
-                details: 'Museum-grade Giclée print of iconic cyanotype artwork',
-                technique: '12-Color Archival Pigment Giclée Print',
-                paper: '290gsm Hahnemühle Bamboo FineArt',
-                dimensions: 'Multiple formats available',
-                origin: 'Printed in Zurich, Switzerland',
+                title: { de: 'Das Matterhorn, Blau', en: 'The Matterhorn, Blue', fr: 'Le Cervin, Bleu' },
+                details: {
+                    de: 'Museumswürdiger Giclée-Druck des ikonischen Cyanotypie-Kunstwerks',
+                    en: 'Museum-grade Giclée print of iconic cyanotype artwork',
+                    fr: 'Tirage Giclée d\'art de qualité musée du cyanotype emblématique'
+                },
+                technique: { de: '12-Farben Archivarischer Pigmentdruck', en: '12-Color Archival Pigment Giclée Print', fr: 'Impression d\'art giclée 12 couleurs' },
+                paper: { de: '290g/m² Hahnemühle Bamboo FineArt', en: '290gsm Hahnemühle Bamboo FineArt', fr: 'Papier Hahnemühle Bamboo 290g/m²' },
+                dimensions: 'Mehrere Formate verfügbar',
+                origin: { de: 'Gedruckt in Zürich, Schweiz', en: 'Printed in Zurich, Switzerland', fr: 'Imprimé à Zurich, Suisse' },
                 basePrice: 75,
                 image: 'images/matterhorn.jpg',
                 fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cpolygon points=\'100,400 230,100 320,400\' fill=\'%23EBF1F8\' opacity=\'0.2\'/%3E%3Ctext x=\'50%25\' y=\'92%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EThe Matterhorn, Blue%3C/text%3E%3C/svg%3E',
@@ -1850,17 +1936,20 @@
             },
             {
                 id: 'print-2',
-                title: 'Lake Geneva Botanicals',
                 category: 'print',
                 series: 'botanical',
-                type: 'Fine Art Print',
-                badge: 'Archival Giclée',
+                badge: { de: 'Archivarischer Giclée', en: 'Archival Giclée', fr: 'Giclée d\'Art' },
                 badgeClass: '',
-                details: 'Botanical grid composition of pressed Vaudois lake leaves',
-                technique: 'Archival Fine Art Reproduction',
-                paper: '300gsm Cotton Smooth Rag',
-                dimensions: 'Multiple formats available',
-                origin: 'Designed in Bern, Printed in CH',
+                title: { de: 'Genfersee Botanik', en: 'Lake Geneva Botanicals', fr: 'Botanique du Lac Léman' },
+                details: {
+                    de: 'Botanische Rasterkomposition gepresster Waadtländer See-Blätter',
+                    en: 'Botanical grid composition of pressed Vaudois lake leaves',
+                    fr: 'Composition botanique de feuilles pressées du lac Léman'
+                },
+                technique: { de: 'Archivarische Kunstdruck-Reproduktion', en: 'Archival Fine Art Reproduction', fr: 'Reproduction d\'art archivistique' },
+                paper: { de: '300g/m² Glatter Baumwollkarton', en: '300gsm Cotton Smooth Rag', fr: 'Papier coton lisse 300g/m²' },
+                dimensions: 'Mehrere Formate verfügbar',
+                origin: { de: 'Entworfen in Bern, gedruckt in der Schweiz', en: 'Designed in Bern, Printed in CH', fr: 'Conçu à Berne, imprimé en Suisse' },
                 basePrice: 75,
                 image: 'images/lake_botanicals.jpg',
                 fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Crect x=\'60\' y=\'80\' width=\'120\' height=\'150\' fill=\'none\' stroke=\'%23FBF9F5\' stroke-width=\'1\'/%3E%3Crect x=\'220\' y=\'80\' width=\'120\' height=\'150\' fill=\'none\' stroke=\'%23FBF9F5\' stroke-width=\'1\'/%3E%3Ctext x=\'50%25\' y=\'92%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3ELake Geneva Botanicals%3C/text%3E%3C/svg%3E',
@@ -1873,17 +1962,20 @@
             },
             {
                 id: 'print-3',
-                title: 'Alpine Fern Fine Art Edition',
                 category: 'print',
                 series: 'botanical',
-                type: 'Fine Art Print',
-                badge: 'Limited Edition',
+                badge: { de: 'Limitierte Edition', en: 'Limited Edition', fr: 'Édition Limitée' },
                 badgeClass: '',
-                details: 'Limited run archival giclée print of our flagship original',
-                technique: 'UltraChrome Pro 10-Color Print',
-                paper: '310gsm German Etching FineArt',
-                dimensions: 'Multiple formats available',
-                origin: 'Hand-numbered edition of 50',
+                title: { de: 'Alpenfarn Kunstdruck-Edition', en: 'Alpine Fern Fine Art Edition', fr: 'Édition Fougère Alpine' },
+                details: {
+                    de: 'Limitierter archivarischer Giclée-Druck unseres Originalwerks',
+                    en: 'Limited run archival giclée print of our flagship original',
+                    fr: 'Tirage giclée d\'art limité de notre œuvre originale'
+                },
+                technique: { de: 'UltraChrome Pro 10-Farben Druck', en: 'UltraChrome Pro 10-Color Print', fr: 'Impression 10 couleurs UltraChrome Pro' },
+                paper: { de: '310g/m² German Etching FineArt Papier', en: '310gsm German Etching FineArt', fr: 'Papier German Etching 310g/m²' },
+                dimensions: 'Mehrere Formate verfügbar',
+                origin: { de: 'Handsignierte Auflage von 50 Stück', en: 'Hand-numbered edition of 50', fr: 'Édition numérotée à la main de 50' },
                 basePrice: 70,
                 image: 'images/alpine_fern.jpg',
                 fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EAlpine Fern Edition%3C/text%3E%3C/svg%3E',
@@ -1896,7 +1988,8 @@
             }
         ];
 
-        // Global State
+        // Global Application State (German as Primary Default)
+        let currentLang = 'de';
         let cart = [];
         let activeFilter = 'all';
         let currentModalProductId = null;
@@ -1909,8 +2002,6 @@
         const cartCountBadge = document.getElementById('cartCountBadge');
         const cartTriggerBtn = document.getElementById('cartTriggerBtn');
         const cartCloseBtn = document.getElementById('cartCloseBtn');
-        const shippingProgressBar = document.getElementById('shippingProgressBar');
-        const freeShippingText = document.getElementById('freeShippingText');
 
         const productModalOverlay = document.getElementById('productModalOverlay');
         const modalCloseBtn = document.getElementById('modalCloseBtn');
@@ -1937,12 +2028,63 @@
         // Initialization
         document.addEventListener('DOMContentLoaded', () => {
             loadCartFromLocalStorage();
+            initLanguage();
             renderProducts();
             initFilterNav();
-            initFaqAccordion();
             initEventListeners();
             updateCartUI();
         });
+
+        // Initialize Language System (German Default)
+        function initLanguage() {
+            const savedLang = localStorage.getItem('madita_lang');
+            if (savedLang && ['de', 'en', 'fr'].includes(savedLang)) {
+                currentLang = savedLang;
+            } else {
+                currentLang = 'de'; // German Primary Default
+            }
+            applyLanguage(currentLang);
+        }
+
+        // Switch Language Trigger
+        function setLanguage(lang) {
+            if (!['de', 'en', 'fr'].includes(lang)) return;
+            currentLang = lang;
+            localStorage.setItem('madita_lang', lang);
+            applyLanguage(lang);
+            renderProducts();
+            updateCartUI();
+        }
+
+        // Apply Language Dictionary to Elements
+        function applyLanguage(lang) {
+            document.documentElement.lang = lang;
+
+            // Update Language Switcher Active State
+            ['de', 'en', 'fr'].forEach(l => {
+                const btn = document.getElementById(`lang-${l}`);
+                if (btn) {
+                    if (l === lang) btn.classList.add('active');
+                    else btn.classList.remove('active');
+                }
+            });
+
+            // Translate Text Content Elements
+            document.querySelectorAll('[data-i18n]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n');
+                if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+                    elem.textContent = TRANSLATIONS[lang][key];
+                }
+            });
+
+            // Translate HTML Elements (e.g. Announcement Bar with <span>)
+            document.querySelectorAll('[data-i18n-html]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n-html');
+                if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+                    elem.innerHTML = TRANSLATIONS[lang][key];
+                }
+            });
+        }
 
         // Load Cart from LocalStorage
         function loadCartFromLocalStorage() {
@@ -1965,7 +2107,7 @@
             }
         }
 
-        // Render Product Cards Grid
+        // Render Product Cards Grid with Active Language Data
         function renderProducts() {
             productGrid.innerHTML = '';
 
@@ -1978,12 +2120,17 @@
                 return true;
             });
 
+            const t = TRANSLATIONS[currentLang];
+
             filteredProducts.forEach(product => {
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.setAttribute('data-id', product.id);
 
                 const imageAspectClass = product.isOriginal ? '' : 'portrait';
+                const titleText = product.title[currentLang] || product.title.de;
+                const detailsText = product.details[currentLang] || product.details.de;
+                const badgeText = product.badge[currentLang] || product.badge.de;
 
                 let sizeSelectorHtml = '';
                 if (!product.isOriginal && product.sizes) {
@@ -1998,20 +2145,20 @@
 
                 card.innerHTML = `
                     <div class="card-image-wrapper ${imageAspectClass}" onclick="openProductModal('${product.id}')">
-                        <img src="${product.image}" alt="${product.title}" onerror="this.src='${product.fallbackSvg}'">
-                        <span class="badge ${product.badgeClass}">${product.badge}</span>
+                        <img src="${product.image}" alt="${titleText}" onerror="this.src='${product.fallbackSvg}'">
+                        <span class="badge ${product.badgeClass}">${badgeText}</span>
                     </div>
                     <div class="card-content">
-                        <div class="card-title">${product.title}</div>
-                        <div class="card-details">${product.details}</div>
+                        <div class="card-title">${titleText}</div>
+                        <div class="card-details">${detailsText}</div>
                         <div class="card-controls">
                             ${sizeSelectorHtml}
                             <div class="card-price-row">
                                 <span class="card-price" id="price-display-${product.id}">CHF ${product.basePrice}</span>
                             </div>
                             <div class="card-buttons">
-                                <button class="btn-card-action" onclick="openProductModal('${product.id}')">Quick View</button>
-                                <button class="btn-card-action primary" onclick="handleAddToCartClick('${product.id}')">Add to Cart</button>
+                                <button class="btn-card-action" onclick="openProductModal('${product.id}')">${t.quick_view}</button>
+                                <button class="btn-card-action primary" onclick="handleAddToCartClick('${product.id}')">${t.add_to_cart}</button>
                             </div>
                         </div>
                     </div>
@@ -2061,9 +2208,11 @@
                 finalPrice = product.sizes[selectedIdx].price;
             }
 
+            const titleText = product.title[currentLang] || product.title.de;
+
             addToCart({
                 id: product.id,
-                title: product.title,
+                title: titleText,
                 size: chosenSize,
                 price: finalPrice,
                 image: product.image,
@@ -2071,7 +2220,7 @@
                 isOriginal: product.isOriginal
             });
 
-            showToast(`Added "${product.title}" to your cart`);
+            showToast(`${titleText} ${currentLang === 'de' ? 'zum Warenkorb hinzugefügt' : (currentLang === 'fr' ? 'ajouté au panier' : 'added to cart')}`);
         }
 
         // Add Item Object to Cart Array
@@ -2099,27 +2248,16 @@
             triggerBadgePulse();
         }
 
-        // Update Cart Drawer & Badge UI
+        // Update Cart Drawer & Badge UI (Streamlined & Minimal)
         function updateCartUI() {
+            const t = TRANSLATIONS[currentLang];
             const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
             cartCountBadge.innerText = totalCount;
 
             const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             cartSubtotal.innerText = `CHF ${subtotal.toFixed(2)}`;
 
-            // Free Shipping Progress Calculation (Free over CHF 150)
-            const freeShippingThreshold = 150;
-            if (subtotal >= freeShippingThreshold) {
-                freeShippingText.innerHTML = '🎉 <strong>Free Delivery Unlocked!</strong>';
-                shippingProgressBar.style.width = '100%';
-            } else {
-                const remaining = freeShippingThreshold - subtotal;
-                const progressPct = Math.min((subtotal / freeShippingThreshold) * 100, 100);
-                freeShippingText.innerHTML = `Add <strong>CHF ${remaining.toFixed(2)}</strong> for Free Delivery in CH`;
-                shippingProgressBar.style.width = `${progressPct}%`;
-            }
-
-            // Render Cart Drawer Body Items
+            // Render Streamlined Cart Body Items
             if (cart.length === 0) {
                 cartItemsList.innerHTML = `
                     <div class="cart-empty-state">
@@ -2127,8 +2265,7 @@
                             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
                             <line x1="3" y1="6" x2="21" y2="6"></line>
                         </svg>
-                        <p>Your shopping cart is empty.</p>
-                        <a href="#gallery" onclick="closeCart()" style="color: var(--accent-color); font-size: 0.85rem; text-decoration: underline; margin-top: 8px; display: inline-block;">Discover artworks</a>
+                        <p>${t.cart_empty}</p>
                     </div>
                 `;
             } else {
@@ -2137,7 +2274,7 @@
                         <img src="${item.image}" alt="${item.title}" class="cart-item-img" onerror="this.src='${item.fallbackSvg}'">
                         <div class="cart-item-info">
                             <div class="cart-item-title">${item.title}</div>
-                            <div class="cart-item-meta">${item.size ? 'Format: ' + item.size : 'Original 1-of-1 Piece'}</div>
+                            <div class="cart-item-meta">${item.size ? item.size : (currentLang === 'de' ? '1-of-1 Originalstück' : (currentLang === 'fr' ? 'Pièce Unique 1-of-1' : '1-of-1 Original Piece'))}</div>
                             <div class="cart-item-price">CHF ${(item.price * item.quantity).toFixed(2)}</div>
                         </div>
                         <div class="cart-quantity-controls">
@@ -2145,7 +2282,7 @@
                             <span class="qty-num">${item.quantity}</span>
                             <button class="qty-btn" onclick="updateItemQuantity('${item.cartItemId}', 1)">+</button>
                         </div>
-                        <button class="remove-item-btn" onclick="removeItemFromCart('${item.cartItemId}')">Remove</button>
+                        <button class="remove-item-btn" onclick="removeItemFromCart('${item.cartItemId}')">${currentLang === 'de' ? 'Entfernen' : (currentLang === 'fr' ? 'Supprimer' : 'Remove')}</button>
                     </div>
                 `).join('');
             }
@@ -2170,7 +2307,7 @@
             cart = cart.filter(i => i.cartItemId !== cartItemId);
             saveCartToLocalStorage();
             updateCartUI();
-            showToast('Item removed from cart');
+            showToast(currentLang === 'de' ? 'Artikel entfernt' : (currentLang === 'fr' ? 'Article supprimé' : 'Item removed'));
         }
 
         // Cart Badge Pulse Effect
@@ -2192,7 +2329,7 @@
             document.body.style.overflow = '';
         }
 
-        // Open Detail Lightbox Modal
+        // Open Detail Lightbox Modal with Translated Data
         function openProductModal(productId) {
             const product = PRODUCTS.find(p => p.id === productId);
             if (!product) return;
@@ -2200,13 +2337,13 @@
             currentModalProductId = productId;
             modalImage.src = product.image;
             modalImage.onerror = () => { modalImage.src = product.fallbackSvg; };
-            modalBadge.innerText = product.badge;
-            modalTitle.innerText = product.title;
+            modalBadge.innerText = product.badge[currentLang] || product.badge.de;
+            modalTitle.innerText = product.title[currentLang] || product.title.de;
             modalPrice.innerText = `CHF ${product.basePrice}`;
-            modalTechnique.innerText = product.technique;
-            modalPaper.innerText = product.paper;
+            modalTechnique.innerText = product.technique[currentLang] || product.technique.de;
+            modalPaper.innerText = product.paper[currentLang] || product.paper.de;
             modalDimensions.innerText = product.dimensions;
-            modalOrigin.innerText = product.origin;
+            modalOrigin.innerText = product.origin[currentLang] || product.origin.de;
 
             if (!product.isOriginal && product.sizes) {
                 modalSizeGroup.style.display = 'block';
@@ -2247,9 +2384,11 @@
                 finalPrice = product.sizes[selectedIdx].price;
             }
 
+            const titleText = product.title[currentLang] || product.title.de;
+
             addToCart({
                 id: product.id,
-                title: product.title,
+                title: titleText,
                 size: chosenSize,
                 price: finalPrice,
                 image: product.image,
@@ -2259,13 +2398,13 @@
 
             closeProductModal();
             openCart();
-            showToast(`Added "${product.title}" to cart`);
+            showToast(`${titleText} ${currentLang === 'de' ? 'zum Warenkorb hinzugefügt' : (currentLang === 'fr' ? 'ajouté au panier' : 'added to cart')}`);
         });
 
         // Checkout Modal Action
         checkoutBtn.addEventListener('click', () => {
             if (cart.length === 0) {
-                showToast('Your cart is empty');
+                showToast(currentLang === 'de' ? 'Ihr Warenkorb ist leer' : (currentLang === 'fr' ? 'Votre panier est vide' : 'Your cart is empty'));
                 return;
             }
             closeCart();
@@ -2285,22 +2424,7 @@
             saveCartToLocalStorage();
             updateCartUI();
             closeCheckoutModal();
-            showToast('🎉 Order Placed! Thank you for supporting Swiss art.');
-        }
-
-        // FAQ Accordion Toggle
-        function initFaqAccordion() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const questionBtn = item.querySelector('.faq-question');
-                questionBtn.addEventListener('click', () => {
-                    const isOpen = item.classList.contains('open');
-                    faqItems.forEach(i => i.classList.remove('open'));
-                    if (!isOpen) {
-                        item.classList.add('open');
-                    }
-                });
-            });
+            showToast(currentLang === 'de' ? '🎉 Bestellung abgeschlossen! Vielen Dank.' : (currentLang === 'fr' ? '🎉 Commande finalisée! Merci.' : '🎉 Order Placed! Thank you.'));
         }
 
         // Toast Notification System
@@ -2324,16 +2448,14 @@
             }, 3000);
         }
 
-        // Setup All Core Event Listeners
+        // Setup Event Listeners
         function initEventListeners() {
-            // Cart Triggers
             cartTriggerBtn.addEventListener('click', openCart);
             cartCloseBtn.addEventListener('click', closeCart);
             cartOverlay.addEventListener('click', (e) => {
                 if (e.target === cartOverlay) closeCart();
             });
 
-            // Modal Closes
             modalCloseBtn.addEventListener('click', closeProductModal);
             productModalOverlay.addEventListener('click', (e) => {
                 if (e.target === productModalOverlay) closeProductModal();
@@ -2344,7 +2466,6 @@
                 if (e.target === checkoutModalOverlay) closeCheckoutModal();
             });
 
-            // Keyboard Escape Listener
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     closeCart();
@@ -2353,7 +2474,6 @@
                 }
             });
 
-            // Hamburger Mobile Menu
             hamburgerBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('open');
             });
