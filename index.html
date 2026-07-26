@@ -1170,6 +1170,70 @@
             color: var(--accent-gold);
         }
 
+        /* Payment Trust Indicators & Swiss Post Shipping Bar */
+        .payment-trust-bar {
+            margin-top: 18px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-soft);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-align: center;
+        }
+
+        .payment-trust-title {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .payment-icons-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pay-badge {
+            background: rgba(27, 54, 93, 0.05);
+            border: 1px solid var(--border-soft);
+            color: var(--text-color);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            padding: 3px 9px;
+            border-radius: 6px;
+        }
+
+        .swiss-shipping-bar {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-pill);
+            padding: 10px 22px;
+            margin: 24px auto 16px;
+            max-width: 820px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .swiss-shipping-bar svg {
+            stroke: var(--accent-gold);
+            flex-shrink: 0;
+        }
+
         /* Minimal Footer for Dedicated Views */
         .category-minimal-footer {
             border-top: 1px solid var(--border-soft);
@@ -2290,6 +2354,15 @@
 
         <!-- Minimal Footer for Dedicated Views -->
         <div class="category-minimal-footer" id="categoryFooter" style="display: none;">
+            <div class="swiss-shipping-bar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <span data-i18n="swiss_shipping_notice">Eingeschriebener Versand schweizweit ab CHF 6.80 (Die Post) | Kostenloser Versand ab CHF 150</span>
+            </div>
             <div class="category-footer-prompt">
                 <span data-i18n="category_footer_prompt">Möchten Sie ein individuelles Unikat auf Bestellung?</span> 
                 <a href="#custom" onclick="openCustomModal()" data-i18n="contact_us_short">Kontaktieren Sie unser Atelier in Bern</a>
@@ -2317,6 +2390,21 @@
                     <span id="cartSubtotal">CHF 0.00</span>
                 </div>
                 <button class="btn-checkout" id="checkoutBtn" data-i18n="btn_checkout">Zur Kasse gehen</button>
+                <div class="payment-trust-bar">
+                    <div class="payment-trust-title">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <span data-i18n="trust_payment_title">Sichere Bezahlung & TWINT</span>
+                    </div>
+                    <div class="payment-icons-row">
+                        <span class="pay-badge">TWINT</span>
+                        <span class="pay-badge">VISA</span>
+                        <span class="pay-badge">Mastercard</span>
+                        <span class="pay-badge">Apple Pay</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -2485,6 +2573,21 @@
                         </div>
                     </div>
                     <button type="submit" class="btn-checkout" data-i18n="checkout_submit">Testbestellung abschliessen</button>
+                    <div class="payment-trust-bar">
+                        <div class="payment-trust-title">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <span data-i18n="trust_payment_title">Sichere Bezahlung & TWINT</span>
+                        </div>
+                        <div class="payment-icons-row">
+                            <span class="pay-badge">TWINT</span>
+                            <span class="pay-badge">VISA</span>
+                            <span class="pay-badge">Mastercard</span>
+                            <span class="pay-badge">Apple Pay</span>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -2534,6 +2637,16 @@
                         </div>
                     </form>
                 </div>
+            </div>
+
+            <div class="swiss-shipping-bar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <span data-i18n="swiss_shipping_notice">Eingeschriebener Versand schweizweit ab CHF 6.80 (Die Post) | Kostenloser Versand ab CHF 150</span>
             </div>
 
             <div class="footer-bottom">
@@ -2586,6 +2699,8 @@
                 status_sold: "Verkauft (Archivstück)",
                 made_to_order_notice: "Auf Bestellung gedruckt – Lieferzeit ca. 2 Wochen",
                 in_stock_notice: "Ab Bern-Atelier lieferbar (Sofortversand)",
+                trust_payment_title: "Sichere Bezahlung & TWINT",
+                swiss_shipping_notice: "Eingeschriebener Versand schweizweit ab CHF 6.80 (Die Post) | Kostenloser Versand ab CHF 150",
                 bulk_inquiry: "Grossbestellung anfragen",
                 bulk_title: "Grossbestellung & Atelier-Anfrage",
                 bulk_sub: "Für grössere Mengen (50+ Stück) drucken wir frisch auf Bestellung mit ca. 2 Wochen Lieferzeit.",
@@ -2688,6 +2803,8 @@
                 status_sold: "Sold Out (Archive Piece)",
                 made_to_order_notice: "Made to order – Delivery approx. 2 weeks",
                 in_stock_notice: "In stock in Bern studio (Immediate dispatch)",
+                trust_payment_title: "Secure Payment & TWINT",
+                swiss_shipping_notice: "Registered Swiss Post shipping from CHF 6.80 nationwide | Free shipping on orders over CHF 150",
                 bulk_inquiry: "Bulk Order Inquiry",
                 bulk_title: "Bulk & Custom Studio Inquiry",
                 bulk_sub: "For bulk quantities (50+ items), we print fresh to order with approx. 2 weeks lead time.",
@@ -2790,6 +2907,8 @@
                 status_sold: "Vendu (Pièce d'Archive)",
                 made_to_order_notice: "Imprimé sur commande – Livraison env. 2 semaines",
                 in_stock_notice: "En stock à l'atelier de Berne (Expédition immédiate)",
+                trust_payment_title: "Paiement sécurisé & TWINT",
+                swiss_shipping_notice: "Envoi recommandé dans toute la Suisse dès CHF 6.80 (La Poste) | Livraison gratuite dès CHF 150",
                 bulk_inquiry: "Demande de Grande Commande",
                 bulk_title: "Demande de Grande Commande",
                 bulk_sub: "Pour les grandes quantités (50+ pièces), nous imprimons sur commande sous env. 2 semaines.",
