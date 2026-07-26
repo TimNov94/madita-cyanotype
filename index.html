@@ -89,17 +89,23 @@
             opacity: 0 !important;
         }
 
-        /* Sticky Semi-Transparent Glassmorphism Header Bar (Desktop & Mobile) */
+        /* Dynamic Scroll-Activated Glassmorphism Header Bar (Desktop & Mobile) */
         header {
-            background: rgba(253, 251, 247, 0.6) !important;
+            background-color: rgba(253, 251, 247, 1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid transparent;
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease, border-bottom-color 0.3s ease;
+            width: 100%;
+        }
+
+        header.scrolled-header {
+            background-color: rgba(253, 251, 247, 0.7) !important;
             backdrop-filter: blur(12px) !important;
             -webkit-backdrop-filter: blur(12px) !important;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
-            position: sticky !important;
-            top: 0 !important;
-            z-index: 1000 !important;
-            transition: all 0.3s ease;
-            width: 100%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
         }
 
         .header-container {
@@ -2125,7 +2131,7 @@
 
         <!-- Category Breadcrumb Bar -->
         <div class="breadcrumb-nav" id="breadcrumbBar" style="display: none;">
-            <a href="#home" onclick="switchView('home')" data-i18n="back_to_home">← Zurück zur Übersicht</a>
+            <a href="#home" onclick="switchView('home')" data-i18n="back_to_home">← Zurück</a>
             <span>/</span>
             <span id="breadcrumbCurrentTitle" style="color: var(--text-color); font-weight: 500;">Originale</span>
         </div>
@@ -2567,7 +2573,7 @@
                 showcase_prints_title: "Kunstdrucke & Postkarten",
                 view_all_originals: "Alle Originale anzeigen →",
                 view_all_prints: "Alle Kunstdrucke anzeigen →",
-                back_to_home: "← Zurück zur Übersicht",
+                back_to_home: "← Zurück",
                 originals_title: "1-of-1 Originale Kollektion",
                 prints_title: "Archivarische Kunstdrucke & Postkarten",
                 collection_title: "Die Kunstkollektion",
@@ -2669,7 +2675,7 @@
                 showcase_prints_title: "Fine Art Prints & Postcards",
                 view_all_originals: "View All Originals →",
                 view_all_prints: "View All Fine Art Prints →",
-                back_to_home: "← Back to Overview",
+                back_to_home: "← Back",
                 originals_title: "1-of-1 Originals Collection",
                 prints_title: "Archival Fine Art Prints & Postcards",
                 collection_title: "The Fine Art Collection",
@@ -2771,7 +2777,7 @@
                 showcase_prints_title: "Tirages d'Art & Cartes Postales",
                 view_all_originals: "Voir Tous Les Originaux →",
                 view_all_prints: "Voir Tous Les Tirages →",
-                back_to_home: "← Retour à l'accueil",
+                back_to_home: "← Retour",
                 originals_title: "Collection des Pièces Uniques",
                 prints_title: "Tirages d'Art & Cartes Postales",
                 collection_title: "La Collection Beaux-Arts",
@@ -3921,6 +3927,9 @@
                 }
             });
 
+            window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+            handleHeaderScroll();
+
             hamburgerBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('open');
             });
@@ -3930,6 +3939,17 @@
                     mobileMenu.classList.remove('open');
                 });
             });
+        }
+
+        // Header Scroll-Activated Opacity Controller
+        function handleHeaderScroll() {
+            const header = document.querySelector('header');
+            if (!header) return;
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled-header');
+            } else {
+                header.classList.remove('scrolled-header');
+            }
         }
     </script>
 </body>
