@@ -1419,10 +1419,16 @@
 
         .cyanotype-wash-layer.wash-brush {
             background-color: #1B365D;
-            inset: 22px 18px;
-            border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
-            transform: rotate(-1.5deg);
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+            inset: 18px 14px;
+            clip-path: polygon(
+                3% 6%, 12% 2%, 25% 5%, 42% 1%, 58% 6%, 74% 2%, 88% 7%, 97% 3%,
+                96% 22%, 98% 44%, 95% 66%, 98% 85%, 94% 97%,
+                82% 93%, 66% 98%, 51% 92%, 36% 97%, 22% 91%, 6% 96%,
+                3% 76%, 5% 54%, 2% 34%, 4% 14%
+            );
+            border-radius: 4px;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25);
+            filter: drop-shadow(0 2px 4px rgba(27, 54, 93, 0.2));
         }
 
         .placed-plants-layer {
@@ -1431,18 +1437,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 16px;
-            padding: 20px;
+            gap: 8px;
+            padding: 18px;
             z-index: 5;
             flex-wrap: wrap;
+            align-content: center;
         }
 
         .placed-plant-item {
-            width: 70px;
-            height: 70px;
+            width: 48px;
+            height: 48px;
             cursor: pointer;
-            transition: transform 0.3s ease;
-            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+            transition: transform 0.25s ease, filter 0.25s ease;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.25));
             animation: plantAppear 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
@@ -2608,8 +2615,8 @@
                     <!-- 3. Botanical Elements Selector (10 Plants) -->
                     <div class="control-group">
                         <div class="control-label-row">
-                            <label class="control-label" data-i18n="studio_plants_label">3. Botanische Motive wählen (1–4 Stk.)</label>
-                            <span class="studio-count-badge" id="studioPlantCount">0 / 4</span>
+                            <label class="control-label" data-i18n="studio_plants_label">3. Botanische Motive wählen (1–10 Stk.)</label>
+                            <span class="studio-count-badge" id="studioPlantCount">0 / 10</span>
                         </div>
                         <div class="botanical-selector-grid" id="botanicalSelectorGrid">
                             <!-- 10 Demo Plants rendered by JS -->
@@ -3040,7 +3047,7 @@
                 studio_wash_label: "2. Sonnen-Belichtungsart",
                 studio_wash_bleed: "Vollflächig (Full Bleed)",
                 studio_wash_brush: "Handgefertigter Pinselstrich",
-                studio_plants_label: "3. Botanische Motive wählen (1–4 Stk.)",
+                studio_plants_label: "3. Botanische Motive wählen (1–10 Stk.)",
                 studio_btn_inquire: "Individuelle Anfrage senden →",
                 btn_custom_request: "Persönliche Cyanotypie Anfragen",
                 custom_modal_title: "Ihr Persönliches Pflanzenunikat Anfragen",
@@ -3154,7 +3161,7 @@
                 studio_wash_label: "2. Sun Exposure Style",
                 studio_wash_bleed: "Full Bleed Coating",
                 studio_wash_brush: "Artisanal Brush Wash",
-                studio_plants_label: "3. Select Botanical Motifs (1–4 items)",
+                studio_plants_label: "3. Select Botanical Motifs (1–10 items)",
                 studio_btn_inquire: "Send Bespoke Inquiry →",
                 btn_custom_request: "Request Custom Creation",
                 custom_modal_title: "Request Your Bespoke Cyanotype",
@@ -3268,7 +3275,7 @@
                 studio_wash_label: "2. Style d'Exposition Solaire",
                 studio_wash_bleed: "Plein Papier (Full Bleed)",
                 studio_wash_brush: "Pinceau Artisanal",
-                studio_plants_label: "3. Motifs Botaniques (1–4 éléments)",
+                studio_plants_label: "3. Motifs Botaniques (1–10 éléments)",
                 studio_btn_inquire: "Envoyer la Demande Sur Mesure →",
                 btn_custom_request: "Demander une Création Sur Mesure",
                 custom_modal_title: "Demander Votre Cyanotype Personnalisé",
@@ -4486,8 +4493,8 @@
             if (idx >= 0) {
                 studioState.selectedPlants.splice(idx, 1);
             } else {
-                if (studioState.selectedPlants.length >= 4) {
-                    showToast(currentLang === 'de' ? 'Maximal 4 Motive pro Papier' : (currentLang === 'fr' ? 'Maximum 4 motifs par papier' : 'Maximum 4 botanicals per paper'));
+                if (studioState.selectedPlants.length >= 10) {
+                    showToast(currentLang === 'de' ? 'Maximal 10 Motive pro Papier' : (currentLang === 'fr' ? 'Maximum 10 motifs par papier' : 'Maximum 10 botanicals per paper'));
                     return;
                 }
                 studioState.selectedPlants.push(plantId);
@@ -4526,7 +4533,7 @@
 
             const countBadge = document.getElementById('studioPlantCount');
             if (countBadge) {
-                countBadge.innerText = `${studioState.selectedPlants.length} / 4`;
+                countBadge.innerText = `${studioState.selectedPlants.length} / 10`;
             }
         }
 
