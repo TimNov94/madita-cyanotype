@@ -78,29 +78,12 @@
             height: auto;
         }
 
-        /* Announcement Bar */
-        .announcement-bar {
-            background: linear-gradient(90deg, #162C4E 0%, #1B365D 50%, #162C4E 100%);
-            color: #FDFBF7;
-            text-align: center;
-            padding: 8px 16px;
-            font-size: 0.78rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 400;
-        }
-
-        .announcement-bar span {
-            color: var(--accent-gold);
-            font-weight: 600;
-        }
-
         /* Spacious & Clean Desktop Header */
         header {
-            background-color: rgba(253, 251, 247, 0.9);
+            background-color: rgba(253, 251, 247, 0.92);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(239, 236, 230, 0.7);
+            border-bottom: 1px solid rgba(239, 236, 230, 0.75);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -302,11 +285,11 @@
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 70px;
+            top: 60px;
             left: 0;
             right: 0;
             width: 100%;
-            background-color: rgba(253, 251, 247, 0.96);
+            background-color: rgba(253, 251, 247, 0.98);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-soft);
             padding: 20px 28px;
@@ -318,6 +301,7 @@
         }
 
         .mobile-menu.open {
+            display: block;
             transform: translateY(0);
             opacity: 1;
         }
@@ -1684,51 +1668,70 @@
             width: 100%;
         }
 
-        /* Mobile Breakpoints (< 768px) */
+        /* Precision Mobile Overrides (< 768px) */
         @media (max-width: 768px) {
+            nav.desktop-nav {
+                display: none !important;
+            }
+
             .header-container {
                 padding: 10px 14px;
+                display: grid;
+                grid-template-columns: auto 1fr auto;
+                align-items: center;
+                gap: 8px;
+                width: 100%;
+            }
+
+            .hamburger-btn {
+                display: inline-flex !important;
+                grid-column: 1;
+            }
+
+            .logo-group {
+                grid-column: 2;
+                text-align: center;
+                justify-self: center;
+            }
+
+            .logo {
+                font-size: 1.35rem;
+                letter-spacing: 2.5px;
+            }
+
+            .logo-tagline {
+                display: none !important;
+            }
+
+            .header-actions {
+                grid-column: 3;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-                gap: 6px;
+                gap: 5px;
+                justify-self: end;
             }
-            .hamburger-btn {
-                display: inline-flex;
-                padding: 6px;
-                min-height: 40px;
-                min-width: 40px;
-            }
-            .logo-group {
-                align-items: center;
-            }
-            .logo {
-                font-size: 1.4rem;
-                letter-spacing: 2px;
-            }
-            .logo-tagline {
-                display: none;
-            }
-            .header-actions {
-                gap: 6px;
-            }
+
             .lang-switcher {
-                padding: 2px 3px;
+                padding: 2px;
                 gap: 1px;
             }
+
             .lang-btn {
-                padding: 4px 5px;
-                font-size: 0.65rem;
-                min-width: 28px;
-                min-height: 34px;
+                padding: 3px 4px;
+                font-size: 0.62rem;
+                min-width: 25px;
+                min-height: 32px;
             }
+
             .cart-trigger {
-                padding: 6px 10px;
-                min-height: 38px;
-                font-size: 0.72rem;
+                padding: 5px 8px;
+                min-height: 34px;
+                font-size: 0.68rem;
+                gap: 4px;
             }
+
             .cart-trigger span[data-i18n] {
-                display: none;
+                display: none !important;
             }
 
             .container {
@@ -1736,38 +1739,103 @@
             }
 
             .hero {
-                padding: 45px 14px 30px;
+                padding: 35px 12px 20px;
             }
+
             .hero h1 {
-                font-size: 2.1rem;
-                line-height: 1.18;
-                margin-bottom: 16px;
+                font-size: 1.95rem;
+                line-height: 1.16;
+                margin-bottom: 12px;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .showcase-header h3 {
+                font-size: 1.45rem;
+            }
+
+            .story-text h2, .custom-banner-section h2, .contact-info h2, .bts-gallery-header h3 {
+                font-size: 1.6rem;
+                line-height: 1.22;
+            }
+
+            .story-section {
+                padding: 22px 14px;
+                margin-top: 15px;
+                margin-bottom: 35px;
+                border-radius: 18px;
+            }
+
+            .story-badge-floating {
+                position: static;
+                margin-top: 14px;
+                padding: 14px 16px;
+                border-radius: 12px;
+                box-shadow: var(--shadow-card);
+                max-width: 100%;
+            }
+
+            .story-badge-floating p {
+                font-size: 0.95rem;
+                line-height: 1.4;
             }
 
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-                margin-bottom: 45px;
+                gap: 10px;
+                margin-bottom: 40px;
             }
 
             .card {
-                padding: 10px;
-                border-radius: 14px;
+                padding: 8px;
+                border-radius: 12px;
+            }
+
+            .card-image-wrapper {
+                padding: 5px;
+                margin-bottom: 8px;
+                border-radius: 8px;
+            }
+
+            .card-title {
+                font-size: 0.92rem;
+                margin-bottom: 2px;
+            }
+
+            .card-details {
+                font-size: 0.7rem;
+                line-height: 1.35;
+                margin-bottom: 8px;
+            }
+
+            .card-price {
+                font-size: 0.88rem;
+            }
+
+            .btn-card-action {
+                font-size: 0.6rem;
+                padding: 5px 2px;
+                min-height: 34px;
+            }
+
+            select.size-select {
+                font-size: 0.62rem;
+                padding: 4px 6px;
+                min-height: 34px;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr;
-                gap: 28px;
+                gap: 24px;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- Top Announcement Bar -->
-    <div class="announcement-bar" data-i18n-html="announcement">
-        Kostenloser versicherter Versand in der Schweiz ab <span>CHF 150</span>
-    </div>
 
     <!-- Spacious & Clean Desktop Header -->
     <header>
@@ -2279,7 +2347,6 @@
         // Multi-Language Translation Dictionaries (DE, EN, FR) - GERMAN DEFAULT
         const TRANSLATIONS = {
             de: {
-                announcement: "Kostenloser versicherter Versand in der Schweiz ab <span>CHF 150</span>",
                 logo_tagline: "Schweizer Cyanotypie-Kunst",
                 nav_gallery: "Galerie",
                 nav_originals: "Originale",
@@ -2392,7 +2459,6 @@
                 footer_tag: "Alle Rechte vorbehalten. Für Sammler & Naturliebhaber."
             },
             en: {
-                announcement: "Free Insured Shipping Across Switzerland on Orders Over <span>CHF 150</span>",
                 logo_tagline: "Swiss Cyanotype Art",
                 nav_gallery: "Gallery",
                 nav_originals: "Originals",
@@ -2505,7 +2571,6 @@
                 footer_tag: "All rights reserved. Designed for collectors & nature lovers."
             },
             fr: {
-                announcement: "Livraison assurée gratuite en Suisse dès <span>CHF 150</span>",
                 logo_tagline: "Art du Cyanotype Suisse",
                 nav_gallery: "Galerie",
                 nav_originals: "Originaux",
@@ -3572,7 +3637,7 @@
         // Checkout Modal
         checkoutBtn.addEventListener('click', () => {
             if (cart.length === 0) {
-                showToast(currentLang === 'de' ? 'Ihr Warenkorb ist leer' : (currentLang === 'fr' ? 'Votre panier est vide' : 'Your cart is empty'));
+                showToast(currentLang === 'de' ? 'Ihr Warenkorb ist leer' : (currentLang === 'fr' ? 'Votre panier ist vide' : 'Your cart is empty'));
                 return;
             }
             closeCart();
