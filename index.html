@@ -3,292 +3,2257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madita | Swiss Cyanotype Art</title>
+    <title>Madita | Swiss Cyanotype Art & Fine Art Prints</title>
+    <meta name="description" content="Hand-crafted sun-exposed cyanotypes inspired by Swiss nature & alpine botanicals. Made with love in Bern, Switzerland. Original 1-of-1 artworks & archival giclée prints.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg-color: #FBF9F5;
             --text-color: #1B365D;
+            --text-muted: #556B82;
             --card-bg: #FFFFFF;
+            --story-bg: #F4F0EA;
             --border-color: #E5E2DC;
+            --border-hover: #1B365D;
             --accent-color: #1B365D;
-            --button-hover: #0d223f;
+            --accent-gold: #C5A059;
+            --accent-light: #EBF1F8;
+            --button-hover: #0D223F;
+            --shadow-sm: 0 4px 12px rgba(27, 54, 93, 0.04);
+            --shadow-md: 0 10px 30px rgba(27, 54, 93, 0.08);
+            --shadow-lg: 0 20px 40px rgba(27, 54, 93, 0.12);
+            --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .logo, .font-serif {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* Top Announcement Bar */
+        .announcement-bar {
+            background-color: var(--accent-color);
+            color: #FBF9F5;
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .announcement-bar span {
+            color: var(--accent-gold);
+            font-weight: 600;
         }
 
         /* Header Navigation */
         header {
+            background-color: rgba(251, 249, 245, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
-            padding: 20px 40px;
-            background-color: var(--bg-color);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
 
-        .header-top {
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
+        }
+
+        .logo-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
         }
 
         .logo {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 300;
-            letter-spacing: 2px;
-            text-decoration: none;
-            color: var(--text-color);
+            letter-spacing: 4px;
+            line-height: 1;
+            text-transform: uppercase;
         }
 
-        nav a {
-            margin: 0 15px;
+        .logo-tagline {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        nav.desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav.desktop-nav a {
             text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+            position: relative;
+            padding: 4px 0;
+            transition: color 0.2s ease;
+        }
+
+        nav.desktop-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--text-color);
+            transition: width 0.3s var(--transition-smooth);
+        }
+
+        nav.desktop-nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cart-trigger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             color: var(--text-color);
             font-size: 0.9rem;
-            text-transform: uppercase;
+            font-weight: 500;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 8px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+            position: relative;
+            width: auto;
+            margin-top: 0;
         }
 
-        .cart-icon {
-            font-size: 1.1rem;
+        .cart-trigger:hover {
+            border-color: var(--text-color);
+            background-color: rgba(27, 54, 93, 0.04);
+            color: var(--text-color);
+        }
+
+        .cart-count-badge {
+            background-color: var(--text-color);
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            font-weight: 600;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cart-count-badge.pulse {
+            transform: scale(1.3);
+        }
+
+        .hamburger-btn {
+            display: none;
+            background: none;
+            border: none;
             cursor: pointer;
+            padding: 8px;
+            flex-direction: column;
+            gap: 5px;
+            width: auto;
+            margin-top: 0;
         }
 
-        .subtitle {
+        .hamburger-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Menu Drawer */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background-color: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 24px 32px;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .mobile-menu.open {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 12px 0;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(229, 226, 220, 0.5);
+        }
+
+        /* Hero Showcase */
+        .hero {
+            position: relative;
+            padding: 80px 20px 60px;
             text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-tag {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            max-width: 680px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+
+        .hero-ctas {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            padding: 14px 28px;
+            border: 1px solid var(--accent-color);
             font-size: 0.85rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-top: 15px;
-            color: #556b82;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            display: inline-block;
+            width: auto;
+            margin-top: 0;
         }
 
-        /* Main Section */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+        .btn-primary:hover {
+            background-color: var(--button-hover);
+            border-color: var(--button-hover);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
         }
 
-        h2.section-title {
-            text-align: center;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 40px;
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-color);
+            padding: 14px 28px;
+            border: 1px solid var(--text-color);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            display: inline-block;
+            width: auto;
+            margin-top: 0;
         }
 
+        .btn-secondary:hover {
+            background-color: var(--text-color);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Filter Controls */
+        .filter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 10px 20px;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.25s ease;
+            width: auto;
+            margin-top: 0;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            border-color: var(--accent-color);
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.6rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        /* Gallery Grid Layout */
         .gallery-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 36px;
+            margin-bottom: 80px;
         }
 
-        @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            header {
-                padding: 15px 20px;
-            }
-            nav {
-                display: none; /* Mobile nav menu can be expanded later */
-            }
-        }
-
-        .category-column h3 {
-            font-weight: 400;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-
+        /* Card Design */
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 20px;
-            margin-bottom: 25px;
+            border-radius: 4px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
+            transition: all 0.35s var(--transition-smooth);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(27, 54, 93, 0.25);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            background-color: #F4F0EA;
+            aspect-ratio: 4 / 3;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .card-image-wrapper.portrait {
+            aspect-ratio: 3 / 4;
         }
 
         .card img {
             width: 100%;
-            height: auto;
-            background-color: #f0f0f0;
-            margin-bottom: 15px;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--transition-smooth);
+            display: block;
+        }
+
+        .card:hover img {
+            transform: scale(1.04);
+        }
+
+        .badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background-color: rgba(251, 249, 245, 0.94);
+            color: var(--accent-color);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 2px;
+            border: 1px solid rgba(27, 54, 93, 0.15);
+            backdrop-filter: blur(4px);
+        }
+
+        .badge.badge-gold {
+            background-color: var(--accent-gold);
+            color: #FFFFFF;
+            border: none;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .card-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 5px;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            color: var(--text-color);
         }
 
         .card-details {
             font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 10px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .card-controls {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .card-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
         }
 
         .card-price {
-            font-size: 1rem;
-            font-weight: 500;
-            margin-top: auto;
-            padding-top: 10px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-color);
         }
 
-        select, button {
+        .size-select-wrapper {
+            position: relative;
+        }
+
+        select.size-select {
             width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid var(--text-color);
-            background: transparent;
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            background-color: #FBF9F5;
             color: var(--text-color);
-            cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
             text-transform: uppercase;
-            transition: all 0.2s ease;
+            border-radius: 2px;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%1B365D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            margin-top: 0;
+            transition: border-color 0.2s ease;
         }
 
-        button:hover {
-            background-color: var(--text-color);
+        select.size-select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .card-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .btn-card-action {
+            padding: 10px 14px;
+            border: 1px solid var(--accent-color);
+            background: transparent;
+            color: var(--accent-color);
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+            width: 100%;
+            margin-top: 0;
+        }
+
+        .btn-card-action:hover {
+            background-color: rgba(27, 54, 93, 0.06);
+        }
+
+        .btn-card-action.primary {
+            background-color: var(--accent-color);
             color: #FFFFFF;
         }
 
-        /* Story Section */
+        .btn-card-action.primary:hover {
+            background-color: var(--button-hover);
+            color: #FFFFFF;
+        }
+
+        /* Story & Crafting Section */
         .story-section {
-            background-color: #F4F0EA;
-            border: 1px solid var(--border-color);
-            padding: 40px;
-            margin-top: 60px;
-            display: flex;
-            gap: 40px;
+            background-color: var(--story-bg);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 90px 0;
+            margin-top: 40px;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
         }
 
-        @media (max-width: 768px) {
-            .story-section {
-                flex-direction: column;
-                padding: 20px;
-            }
+        .story-image-container {
+            position: relative;
         }
 
-        .story-text h3 {
-            font-weight: 400;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
+        .story-image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: var(--shadow-md);
+            display: block;
+        }
+
+        .story-badge-floating {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background-color: var(--accent-color);
+            color: #FBF9F5;
+            padding: 20px 24px;
+            border-radius: 4px;
+            max-width: 220px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .story-badge-floating p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            line-height: 1.3;
+            font-style: italic;
+        }
+
+        .story-text h2 {
+            font-size: 2.8rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
         }
 
         .story-text p {
+            font-size: 1.05rem;
+            color: #334455;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Process Steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .process-card {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .process-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: rgba(27, 54, 93, 0.15);
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .process-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .process-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* FAQ Accordion Section */
+        .faq-section {
+            padding: 90px 0;
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 0;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            margin-top: 0;
+        }
+
+        .faq-question span.icon {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s var(--transition-smooth), padding 0.3s ease;
+            color: var(--text-muted);
             font-size: 0.95rem;
-            color: #444;
-            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding-bottom: 24px;
+        }
+
+        .faq-item.open .faq-question span.icon {
+            transform: rotate(45deg);
+        }
+
+        /* Slide-over Shopping Cart Drawer */
+        .cart-drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(27, 54, 93, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cart-drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 440px;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 2001;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.4s var(--transition-smooth);
+        }
+
+        .cart-drawer-overlay.active .cart-drawer {
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            padding: 24px 28px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cart-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 4px;
+            width: auto;
+            margin-top: 0;
+        }
+
+        .free-shipping-bar {
+            background-color: var(--accent-light);
+            padding: 12px 28px;
+            font-size: 0.8rem;
+            color: var(--text-color);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .progress-bar-bg {
+            height: 4px;
+            background-color: var(--border-color);
+            border-radius: 2px;
+            margin-top: 6px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: var(--accent-gold);
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        .cart-body {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 24px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cart-empty-state {
+            text-align: center;
+            margin: auto 0;
+            color: var(--text-muted);
+        }
+
+        .cart-empty-state svg {
+            margin-bottom: 16px;
+            opacity: 0.4;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 16px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            align-items: center;
+        }
+
+        .cart-item-img {
+            width: 70px;
+            height: 85px;
+            object-fit: cover;
+            border-radius: 2px;
+            background-color: #F4F0EA;
+        }
+
+        .cart-item-info {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 4px;
+        }
+
+        .cart-item-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .cart-item-price {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .cart-quantity-controls {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            width: fit-content;
+            border-radius: 2px;
+        }
+
+        .qty-btn {
+            background: none;
+            border: none;
+            padding: 4px 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: var(--text-color);
+            width: auto;
+            margin-top: 0;
+        }
+
+        .qty-num {
+            padding: 0 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .remove-item-btn {
+            background: none;
+            border: none;
+            color: #990000;
+            font-size: 0.75rem;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-left: auto;
+            width: auto;
+            margin-top: 0;
+        }
+
+        .cart-footer {
+            padding: 24px 28px;
+            border-top: 1px solid var(--border-color);
+            background-color: #FFFFFF;
+        }
+
+        .cart-summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .btn-checkout {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            border: none;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 0;
+        }
+
+        .btn-checkout:hover {
+            background-color: var(--button-hover);
+        }
+
+        /* Detail Modal / Lightbox */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(27, 54, 93, 0.6);
+            backdrop-filter: blur(6px);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-card {
+            background-color: var(--bg-color);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            transform: scale(0.95);
+            transition: transform 0.3s var(--transition-smooth);
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(251, 249, 245, 0.9);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            margin-top: 0;
+        }
+
+        .modal-image-col {
+            background-color: #F4F0EA;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image-col img {
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            box-shadow: var(--shadow-md);
+        }
+
+        .modal-info-col {
+            padding: 40px 36px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-badge {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .modal-title {
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .modal-price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--accent-color);
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            font-size: 0.85rem;
+        }
+
+        .specs-table td {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .specs-table td:first-child {
+            color: var(--text-muted);
+            width: 40%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.75rem;
+        }
+
+        .specs-table td:last-child {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .modal-actions {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 4000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toast {
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            padding: 14px 22px;
+            border-radius: 4px;
+            box-shadow: var(--shadow-md);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: slideInRight 0.3s var(--transition-smooth) forwards;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Checkout Modal */
+        .checkout-step {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            color: var(--text-muted);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            background: #FFFFFF;
+            font-size: 0.9rem;
+            border-radius: 2px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #11223A;
+            color: #E5E8EC;
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            color: #94A3B8;
+            font-size: 0.9rem;
+            max-width: 320px;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #CBD5E1;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #FFFFFF;
+        }
+
+        .newsletter-input-group {
+            display: flex;
+            margin-top: 12px;
+        }
+
+        .newsletter-input-group input {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: #FFFFFF;
+            font-size: 0.85rem;
+            border-radius: 2px 0 0 2px;
+            flex-grow: 1;
+        }
+
+        .newsletter-input-group button {
+            padding: 12px 18px;
+            background-color: var(--accent-gold);
+            color: #FFFFFF;
+            border: none;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: auto;
+            margin-top: 0;
+            border-radius: 0 2px 2px 0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #64748B;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+            .modal-card {
+                grid-template-columns: 1fr;
+                max-height: 85vh;
+            }
+            .modal-image-col {
+                max-height: 300px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 14px 20px;
+            }
+            nav.desktop-nav {
+                display: none;
+            }
+            .hamburger-btn {
+                display: flex;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 14px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        Free Insured Shipping Across Switzerland on Orders Over <span>CHF 150</span>
+    </div>
+
+    <!-- Header Navigation -->
     <header>
-        <div class="header-top">
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">Originals</a>
-                <a href="#">Prints</a>
+        <div class="header-container">
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="#" class="logo-group">
+                <span class="logo">Madita</span>
+                <span class="logo-tagline">Swiss Cyanotype Art</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="#gallery">Gallery</a>
+                <a href="#originals">Originals</a>
+                <a href="#prints">Prints</a>
+                <a href="#story">Our Story</a>
+                <a href="#faq">Shipping & FAQ</a>
             </nav>
-            <a href="#" class="logo">Madita</a>
-            <div>
-                <nav>
-                    <a href="#">Process</a>
-                    <a href="#">Our Story</a>
-                </nav>
-                <span class="cart-icon">🛒 (0)</span>
+
+            <div class="header-actions">
+                <button class="cart-trigger" id="cartTriggerBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span>Cart</span>
+                    <span class="cart-count-badge" id="cartCountBadge">0</span>
+                </button>
             </div>
         </div>
-        <div class="subtitle">Bringing Swiss Nature Home Through Cyanotype Art</div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#gallery" class="mobile-link">Gallery</a>
+            <a href="#originals" class="mobile-link">Original 1-of-1 Artworks</a>
+            <a href="#prints" class="mobile-link">Fine Art Prints</a>
+            <a href="#story" class="mobile-link">Our Story & Craft</a>
+            <a href="#faq" class="mobile-link">Shipping & Care</a>
+        </div>
     </header>
 
-    <div class="container">
-        <h2 class="section-title">Fine Art Curations</h2>
+    <!-- Hero Showcase Section -->
+    <section class="hero">
+        <div class="hero-tag">Handcrafted in Bern, Switzerland</div>
+        <h1>Capturing Alpine Solitude & Sunlight</h1>
+        <p>
+            Unique, sun-exposed cyanotypes and archival giclée prints created from pressed botanicals 
+            and mountain silhouettes collected throughout the Swiss Alps.
+        </p>
+        <div class="hero-ctas">
+            <a href="#originals" class="btn-primary">Explore 1-of-1 Originals</a>
+            <a href="#prints" class="btn-secondary">Browse Fine Art Prints</a>
+        </div>
+    </section>
 
-        <div class="gallery-grid">
-            <!-- Originals Column -->
-            <div class="category-column">
-                <h3>Originals (1-of-1)</h3>
-
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x500/1B365D/FFFFFF?text=Alpine+Fern+Original" alt="Alpine Fern">
-                    <div class="card-title">Alpine Fern No. 1</div>
-                    <div class="card-details">30x40 cm | Original Cyanotype on textured paper</div>
-                    <div class="card-price">CHF 280</div>
-                    <button>View Details</button>
-                </div>
-
-                <div class="card">
-                    <img src="https://via.placeholder.com/500x350/1B365D/FFFFFF?text=Bernese+Peak+Original" alt="Bernese Peak">
-                    <div class="card-title">Bernese Peak Study</div>
-                    <div class="card-details">40x50 cm | Multi-layered cyanotype of mountain silhouettes</div>
-                    <div class="card-price">CHF 280</div>
-                    <button>View Details</button>
-                </div>
-            </div>
-
-            <!-- Prints Column -->
-            <div class="category-column">
-                <h3>Fine Art Prints</h3>
-
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x500/1B365D/FFFFFF?text=The+Matterhorn+Print" alt="The Matterhorn">
-                    <div class="card-title">The Matterhorn, Blue</div>
-                    <div class="card-details">Giclée print on archival cotton paper</div>
-                    <select>
-                        <option>Select Size: A3 (CHF 75)</option>
-                        <option>Select Size: A2 (CHF 110)</option>
-                    </select>
-                    <button>Add to Cart</button>
-                </div>
-
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x500/1B365D/FFFFFF?text=Lake+Geneva+Botanicals" alt="Lake Geneva Botanicals">
-                    <div class="card-title">Lake Geneva Botanicals</div>
-                    <div class="card-details">Grid composition print of collected Swiss leaves</div>
-                    <select>
-                        <option>Select Size: A3 (CHF 75)</option>
-                        <option>Select Size: A2 (CHF 110)</option>
-                    </select>
-                    <button>Add to Cart</button>
-                </div>
-            </div>
+    <!-- Main Content Container -->
+    <div class="container" id="gallery">
+        
+        <!-- Filter Tabs -->
+        <div class="filter-nav">
+            <button class="filter-btn active" data-filter="all">All Works</button>
+            <button class="filter-btn" data-filter="original">1-of-1 Originals</button>
+            <button class="filter-btn" data-filter="print">Fine Art Prints</button>
+            <button class="filter-btn" data-filter="botanical">Botanical Series</button>
+            <button class="filter-btn" data-filter="alpine">Alpine Landscapes</button>
         </div>
 
-        <!-- Story Section -->
-        <div class="story-section">
-            <div style="flex: 1;">
-                <img src="https://via.placeholder.com/500x350/E5E2DC/1B365D?text=Crafting+in+the+Alps" alt="Our Studio" style="width: 100%; height: auto;">
+        <!-- Gallery Section -->
+        <div class="section-header">
+            <h2>The Fine Art Collection</h2>
+            <p>Each piece is individually printed or sun-exposed on museum-grade cotton paper</p>
+        </div>
+
+        <div class="gallery-grid" id="productGrid">
+            <!-- Dynamic JavaScript Product Injection Target -->
+        </div>
+
+        <!-- Story & Process Section -->
+        <section class="story-section" id="story">
+            <div class="container">
+                <div class="story-grid">
+                    <div class="story-image-container">
+                        <img src="images/studio_process.jpg" alt="Madita Cyanotype Studio Process Bern" 
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'450\' viewBox=\'0 0 600 450\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'24\' text-anchor=\'middle\'%3EMadita Studio Process, Bern%3C/text%3E%3C/svg%3E'">
+                        <div class="story-badge-floating">
+                            <p>"Sunlight and iron salts turn nature into timeless Prussian Blue."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="story-text">
+                        <div class="hero-tag" style="text-align: left;">Behind The Craft</div>
+                        <h2>Our Story & Solar Process</h2>
+                        <p>
+                            Founded in Bern, <strong>Madita</strong> stems from a deep reverence for the quiet majesty of the Swiss landscape. 
+                            Using the 19th-century cyanotype technique, we coat heavy French and German rag papers with sunlight-sensitive iron solutions, 
+                            placing hand-foraged alpine flora under the intense UV rays of the Swiss sun.
+                        </p>
+                        <p>
+                            Because weather and sun intensities shift daily in the mountains, no two original prints develop identically. 
+                            The resulting deep Prussian blue shades (#1B365D) hold the essence of a single sunlit moment in the Bernese Oberland.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3 Step Process Cards -->
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-number">01</div>
+                        <h4>Botanical Foraging</h4>
+                        <p>Carefully selecting wild ferns, pine needles, and alpine blooms across the Bernese Oberland and Lake Thun trailways.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-number">02</div>
+                        <h4>Solar UV Exposure</h4>
+                        <p>Sensitizing archival Hahnemühle cotton paper with chemical emulsion and exposing under natural sunlight.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-number">03</div>
+                        <h4>Alpine Water Rinsing</h4>
+                        <p>Washing away unexposed iron salts in clear water to reveal sharp indigo silhouettes and Prussian Blue depth.</p>
+                    </div>
+                </div>
             </div>
-            <div class="story-text" style="flex: 1;">
-                <h3>OUR STORY</h3>
-                <p>We combine a love for Swiss landscapes with the hand-made cyanotype process. Each piece, original or print, is created with care in our studio.</p>
-                <p>Follow our journey: <strong>@madita_cyanotypes</strong></p>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="section-header">
+                <h2>Shipping & Frequently Asked Questions</h2>
+                <p>Everything you need to know about delivery, framing, and artwork care</p>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How are the artworks packaged and shipped?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        All original cyanotypes and fine art prints are carefully wrapped in acid-free glassine paper and shipped flat in heavy protective cardboard packaging (or sturdy reinforced tubes for A2 prints). We ship via Swiss Post priority with full insurance.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer framing options?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        To preserve artwork integrity during transit, our pieces are sold unframed. However, all our works are created in standard European sizes (30x40 cm, A4, A3, A2) so you can easily fit them into off-the-shelf oak or walnut frames from your local framer or standard stores.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How should I care for my cyanotype print?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Cyanotypes are remarkably durable, but like any fine art piece, avoid hanging them in direct intense sunlight. If exposed to light over time and slight fading occurs, placing the artwork in a dark room for a few days naturally regenerates the rich Prussian Blue color!
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you ship internationally outside Switzerland?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes! We ship worldwide across Europe, North America, and Asia with tracked international priority post (Flat rate CHF 18 outside CH).
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Slide-over Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cartOverlay">
+        <div class="cart-drawer">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="cart-close-btn" id="cartCloseBtn">&times;</button>
+            </div>
+
+            <div class="free-shipping-bar" id="freeShippingNotice">
+                <span id="freeShippingText">Add CHF 150 for Free Delivery in CH</span>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="shippingProgressBar"></div>
+                </div>
+            </div>
+
+            <div class="cart-body" id="cartItemsList">
+                <!-- Cart items rendered dynamically -->
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-summary-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">CHF 0.00</span>
+                </div>
+                <button class="btn-checkout" id="checkoutBtn">Proceed to Checkout</button>
             </div>
         </div>
     </div>
 
+    <!-- Product Detail Lightbox Modal -->
+    <div class="modal-overlay" id="productModalOverlay">
+        <div class="modal-card">
+            <button class="modal-close" id="modalCloseBtn">&times;</button>
+            <div class="modal-image-col">
+                <img id="modalImage" src="" alt="Artwork detail">
+            </div>
+            <div class="modal-info-col">
+                <div class="modal-badge" id="modalBadge">Original 1-of-1</div>
+                <h2 class="modal-title" id="modalTitle">Artwork Title</h2>
+                <div class="modal-price" id="modalPrice">CHF 280</div>
+
+                <table class="specs-table">
+                    <tr>
+                        <td>Technique</td>
+                        <td id="modalTechnique">Sun-exposed Cyanotype</td>
+                    </tr>
+                    <tr>
+                        <td>Paper</td>
+                        <td id="modalPaper">300gsm Hahnemühle FineArt Cotton</td>
+                    </tr>
+                    <tr>
+                        <td>Dimensions</td>
+                        <td id="modalDimensions">30 x 40 cm</td>
+                    </tr>
+                    <tr>
+                        <td>Origin</td>
+                        <td id="modalOrigin">Handcrafted in Bern, Switzerland</td>
+                    </tr>
+                </table>
+
+                <div class="form-group" id="modalSizeGroup" style="display: none;">
+                    <label for="modalSizeSelect">Choose Print Format</label>
+                    <select id="modalSizeSelect" class="size-select">
+                        <!-- Options injected by JS -->
+                    </select>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-primary" id="modalAddToCartBtn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModalOverlay">
+        <div class="modal-card" style="max-width: 600px; grid-template-columns: 1fr;">
+            <button class="modal-close" id="checkoutCloseBtn">&times;</button>
+            <div class="checkout-step" id="checkoutFormStep">
+                <h2 class="modal-title" style="font-size: 1.8rem; margin-bottom: 20px;">Shipping & Order Summary</h2>
+                <form id="checkoutForm" onsubmit="event.preventDefault(); handleCompleteOrder();">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" required placeholder="e.g. Elena Rossi">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" required placeholder="elena@example.ch">
+                    </div>
+                    <div class="form-group">
+                        <label>Delivery Address</label>
+                        <input type="text" class="form-control" required placeholder="Kramgasse 42, 3011 Bern">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" class="form-control" required placeholder="Bern">
+                        </div>
+                        <div class="form-group">
+                            <label>Postal Code</label>
+                            <input type="text" class="form-control" required placeholder="3011">
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px; padding: 16px; background-color: var(--story-bg); border-radius: 4px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 4px;">
+                            <span>Total Payable:</span>
+                            <span id="checkoutTotalAmount">CHF 0.00</span>
+                        </div>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">Includes insurance & standard Swiss delivery.</span>
+                    </div>
+                    <button type="submit" class="btn-checkout">Complete Mock Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Madita</h3>
+                    <p>
+                        Handcrafted sun-exposed cyanotypes inspired by the wild botanicals and serene landscapes of Switzerland.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="#gallery">All Artworks</a></li>
+                        <li><a href="#originals">Originals (1-of-1)</a></li>
+                        <li><a href="#prints">Fine Art Prints</a></li>
+                        <li><a href="#story">Process & Studio</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#faq">Shipping Information</a></li>
+                        <li><a href="#faq">Framing Advice</a></li>
+                        <li><a href="https://instagram.com/madita_cyanotypes" target="_blank" rel="noopener">Instagram @madita_cyanotypes</a></li>
+                        <li><a href="mailto:hello@madita-cyanotype.ch">hello@madita-cyanotype.ch</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 12px;">Receive rare drop notices for 1-of-1 original releases.</p>
+                    <form onsubmit="event.preventDefault(); showToast('Subscribed to Madita journal!'); this.reset();">
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Madita Cyanotype Art. Handcrafted in Bern, Switzerland.</div>
+                <div>All rights reserved. Designed for collectors & nature lovers.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vanilla JavaScript Implementation -->
+    <script>
+        // Product Data Definition
+        const PRODUCTS = [
+            {
+                id: 'orig-1',
+                title: 'Alpine Fern No. 1',
+                category: 'original',
+                series: 'botanical',
+                type: '1-of-1 Original',
+                badge: '1-of-1 Original',
+                badgeClass: 'badge-gold',
+                details: '30x40 cm | Original Cyanotype on textured Hahnemühle cotton paper',
+                technique: 'Sun-exposed Prussian Blue Cyanotype',
+                paper: '300gsm Hahnemühle Mould-made Rag',
+                dimensions: '30 x 40 cm',
+                origin: 'Hand-pressed & developed in Bern, CH',
+                basePrice: 280,
+                image: 'images/alpine_fern.jpg',
+                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cpath d=\'M200,450 C200,300 250,200 280,100 M200,350 C180,300 130,250 110,210 M200,280 C220,230 270,180 290,140\' stroke=\'%23FBF9F5\' stroke-width=\'4\' fill=\'none\'/%3E%3Ctext x=\'50%25\' y=\'92%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EAlpine Fern No. 1%3C/text%3E%3C/svg%3E',
+                isOriginal: true
+            },
+            {
+                id: 'orig-2',
+                title: 'Bernese Peak Study',
+                category: 'original',
+                series: 'alpine',
+                type: '1-of-1 Original',
+                badge: '1-of-1 Original',
+                badgeClass: 'badge-gold',
+                details: '40x50 cm | Multi-layered cyanotype of Eiger & Jungfrau silhouettes',
+                technique: 'Double Solar Exposure Cyanotype',
+                paper: '350gsm Heavyweight Arches Paper',
+                dimensions: '40 x 50 cm',
+                origin: 'Exposed outdoors in Mürren, Bernese Oberland',
+                basePrice: 320,
+                image: 'images/bernese_peak.jpg',
+                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'350\' viewBox=\'0 0 500 350\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cpolygon points=\'50,300 180,120 310,300\' fill=\'%23162C4E\'/%3E%3Cpolygon points=\'200,300 320,80 450,300\' fill=\'%23224474\'/%3E%3Ctext x=\'50%25\' y=\'90%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EBernese Peak Study%3C/text%3E%3C/svg%3E',
+                isOriginal: true
+            },
+            {
+                id: 'orig-3',
+                title: 'Engadin Whispering Pines',
+                category: 'original',
+                series: 'botanical',
+                type: '1-of-1 Original',
+                badge: '1-of-1 Original',
+                badgeClass: 'badge-gold',
+                details: '30x40 cm | Wild Engadin pine needle impress on raw linen cotton paper',
+                technique: 'Direct Botanical Solar Exposure',
+                paper: '300gsm Handmade Linen Cotton Rag',
+                dimensions: '30 x 40 cm',
+                origin: 'Collected in St. Moritz & crafted in Bern',
+                basePrice: 295,
+                image: 'images/engadin_pine.jpg',
+                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cline x1=\'200\' y1=\'400\' x2=\'200\' y2=\'100\' stroke=\'%23FBF9F5\' stroke-width=\'3\'/%3E%3Ctext x=\'50%25\' y=\'92%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EEngadin Whispering Pines%3C/text%3E%3C/svg%3E',
+                isOriginal: true
+            },
+            {
+                id: 'print-1',
+                title: 'The Matterhorn, Blue',
+                category: 'print',
+                series: 'alpine',
+                type: 'Fine Art Print',
+                badge: 'Bestseller',
+                badgeClass: '',
+                details: 'Museum-grade Giclée print of iconic cyanotype artwork',
+                technique: '12-Color Archival Pigment Giclée Print',
+                paper: '290gsm Hahnemühle Bamboo FineArt',
+                dimensions: 'Multiple formats available',
+                origin: 'Printed in Zurich, Switzerland',
+                basePrice: 75,
+                image: 'images/matterhorn.jpg',
+                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cpolygon points=\'100,400 230,100 320,400\' fill=\'%23EBF1F8\' opacity=\'0.2\'/%3E%3Ctext x=\'50%25\' y=\'92%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EThe Matterhorn, Blue%3C/text%3E%3C/svg%3E',
+                isOriginal: false,
+                sizes: [
+                    { name: 'A4 (21x29.7 cm)', price: 55 },
+                    { name: 'A3 (29.7x42 cm)', price: 75 },
+                    { name: 'A2 (42x59.4 cm)', price: 110 }
+                ]
+            },
+            {
+                id: 'print-2',
+                title: 'Lake Geneva Botanicals',
+                category: 'print',
+                series: 'botanical',
+                type: 'Fine Art Print',
+                badge: 'Archival Giclée',
+                badgeClass: '',
+                details: 'Botanical grid composition of pressed Vaudois lake leaves',
+                technique: 'Archival Fine Art Reproduction',
+                paper: '300gsm Cotton Smooth Rag',
+                dimensions: 'Multiple formats available',
+                origin: 'Designed in Bern, Printed in CH',
+                basePrice: 75,
+                image: 'images/lake_botanicals.jpg',
+                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Crect x=\'60\' y=\'80\' width=\'120\' height=\'150\' fill=\'none\' stroke=\'%23FBF9F5\' stroke-width=\'1\'/%3E%3Crect x='220\' y=\'80\' width=\'120\' height=\'150\' fill=\'none\' stroke=\'%23FBF9F5\' stroke-width=\'1\'/%3E%3Ctext x=\'50%25\' y=\'92%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3ELake Geneva Botanicals%3C/text%3E%3C/svg%3E',
+                isOriginal: false,
+                sizes: [
+                    { name: 'A4 (21x29.7 cm)', price: 55 },
+                    { name: 'A3 (29.7x42 cm)', price: 75 },
+                    { name: 'A2 (42x59.4 cm)', price: 110 }
+                ]
+            },
+            {
+                id: 'print-3',
+                title: 'Alpine Fern Fine Art Edition',
+                category: 'print',
+                series: 'botanical',
+                type: 'Fine Art Print',
+                badge: 'Limited Edition',
+                badgeClass: '',
+                details: 'Limited run archival giclée print of our flagship original',
+                technique: 'UltraChrome Pro 10-Color Print',
+                paper: '310gsm German Etching FineArt',
+                dimensions: 'Multiple formats available',
+                origin: 'Hand-numbered edition of 50',
+                basePrice: 70,
+                image: 'images/alpine_fern.jpg',
+                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EAlpine Fern Edition%3C/text%3E%3C/svg%3E',
+                isOriginal: false,
+                sizes: [
+                    { name: 'A4 (21x29.7 cm)', price: 50 },
+                    { name: 'A3 (29.7x42 cm)', price: 70 },
+                    { name: 'A2 (42x59.4 cm)', price: 105 }
+                ]
+            }
+        ];
+
+        // Global State
+        let cart = [];
+        let activeFilter = 'all';
+        let currentModalProductId = null;
+
+        // DOM Element Cache
+        const productGrid = document.getElementById('productGrid');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartItemsList = document.getElementById('cartItemsList');
+        const cartSubtotal = document.getElementById('cartSubtotal');
+        const cartCountBadge = document.getElementById('cartCountBadge');
+        const cartTriggerBtn = document.getElementById('cartTriggerBtn');
+        const cartCloseBtn = document.getElementById('cartCloseBtn');
+        const shippingProgressBar = document.getElementById('shippingProgressBar');
+        const freeShippingText = document.getElementById('freeShippingText');
+
+        const productModalOverlay = document.getElementById('productModalOverlay');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        const modalImage = document.getElementById('modalImage');
+        const modalBadge = document.getElementById('modalBadge');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalTechnique = document.getElementById('modalTechnique');
+        const modalPaper = document.getElementById('modalPaper');
+        const modalDimensions = document.getElementById('modalDimensions');
+        const modalOrigin = document.getElementById('modalOrigin');
+        const modalSizeGroup = document.getElementById('modalSizeGroup');
+        const modalSizeSelect = document.getElementById('modalSizeSelect');
+        const modalAddToCartBtn = document.getElementById('modalAddToCartBtn');
+
+        const checkoutModalOverlay = document.getElementById('checkoutModalOverlay');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const checkoutCloseBtn = document.getElementById('checkoutCloseBtn');
+        const checkoutTotalAmount = document.getElementById('checkoutTotalAmount');
+
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        // Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCartFromLocalStorage();
+            renderProducts();
+            initFilterNav();
+            initFaqAccordion();
+            initEventListeners();
+            updateCartUI();
+        });
+
+        // Load Cart from LocalStorage
+        function loadCartFromLocalStorage() {
+            try {
+                const savedCart = localStorage.getItem('madita_cart');
+                if (savedCart) {
+                    cart = JSON.parse(savedCart);
+                }
+            } catch (e) {
+                console.error('Could not load cart from localStorage', e);
+            }
+        }
+
+        // Save Cart to LocalStorage
+        function saveCartToLocalStorage() {
+            try {
+                localStorage.setItem('madita_cart', JSON.stringify(cart));
+            } catch (e) {
+                console.error('Could not save cart to localStorage', e);
+            }
+        }
+
+        // Render Product Cards Grid
+        function renderProducts() {
+            productGrid.innerHTML = '';
+
+            const filteredProducts = PRODUCTS.filter(p => {
+                if (activeFilter === 'all') return true;
+                if (activeFilter === 'original') return p.category === 'original';
+                if (activeFilter === 'print') return p.category === 'print';
+                if (activeFilter === 'botanical') return p.series === 'botanical';
+                if (activeFilter === 'alpine') return p.series === 'alpine';
+                return true;
+            });
+
+            filteredProducts.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.setAttribute('data-id', product.id);
+
+                const imageAspectClass = product.isOriginal ? '' : 'portrait';
+
+                let sizeSelectorHtml = '';
+                if (!product.isOriginal && product.sizes) {
+                    sizeSelectorHtml = `
+                        <div class="size-select-wrapper">
+                            <select class="size-select" id="size-select-${product.id}" onchange="handleCardSizeChange('${product.id}', this.value)">
+                                ${product.sizes.map((s, idx) => `<option value="${idx}">${s.name} - CHF ${s.price}</option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <div class="card-image-wrapper ${imageAspectClass}" onclick="openProductModal('${product.id}')">
+                        <img src="${product.image}" alt="${product.title}" onerror="this.src='${product.fallbackSvg}'">
+                        <span class="badge ${product.badgeClass}">${product.badge}</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">${product.title}</div>
+                        <div class="card-details">${product.details}</div>
+                        <div class="card-controls">
+                            ${sizeSelectorHtml}
+                            <div class="card-price-row">
+                                <span class="card-price" id="price-display-${product.id}">CHF ${product.basePrice}</span>
+                            </div>
+                            <div class="card-buttons">
+                                <button class="btn-card-action" onclick="openProductModal('${product.id}')">Quick View</button>
+                                <button class="btn-card-action primary" onclick="handleAddToCartClick('${product.id}')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                productGrid.appendChild(card);
+            });
+        }
+
+        // Filter Nav Event Handler
+        function initFilterNav() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    activeFilter = btn.getAttribute('data-filter');
+                    renderProducts();
+                });
+            });
+        }
+
+        // Handle Size Dropdown Change on Card
+        function handleCardSizeChange(productId, selectedIndex) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (product && product.sizes) {
+                const selectedSize = product.sizes[selectedIndex];
+                const priceDisplay = document.getElementById(`price-display-${productId}`);
+                if (priceDisplay) {
+                    priceDisplay.innerText = `CHF ${selectedSize.price}`;
+                }
+            }
+        }
+
+        // Handle "Add to Cart" Button Click from Card Grid
+        function handleAddToCartClick(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            let chosenSize = null;
+            let finalPrice = product.basePrice;
+
+            if (!product.isOriginal && product.sizes) {
+                const selectElem = document.getElementById(`size-select-${productId}`);
+                const selectedIdx = selectElem ? parseInt(selectElem.value) : 0;
+                chosenSize = product.sizes[selectedIdx].name;
+                finalPrice = product.sizes[selectedIdx].price;
+            }
+
+            addToCart({
+                id: product.id,
+                title: product.title,
+                size: chosenSize,
+                price: finalPrice,
+                image: product.image,
+                fallbackSvg: product.fallbackSvg,
+                isOriginal: product.isOriginal
+            });
+
+            showToast(`Added "${product.title}" to your cart`);
+        }
+
+        // Add Item Object to Cart Array
+        function addToCart(itemData) {
+            const cartItemId = itemData.id + (itemData.size ? '-' + itemData.size : '');
+            const existingItem = cart.find(item => item.cartItemId === cartItemId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    cartItemId: cartItemId,
+                    productId: itemData.id,
+                    title: itemData.title,
+                    size: itemData.size,
+                    price: itemData.price,
+                    image: itemData.image,
+                    fallbackSvg: itemData.fallbackSvg,
+                    quantity: 1
+                });
+            }
+
+            saveCartToLocalStorage();
+            updateCartUI();
+            triggerBadgePulse();
+        }
+
+        // Update Cart Drawer & Badge UI
+        function updateCartUI() {
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountBadge.innerText = totalCount;
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartSubtotal.innerText = `CHF ${subtotal.toFixed(2)}`;
+
+            // Free Shipping Progress Calculation (Free over CHF 150)
+            const freeShippingThreshold = 150;
+            if (subtotal >= freeShippingThreshold) {
+                freeShippingText.innerHTML = '🎉 <strong>Free Delivery Unlocked!</strong>';
+                shippingProgressBar.style.width = '100%';
+            } else {
+                const remaining = freeShippingThreshold - subtotal;
+                const progressPct = Math.min((subtotal / freeShippingThreshold) * 100, 100);
+                freeShippingText.innerHTML = `Add <strong>CHF ${remaining.toFixed(2)}</strong> for Free Delivery in CH`;
+                shippingProgressBar.style.width = `${progressPct}%`;
+            }
+
+            // Render Cart Drawer Body Items
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = `
+                    <div class="cart-empty-state">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                        </svg>
+                        <p>Your shopping cart is empty.</p>
+                        <a href="#gallery" onclick="closeCart()" style="color: var(--accent-color); font-size: 0.85rem; text-decoration: underline; margin-top: 8px; display: inline-block;">Discover artworks</a>
+                    </div>
+                `;
+            } else {
+                cartItemsList.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.title}" class="cart-item-img" onerror="this.src='${item.fallbackSvg}'">
+                        <div class="cart-item-info">
+                            <div class="cart-item-title">${item.title}</div>
+                            <div class="cart-item-meta">${item.size ? 'Format: ' + item.size : 'Original 1-of-1 Piece'}</div>
+                            <div class="cart-item-price">CHF ${(item.price * item.quantity).toFixed(2)}</div>
+                        </div>
+                        <div class="cart-quantity-controls">
+                            <button class="qty-btn" onclick="updateItemQuantity('${item.cartItemId}', -1)">-</button>
+                            <span class="qty-num">${item.quantity}</span>
+                            <button class="qty-btn" onclick="updateItemQuantity('${item.cartItemId}', 1)">+</button>
+                        </div>
+                        <button class="remove-item-btn" onclick="removeItemFromCart('${item.cartItemId}')">Remove</button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Quantity Increment / Decrement
+        function updateItemQuantity(cartItemId, delta) {
+            const item = cart.find(i => i.cartItemId === cartItemId);
+            if (!item) return;
+
+            item.quantity += delta;
+            if (item.quantity <= 0) {
+                removeItemFromCart(cartItemId);
+            } else {
+                saveCartToLocalStorage();
+                updateCartUI();
+            }
+        }
+
+        // Remove Item
+        function removeItemFromCart(cartItemId) {
+            cart = cart.filter(i => i.cartItemId !== cartItemId);
+            saveCartToLocalStorage();
+            updateCartUI();
+            showToast('Item removed from cart');
+        }
+
+        // Cart Badge Pulse Effect
+        function triggerBadgePulse() {
+            cartCountBadge.classList.add('pulse');
+            setTimeout(() => {
+                cartCountBadge.classList.remove('pulse');
+            }, 300);
+        }
+
+        // Open / Close Cart Drawer
+        function openCart() {
+            cartOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            cartOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Open Detail Lightbox Modal
+        function openProductModal(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            currentModalProductId = productId;
+            modalImage.src = product.image;
+            modalImage.onerror = () => { modalImage.src = product.fallbackSvg; };
+            modalBadge.innerText = product.badge;
+            modalTitle.innerText = product.title;
+            modalPrice.innerText = `CHF ${product.basePrice}`;
+            modalTechnique.innerText = product.technique;
+            modalPaper.innerText = product.paper;
+            modalDimensions.innerText = product.dimensions;
+            modalOrigin.innerText = product.origin;
+
+            if (!product.isOriginal && product.sizes) {
+                modalSizeGroup.style.display = 'block';
+                modalSizeSelect.innerHTML = product.sizes.map((s, idx) => `
+                    <option value="${idx}">${s.name} - CHF ${s.price}</option>
+                `).join('');
+                modalPrice.innerText = `CHF ${product.sizes[0].price}`;
+
+                modalSizeSelect.onchange = (e) => {
+                    const chosen = product.sizes[e.target.value];
+                    modalPrice.innerText = `CHF ${chosen.price}`;
+                };
+            } else {
+                modalSizeGroup.style.display = 'none';
+            }
+
+            productModalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProductModal() {
+            productModalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Modal Add to Cart Action
+        modalAddToCartBtn.addEventListener('click', () => {
+            if (!currentModalProductId) return;
+            const product = PRODUCTS.find(p => p.id === currentModalProductId);
+            if (!product) return;
+
+            let chosenSize = null;
+            let finalPrice = product.basePrice;
+
+            if (!product.isOriginal && product.sizes) {
+                const selectedIdx = parseInt(modalSizeSelect.value);
+                chosenSize = product.sizes[selectedIdx].name;
+                finalPrice = product.sizes[selectedIdx].price;
+            }
+
+            addToCart({
+                id: product.id,
+                title: product.title,
+                size: chosenSize,
+                price: finalPrice,
+                image: product.image,
+                fallbackSvg: product.fallbackSvg,
+                isOriginal: product.isOriginal
+            });
+
+            closeProductModal();
+            openCart();
+            showToast(`Added "${product.title}" to cart`);
+        });
+
+        // Checkout Modal Action
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                showToast('Your cart is empty');
+                return;
+            }
+            closeCart();
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            checkoutTotalAmount.innerText = `CHF ${subtotal.toFixed(2)}`;
+            checkoutModalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function closeCheckoutModal() {
+            checkoutModalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function handleCompleteOrder() {
+            cart = [];
+            saveCartToLocalStorage();
+            updateCartUI();
+            closeCheckoutModal();
+            showToast('🎉 Order Placed! Thank you for supporting Swiss art.');
+        }
+
+        // FAQ Accordion Toggle
+        function initFaqAccordion() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const questionBtn = item.querySelector('.faq-question');
+                questionBtn.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+                    faqItems.forEach(i => i.classList.remove('open'));
+                    if (!isOpen) {
+                        item.classList.add('open');
+                    }
+                });
+            });
+        }
+
+        // Toast Notification System
+        function showToast(message) {
+            const toastContainer = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>${message}</span>
+            `;
+            toastContainer.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(100%)';
+                toast.style.transition = 'all 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Setup All Core Event Listeners
+        function initEventListeners() {
+            // Cart Triggers
+            cartTriggerBtn.addEventListener('click', openCart);
+            cartCloseBtn.addEventListener('click', closeCart);
+            cartOverlay.addEventListener('click', (e) => {
+                if (e.target === cartOverlay) closeCart();
+            });
+
+            // Modal Closes
+            modalCloseBtn.addEventListener('click', closeProductModal);
+            productModalOverlay.addEventListener('click', (e) => {
+                if (e.target === productModalOverlay) closeProductModal();
+            });
+
+            checkoutCloseBtn.addEventListener('click', closeCheckoutModal);
+            checkoutModalOverlay.addEventListener('click', (e) => {
+                if (e.target === checkoutModalOverlay) closeCheckoutModal();
+            });
+
+            // Keyboard Escape Listener
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeCart();
+                    closeProductModal();
+                    closeCheckoutModal();
+                }
+            });
+
+            // Hamburger Mobile Menu
+            hamburgerBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
