@@ -95,9 +95,9 @@
             font-weight: 600;
         }
 
-        /* Header Navigation */
+        /* Spacious & Clean Desktop Header */
         header {
-            background-color: rgba(253, 251, 247, 0.88);
+            background-color: rgba(253, 251, 247, 0.9);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(239, 236, 230, 0.7);
@@ -109,9 +109,9 @@
         }
 
         .header-container {
-            max-width: 1280px;
+            max-width: 1320px;
             margin: 0 auto;
-            padding: 16px 36px;
+            padding: 20px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -127,7 +127,7 @@
         }
 
         .logo {
-            font-size: 2.4rem;
+            font-size: 2.5rem;
             font-weight: 300;
             letter-spacing: 5px;
             line-height: 1;
@@ -146,7 +146,7 @@
         nav.desktop-nav {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 36px;
         }
 
         nav.desktop-nav a {
@@ -182,7 +182,7 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 22px;
         }
 
         /* Language Switcher */
@@ -190,7 +190,7 @@
             display: flex;
             align-items: center;
             gap: 3px;
-            background: rgba(255, 255, 255, 0.65);
+            background: rgba(255, 255, 255, 0.7);
             border: 1px solid var(--border-soft);
             padding: 3px 5px;
             border-radius: var(--radius-pill);
@@ -228,7 +228,7 @@
         }
 
         .cart-trigger {
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 255, 255, 0.8);
             border: 1px solid var(--border-soft);
             cursor: pointer;
             display: inline-flex;
@@ -240,7 +240,7 @@
             font-weight: 500;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 8px 16px;
+            padding: 8px 18px;
             min-height: 42px;
             border-radius: var(--radius-pill);
             box-shadow: var(--shadow-subtle);
@@ -1073,6 +1073,55 @@
             line-height: 1.7;
         }
 
+        /* Minimal Footer for Category Views */
+        .category-minimal-footer {
+            border-top: 1px solid var(--border-soft);
+            padding: 40px 0 60px;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .category-footer-prompt {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .category-footer-prompt a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn-back-to-top {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--border-soft);
+            color: var(--text-color);
+            padding: 10px 24px;
+            min-height: 42px;
+            font-size: 0.76rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: var(--radius-pill);
+            cursor: pointer;
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            margin-top: 0;
+        }
+
+        .btn-back-to-top:hover {
+            background: #FFFFFF;
+            border-color: var(--text-color);
+            transform: translateY(-2px);
+        }
+
         /* Slide-over Shopping Cart Drawer */
         .cart-drawer-overlay {
             position: fixed;
@@ -1520,8 +1569,8 @@
             gap: 16px;
         }
 
-        /* Footer */
-        footer {
+        /* Main Footer */
+        footer#mainFooter {
             background: linear-gradient(180deg, #11223A 0%, #0B1728 100%);
             color: #E5E8EC;
             padding: 80px 0 40px;
@@ -1635,7 +1684,7 @@
             width: 100%;
         }
 
-        /* Refined Compact Mobile Breakpoints (< 768px & < 480px) */
+        /* Mobile Breakpoints (< 768px) */
         @media (max-width: 768px) {
             .header-container {
                 padding: 10px 14px;
@@ -1694,37 +1743,7 @@
                 line-height: 1.18;
                 margin-bottom: 16px;
             }
-            .hero p {
-                font-size: 0.95rem;
-                margin-bottom: 24px;
-                line-height: 1.65;
-            }
-            .hero-ctas {
-                flex-direction: column;
-                gap: 10px;
-                width: 100%;
-            }
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                min-height: 44px;
-                padding: 12px 20px;
-                font-size: 0.76rem;
-            }
 
-            .showcase-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-                margin-bottom: 20px;
-            }
-            .showcase-header h3 {
-                font-size: 1.6rem;
-            }
-            .btn-editorial-link {
-                font-size: 0.76rem;
-            }
-
-            /* Compact 2-Column Mobile Artwork Grid Layout */
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
@@ -1736,228 +1755,9 @@
                 border-radius: 14px;
             }
 
-            .card-image-wrapper {
-                padding: 6px;
-                margin-bottom: 10px;
-                border-radius: 10px;
-            }
-
-            .badge {
-                top: 10px;
-                left: 10px;
-                font-size: 0.55rem;
-                padding: 3px 6px;
-            }
-
-            .card-title {
-                font-size: 0.98rem;
-                margin-bottom: 3px;
-                line-height: 1.25;
-            }
-
-            .card-details {
-                font-size: 0.72rem;
-                line-height: 1.4;
-                margin-bottom: 10px;
-            }
-
-            .card-price {
-                font-size: 0.92rem;
-            }
-
-            .btn-card-action {
-                font-size: 0.62rem;
-                padding: 6px 2px;
-                min-height: 36px;
-                letter-spacing: 0.5px;
-            }
-
-            select.size-select {
-                font-size: 0.65rem;
-                padding: 6px 8px;
-                min-height: 36px;
-            }
-
-            .story-section {
-                padding: 28px 14px;
-                margin-top: 15px;
-                margin-bottom: 40px;
-                border-radius: 18px;
-            }
-
-            .story-grid {
-                grid-template-columns: 1fr;
-                gap: 22px;
-            }
-
-            .story-image-container {
-                padding: 10px;
-                border-radius: 14px;
-            }
-
-            .story-badge-floating {
-                position: static;
-                margin-top: 12px;
-                max-width: 100%;
-                transform: none;
-                padding: 14px 16px;
-                border-radius: 12px;
-                box-shadow: var(--shadow-card);
-            }
-
-            .story-badge-floating p {
-                font-size: 1rem;
-            }
-
-            .story-text h2 {
-                font-size: 1.95rem;
-            }
-
-            .story-text p {
-                font-size: 0.9rem;
-            }
-
-            .bts-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
-            }
-
-            .bts-card img {
-                height: 110px;
-            }
-
-            .custom-banner-section {
-                padding: 28px 16px;
-                border-radius: 18px;
-                margin-bottom: 45px;
-            }
-
-            .custom-banner-section h2 {
-                font-size: 1.9rem;
-            }
-
-            .custom-banner-section p {
-                font-size: 0.9rem;
-                margin-bottom: 20px;
-            }
-
-            .contact-section {
-                padding: 28px 16px;
-                border-radius: 18px;
-                margin-bottom: 45px;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .contact-info h2 {
-                font-size: 1.9rem;
-            }
-
-            .whatsapp-btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .process-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-                margin-top: 30px;
-            }
-
-            .process-card {
-                padding: 20px 18px;
-                border-radius: 14px;
-            }
-
-            .cart-drawer {
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .cart-header {
-                padding: 18px 20px;
-            }
-
-            .cart-body {
-                padding: 20px 16px;
-            }
-
-            .cart-footer {
-                padding: 18px 20px;
-            }
-
-            .modal-overlay {
-                padding: 8px;
-            }
-
-            .modal-card {
-                grid-template-columns: 1fr;
-                width: 100%;
-                max-width: 100%;
-                max-height: 94vh;
-                border-radius: 18px;
-            }
-
-            .modal-image-col {
-                border-radius: 18px 18px 0 0;
-                padding: 18px;
-                max-height: 240px;
-            }
-
-            .modal-info-col {
-                padding: 22px 18px;
-            }
-
-            .modal-title {
-                font-size: 1.6rem;
-            }
-
-            .modal-close {
-                top: 10px;
-                right: 10px;
-                width: 36px;
-                height: 36px;
-            }
-
-            .checkout-step {
-                padding: 20px 16px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .toast-container {
-                left: 12px;
-                right: 12px;
-                bottom: 16px;
-            }
-
-            .toast {
-                width: 100%;
-                justify-content: center;
-                padding: 12px 16px;
-                font-size: 0.8rem;
-            }
-
-            footer {
-                padding: 45px 0 25px;
-                border-radius: 20px 20px 0 0;
-            }
-
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 28px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
             }
         }
     </style>
@@ -1969,7 +1769,7 @@
         Kostenloser versicherter Versand in der Schweiz ab <span>CHF 150</span>
     </div>
 
-    <!-- Header Navigation -->
+    <!-- Spacious & Clean Desktop Header -->
     <header>
         <div class="header-container">
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
@@ -2039,14 +1839,14 @@
     <!-- Main Content Container -->
     <div class="container" id="mainContainer">
 
-        <!-- Category Breadcrumb Bar (Visible on Full Category Views) -->
+        <!-- Category Breadcrumb Bar -->
         <div class="breadcrumb-nav" id="breadcrumbBar" style="display: none;">
             <a href="#home" onclick="switchView('home')" data-i18n="back_to_home">← Zurück zur Übersicht</a>
             <span>/</span>
             <span id="breadcrumbCurrentTitle" style="color: var(--text-color); font-weight: 500;">Originale</span>
         </div>
 
-        <!-- Filter Tabs Bar (Visible on Home & All Works view) -->
+        <!-- Filter Tabs Bar -->
         <div class="filter-nav" id="filterNav">
             <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Alle Werke</button>
             <button class="filter-btn" data-filter="original" data-i18n="filter_original">1-of-1 Originale</button>
@@ -2080,7 +1880,7 @@
             </div>
         </div>
 
-        <!-- FULL CATEGORY TARGET GRID (Visible on Full Category Views like #originals or #prints or filtered) -->
+        <!-- FULL CATEGORY TARGET GRID (All 12 items for category view) -->
         <div class="view-section" id="fullCategorySection" style="display: none;">
             <div class="section-header" style="text-align: left; margin-bottom: 30px;">
                 <h2 id="fullCategoryTitle">Alle Werke</h2>
@@ -2090,7 +1890,7 @@
             </div>
         </div>
 
-        <!-- Story & Process Section (Our Atelier) -->
+        <!-- Story & Process Section -->
         <section class="story-section" id="story">
             <div class="story-grid">
                 <div class="story-image-container">
@@ -2191,7 +1991,6 @@
                         Haben Sie Fragen zu unseren Unikaten, Versand oder Sonderanfertigungen? Wir freuen uns auf Ihre Nachricht.
                     </p>
 
-                    <!-- Official WhatsApp Click-to-Chat Button -->
                     <a href="https://wa.me/41790000000?text=Hallo%20Madita%20Atelier,%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Cyanotypie-Kunstwerke." 
                        target="_blank" rel="noopener" class="whatsapp-btn" id="whatsappLink">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -2218,6 +2017,16 @@
                 </form>
             </div>
         </section>
+
+        <!-- Minimal Footer for Category Pages -->
+        <div class="category-minimal-footer" id="categoryFooter" style="display: none;">
+            <div class="category-footer-prompt">
+                <span data-i18n="category_footer_prompt">Möchten Sie ein individuelles Unikat auf Bestellung?</span> 
+                <a href="#custom" onclick="openCustomModal()" data-i18n="contact_us_short">Kontaktieren Sie unser Atelier in Bern</a>
+            </div>
+            <button class="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" data-i18n="back_to_top">Nach oben ↑</button>
+        </div>
+
     </div>
 
     <!-- Slide-over Shopping Cart Drawer -->
@@ -2414,8 +2223,8 @@
     <!-- Toast Container -->
     <div class="toast-container" id="toastContainer"></div>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Main Footer -->
+    <footer id="mainFooter">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
@@ -2542,6 +2351,9 @@
                 contact_submit: "Nachricht Absenden",
                 whatsapp_btn: "Direkt per WhatsApp Schreiben",
                 whatsapp_text: "Hallo Madita Atelier, ich interessiere mich für Ihre Cyanotypie-Kunstwerke.",
+                back_to_top: "Nach oben ↑",
+                category_footer_prompt: "Möchten Sie ein individuelles Unikat auf Bestellung?",
+                contact_us_short: "Kontaktieren Sie unser Atelier in Bern",
                 proc_1_num: "01",
                 proc_1_title: "Botanische Suche",
                 proc_1_desc: "Sorgfältige Auswahl wilder Farne, Kiefernnadeln und Almenblumen im Berner Oberland und am Thunersee.",
@@ -2652,6 +2464,9 @@
                 contact_submit: "Send Message",
                 whatsapp_btn: "Message Us on WhatsApp",
                 whatsapp_text: "Hello Madita Studio, I am interested in your cyanotype artworks.",
+                back_to_top: "Back to Top ↑",
+                category_footer_prompt: "Looking for a custom 1-of-1 bespoke piece?",
+                contact_us_short: "Contact our studio in Bern",
                 proc_1_num: "01",
                 proc_1_title: "Botanical Foraging",
                 proc_1_desc: "Carefully selecting wild ferns, pine needles, and alpine blooms across the Bernese Oberland and Lake Thun trailways.",
@@ -2762,6 +2577,9 @@
                 contact_submit: "Envoyer le Message",
                 whatsapp_btn: "Écrivez-nous sur WhatsApp",
                 whatsapp_text: "Bonjour Madita Atelier, je suis intéressé(e) par vos créations.",
+                back_to_top: "Haut de page ↑",
+                category_footer_prompt: "Vous souhaitez une pièce unique sur mesure?",
+                contact_us_short: "Contactez notre atelier à Berne",
                 proc_1_num: "01",
                 proc_1_title: "Cueillette Botanique",
                 proc_1_desc: "Sélection minutieuse de fougères sauvages, d'aiguilles de pin et de fleurs alpines dans l'Oberland bernois.",
@@ -2792,7 +2610,7 @@
                 footer_desc: "Cyanotypes artisanaux exposés au soleil, inspirés par la nature sauvage et les paysages sereins de la Suisse.",
                 footer_nav: "Navigation",
                 footer_care: "Service Client",
-                footer_newsletter: "Lettre d'Information",
+                footer_newsletter: "Newsletter",
                 footer_news_sub: "Recevez les annonces rares des nouvelles parutions d'originaux.",
                 newsletter_placeholder: "Votre adresse e-mail",
                 footer_join: "S'inscrire",
@@ -2801,118 +2619,173 @@
             }
         };
 
-        // Product Catalog Data
+        // Expanded Product Catalog Data (12 Demo Items per Category)
         const PRODUCTS = [
+            // --- 12 ORIGINALS ---
             {
-                id: 'orig-1',
-                category: 'original',
-                series: 'botanical',
-                isSoldOut: false,
-                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' },
-                badgeClass: 'badge-gold',
+                id: 'orig-1', category: 'original', series: 'botanical', isSoldOut: false,
+                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' }, badgeClass: 'badge-gold',
                 title: { de: 'Alpenfarn Nr. 1', en: 'Alpine Fern No. 1', fr: 'Fougère Alpine N° 1' },
-                details: {
-                    de: '30x40 cm | Original-Cyanotypie auf strukturiertem Hahnemühle-Baumwollkarton',
-                    en: '30x40 cm | Original Cyanotype on textured Hahnemühle cotton paper',
-                    fr: '30x40 cm | Cyanotype original sur papier coton Hahnemühle'
-                },
-                technique: { de: 'Sonnenbelichtete Preussischblau-Cyanotypie', en: 'Sun-exposed Prussian Blue Cyanotype', fr: 'Cyanotype bleu de Prusse exposé au soleil' },
-                paper: { de: '300g/m² Hahnemühle Baumwollkarton', en: '300gsm Hahnemühle Mould-made Rag', fr: 'Papier coton Hahnemühle 300g/m²' },
-                dimensions: '30 x 40 cm',
-                origin: { de: 'Handgefertigt & belichtet in Bern, CH', en: 'Hand-pressed & developed in Bern, CH', fr: 'Fait main & développé à Berne, CH' },
-                basePrice: 280,
-                image: 'images/alpine_fern.jpg',
-                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cpath d=\'M200,450 C200,300 250,200 280,100 M200,350 C180,300 130,250 110,210 M200,280 C220,230 270,180 290,140\' stroke=\'%23FBF9F5\' stroke-width=\'4\' fill=\'none\'/%3E%3Ctext x=\'50%25\' y=\'92%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EAlpine Fern No. 1%3C/text%3E%3C/svg%3E',
-                isOriginal: true
+                details: { de: '30x40 cm | Original-Cyanotypie auf Hahnemühle-Baumwollkarton', en: '30x40 cm | Original Cyanotype on Hahnemühle paper', fr: '30x40 cm | Cyanotype original sur papier Hahnemühle' },
+                technique: { de: 'Sonnenbelichtete Cyanotypie', en: 'Sun-exposed Cyanotype', fr: 'Cyanotype exposé au soleil' },
+                paper: { de: '300g/m² Hahnemühle Baumwollkarton', en: '300gsm Hahnemühle Rag', fr: 'Papier coton 300g/m²' },
+                dimensions: '30 x 40 cm', origin: { de: 'Belichtet in Bern, CH', en: 'Developed in Bern, CH', fr: 'Développé à Berne, CH' },
+                basePrice: 280, image: 'images/alpine_fern.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EAlpine Fern No. 1%3C/text%3E%3C/svg%3E', isOriginal: true
             },
             {
-                id: 'orig-2',
-                category: 'original',
-                series: 'alpine',
-                isSoldOut: false,
-                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' },
-                badgeClass: 'badge-gold',
+                id: 'orig-2', category: 'original', series: 'alpine', isSoldOut: false,
+                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' }, badgeClass: 'badge-gold',
                 title: { de: 'Berner Gipfelstudie', en: 'Bernese Peak Study', fr: 'Étude des Sommets Bernois' },
-                details: {
-                    de: '40x50 cm | Mehrschichtige Cyanotypie der Eiger- & Jungfrau-Silhouetten',
-                    en: '40x50 cm | Multi-layered cyanotype of Eiger & Jungfrau silhouettes',
-                    fr: '40x50 cm | Cyanotype multicouche des silhouettes de l\'Eiger & Jungfrau'
-                },
-                technique: { de: 'Doppelte Solarbelichtung', en: 'Double Solar Exposure Cyanotype', fr: 'Cyanotype à double exposition solaire' },
-                paper: { de: '350g/m² Arches Büttenpapier', en: '350gsm Heavyweight Arches Paper', fr: 'Papier Arches 350g/m²' },
-                dimensions: '40 x 50 cm',
-                origin: { de: 'Freiluftbelichtung in Mürren, Berner Oberland', en: 'Exposed outdoors in Mürren, Bernese Oberland', fr: 'Exposé en plein air à Mürren, Oberland bernois' },
-                basePrice: 320,
-                image: 'images/bernese_peak.jpg',
-                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'350\' viewBox=\'0 0 500 350\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cpolygon points=\'50,300 180,120 310,300\' fill=\'%23162C4E\'/%3E%3Cpolygon points=\'200,300 320,80 450,300\' fill=\'%23224474\'/%3E%3Ctext x=\'50%25\' y=\'90%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EBernese Peak Study%3C/text%3E%3C/svg%3E',
-                isOriginal: true
+                details: { de: '40x50 cm | Mehrschichtige Cyanotypie der Eiger- & Jungfrau-Silhouetten', en: '40x50 cm | Multi-layered cyanotype of Eiger & Jungfrau', fr: '40x50 cm | Cyanotype multicouche de l\'Eiger & Jungfrau' },
+                technique: { de: 'Doppelte Solarbelichtung', en: 'Double Solar Exposure', fr: 'Double exposition solaire' },
+                paper: { de: '350g/m² Arches Büttenpapier', en: '350gsm Arches Paper', fr: 'Papier Arches 350g/m²' },
+                dimensions: '40 x 50 cm', origin: { de: 'Mürren, Berner Oberland', en: 'Mürren, Bernese Oberland', fr: 'Mürren, Oberland bernois' },
+                basePrice: 320, image: 'images/bernese_peak.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'350\' viewBox=\'0 0 500 350\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EBernese Peak Study%3C/text%3E%3C/svg%3E', isOriginal: true
             },
             {
-                id: 'orig-3',
-                category: 'original',
-                series: 'botanical',
-                isSoldOut: true,
-                badge: { de: 'Verkauft', en: 'Sold Out', fr: 'Vendu' },
-                badgeClass: 'badge-sold',
+                id: 'orig-3', category: 'original', series: 'botanical', isSoldOut: true,
+                badge: { de: 'Verkauft', en: 'Sold Out', fr: 'Vendu' }, badgeClass: 'badge-sold',
                 title: { de: 'Flüsternde Engadiner Kiefern', en: 'Engadin Whispering Pines', fr: 'Pins Murmurants de l\'Engadine' },
-                details: {
-                    de: '30x40 cm | Wilder Kiefernnadel-Abdruck auf rohem Leinen-Baumwollkarton (Privatsammlung)',
-                    en: '30x40 cm | Wild Engadin pine needle impress on raw linen paper (Private Collection)',
-                    fr: '30x40 cm | Empreinte d\'aiguilles de pin sur papier lin (Collection Privée)'
-                },
-                technique: { de: 'Direkte botanische Sonnenbelichtung', en: 'Direct Botanical Solar Exposure', fr: 'Exposition solaire botanique directe' },
-                paper: { de: '300g/m² Handgeschöpftes Leinenpapier', en: '300gsm Handmade Linen Cotton Rag', fr: 'Papier fait main lin & coton 300g/m²' },
-                dimensions: '30 x 40 cm',
-                origin: { de: 'Gesammelt in St. Moritz, gefertigt in Bern', en: 'Collected in St. Moritz & crafted in Bern', fr: 'Récolté à Saint-Moritz, réalisé à Berne' },
-                basePrice: 295,
-                image: 'images/engadin_pine.jpg',
-                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cline x1=\'200\' y1=\'400\' x2=\'200\' y2=\'100\' stroke=\'%23FBF9F5\' stroke-width=\'3\'/%3E%3Ctext x=\'50%25\' y=\'92%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EEngadin Whispering Pines%3C/text%3E%3C/svg%3E',
-                isOriginal: true
+                details: { de: '30x40 cm | Wilder Kiefernnadel-Abdruck auf Leinenpapier (Privatsammlung)', en: '30x40 cm | Wild pine needle impress on linen paper (Private Collection)', fr: '30x40 cm | Empreinte d\'aiguilles de pin (Collection Privée)' },
+                technique: { de: 'Direkte Botanische Belichtung', en: 'Direct Botanical Exposure', fr: 'Exposition botanique directe' },
+                paper: { de: '300g/m² Leinenpapier', en: '300gsm Linen Paper', fr: 'Papier lin 300g/m²' },
+                dimensions: '30 x 40 cm', origin: { de: 'St. Moritz / Bern', en: 'St. Moritz / Bern', fr: 'Saint-Moritz / Berne' },
+                basePrice: 295, image: 'images/engadin_pine.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EEngadin Pines%3C/text%3E%3C/svg%3E', isOriginal: true
             },
             {
-                id: 'orig-4',
-                category: 'original',
-                series: 'alpine',
-                isSoldOut: true,
-                badge: { de: 'Verkauft', en: 'Sold Out', fr: 'Vendu' },
-                badgeClass: 'badge-sold',
+                id: 'orig-4', category: 'original', series: 'alpine', isSoldOut: true,
+                badge: { de: 'Verkauft', en: 'Sold Out', fr: 'Vendu' }, badgeClass: 'badge-sold',
                 title: { de: 'Aletschgletscher Studie Nr. 2', en: 'Aletsch Glacier Study No. 2', fr: 'Étude Glacier d\'Aletsch N° 2' },
-                details: {
-                    de: '50x70 cm | Grossformatige Cyanotypie aus Eis- & Felsabdrücken (Sammlung Zürich)',
-                    en: '50x70 cm | Large format cyanotype created from ice & rock prints (Zurich Collection)',
-                    fr: '50x70 cm | Cyanotype grand format réalisé à partir de glace et roche (Collection Zurich)'
-                },
-                technique: { de: 'Hochalpine Mineral-Sonnenbelichtung', en: 'High Alpine Mineral Solar Exposure', fr: 'Exposition solaire minérale haute alpes' },
-                paper: { de: '350g/m² Heavyweight Arches Cotton Rag', en: '350gsm Heavyweight Arches Cotton Rag', fr: 'Papier coton Arches 350g/m²' },
-                dimensions: '50 x 70 cm',
-                origin: { de: 'Belichtet am Aletschgletscher (3000m)', en: 'Exposed at Aletsch Glacier (3000m)', fr: 'Exposé au glacier d\'Aletsch (3000m)' },
-                basePrice: 420,
-                image: 'images/bernese_peak.jpg',
-                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'350\' viewBox=\'0 0 500 350\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cpolygon points=\'100,300 250,80 400,300\' fill=\'%23162C4E\'/%3E%3Ctext x=\'50%25\' y=\'90%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EAletsch Glacier Study%3C/text%3E%3C/svg%3E',
-                isOriginal: true
+                details: { de: '50x70 cm | Grossformatige Cyanotypie aus Eis- & Felsabdrücken', en: '50x70 cm | Large format cyanotype created from ice & rock', fr: '50x70 cm | Cyanotype grand format réalisé avec de la glace' },
+                technique: { de: 'Hochalpine Belichtung', en: 'High Alpine Exposure', fr: 'Exposition haute montagne' },
+                paper: { de: '350g/m² Arches Rag', en: '350gsm Arches Rag', fr: 'Papier Arches 350g/m²' },
+                dimensions: '50 x 70 cm', origin: { de: 'Aletschgletscher (3000m)', en: 'Aletsch Glacier (3000m)', fr: 'Glacier d\'Aletsch (3000m)' },
+                basePrice: 420, image: 'images/bernese_peak.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'350\' viewBox=\'0 0 500 350\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EAletsch Glacier%3C/text%3E%3C/svg%3E', isOriginal: true
             },
             {
-                id: 'print-4',
-                category: 'print',
-                series: 'postcard',
-                studioStock: 15,
-                isSoldOut: false,
-                badge: { de: 'A6 Postkarten-Set', en: 'A6 Postcard Set', fr: 'Set Cartes A6' },
-                badgeClass: '',
+                id: 'orig-5', category: 'original', series: 'botanical', isSoldOut: false,
+                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' }, badgeClass: 'badge-gold',
+                title: { de: 'Thunersee Botanik-Raster', en: 'Lake Thun Botanical Grid', fr: 'Grille Botanique du Lac de Thoune' },
+                details: { de: '30x40 cm | Symmetrische Anordnung gesammelter Uferblätter', en: '30x40 cm | Symmetrical arrangement of lakeside leaves', fr: '30x40 cm | Disposition symétrique de feuilles du lac' },
+                technique: { de: 'Präzisions-Sonnenbelichtung', en: 'Precision Solar Exposure', fr: 'Exposition solaire de précision' },
+                paper: { de: '300g/m² Hahnemühle Rag', en: '300gsm Hahnemühle Rag', fr: 'Papier Hahnemühle 300g/m²' },
+                dimensions: '30 x 40 cm', origin: { de: 'Thunersee / Bern', en: 'Lake Thun / Bern', fr: 'Lac de Thoune / Berne' },
+                basePrice: 285, image: 'images/lake_botanicals.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3ELake Thun Grid%3C/text%3E%3C/svg%3E', isOriginal: true
+            },
+            {
+                id: 'orig-6', category: 'original', series: 'botanical', isSoldOut: false,
+                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' }, badgeClass: 'badge-gold',
+                title: { de: 'Walliser Arvenzweig', en: 'Valais Stone Pine Branch', fr: 'Branche de Pin d\'Arolle du Valais' },
+                details: { de: '30x40 cm | Feingliedriger Abzug eines hochalpinen Arvenzweigs', en: '30x40 cm | Detailed print of high alpine stone pine', fr: '30x40 cm | Impression détaillée d\'arolle des Alpes' },
+                technique: { de: 'Sonnenbelichtete Cyanotypie', en: 'Sun-exposed Cyanotype', fr: 'Cyanotype exposé au soleil' },
+                paper: { de: '300g/m² Büttenkarton', en: '300gsm Cotton Rag', fr: 'Papier coton 300g/m²' },
+                dimensions: '30 x 40 cm', origin: { de: 'Zermatt, Valais', en: 'Zermatt, Valais', fr: 'Zermatt, Valais' },
+                basePrice: 290, image: 'images/engadin_pine.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EValais Pine%3C/text%3E%3C/svg%3E', isOriginal: true
+            },
+            {
+                id: 'orig-7', category: 'original', series: 'botanical', isSoldOut: false,
+                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' }, badgeClass: 'badge-gold',
+                title: { de: 'Säntis Almenblume', en: 'Säntis Meadow Flower', fr: 'Fleur des Alpages du Säntis' },
+                details: { de: '24x30 cm | Zarte Wildblumen-Silhouette aus der Ostschweiz', en: '24x30 cm | Delicate wildflower silhouette from Eastern CH', fr: '24x30 cm | Silhouette délicate de fleur sauvage' },
+                technique: { de: 'Solar-Cyanotypie', en: 'Solar Cyanotype', fr: 'Cyanotype solaire' },
+                paper: { de: '300g/m² Hahnemühle', en: '300gsm Hahnemühle', fr: 'Papier 300g/m²' },
+                dimensions: '24 x 30 cm', origin: { de: 'Appenzell / Bern', en: 'Appenzell / Bern', fr: 'Appenzell / Berne' },
+                basePrice: 240, image: 'images/alpine_fern.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3ESäntis Flower%3C/text%3E%3C/svg%3E', isOriginal: true
+            },
+            {
+                id: 'orig-8', category: 'original', series: 'botanical', isSoldOut: true,
+                badge: { de: 'Verkauft', en: 'Sold Out', fr: 'Vendu' }, badgeClass: 'badge-sold',
+                title: { de: 'Grindelwald Schattenfarn', en: 'Grindelwald Shadow Fern', fr: 'Fougère d\'Ombre de Grindelwald' },
+                details: { de: '40x50 cm | Tiefblaue Schichtung aus Waldmoos & Farn', en: '40x50 cm | Deep blue layering of forest moss & fern', fr: '40x50 cm | Superposition bleu profond de mousse & fougère' },
+                technique: { de: 'Mehrfachbelichtung', en: 'Multiple Exposure', fr: 'Exposition multiple' },
+                paper: { de: '350g/m² Arches', en: '350gsm Arches', fr: 'Papier Arches 350g/m²' },
+                dimensions: '40 x 50 cm', origin: { de: 'Grindelwald', en: 'Grindelwald', fr: 'Grindelwald' },
+                basePrice: 340, image: 'images/alpine_fern.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EGrindelwald Fern%3C/text%3E%3C/svg%3E', isOriginal: true
+            },
+            {
+                id: 'orig-9', category: 'original', series: 'botanical', isSoldOut: false,
+                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' }, badgeClass: 'badge-gold',
+                title: { de: 'Lavaux Weinstock-Silhouetten', en: 'Lavaux Vine Silhouettes', fr: 'Silhouettes de Vigne du Lavaux' },
+                details: { de: '30x40 cm | Gepresste Reblättern aus den Terrassen von Lavaux', en: '30x40 cm | Pressed vine leaves from Lavaux terraces', fr: '30x40 cm | Feuilles de vigne pressées des terrasses du Lavaux' },
+                technique: { de: 'Sonnenbelichtete Cyanotypie', en: 'Sun-exposed Cyanotype', fr: 'Cyanotype exposé au soleil' },
+                paper: { de: '300g/m² Hahnemühle', en: '300gsm Hahnemühle', fr: 'Papier 300g/m²' },
+                dimensions: '30 x 40 cm', origin: { de: 'Lavaux, Vaud', en: 'Lavaux, Vaud', fr: 'Lavaux, Vaud' },
+                basePrice: 285, image: 'images/lake_botanicals.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3ELavaux Vines%3C/text%3E%3C/svg%3E', isOriginal: true
+            },
+            {
+                id: 'orig-10', category: 'original', series: 'alpine', isSoldOut: false,
+                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' }, badgeClass: 'badge-gold',
+                title: { de: 'Pilatus Nebelwald', en: 'Pilatus Mist Forest', fr: 'Forêt de Brume du Pilate' },
+                details: { de: '40x50 cm | Ätherische Tannenbaum-Silhouetten im Bergnebel', en: '40x50 cm | Ethereal fir tree silhouettes in alpine mist', fr: '40x50 cm | Silhouettes éthérées de sapins dans la brume' },
+                technique: { de: 'Schatten-Belichtung', en: 'Shadow Exposure', fr: 'Exposition d\'ombres' },
+                paper: { de: '350g/m² Heavyweight Rag', en: '350gsm Heavyweight Rag', fr: 'Papier 350g/m²' },
+                dimensions: '40 x 50 cm', origin: { de: 'Luzern / Bern', en: 'Lucerne / Bern', fr: 'Lucerne / Berne' },
+                basePrice: 330, image: 'images/engadin_pine.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EPilatus Forest%3C/text%3E%3C/svg%3E', isOriginal: true
+            },
+            {
+                id: 'orig-11', category: 'original', series: 'botanical', isSoldOut: false,
+                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' }, badgeClass: 'badge-gold',
+                title: { de: 'Zermatt Wildgräser', en: 'Zermatt Alpine Grasses', fr: 'Herbes Sauvages de Zermatt' },
+                details: { de: '30x40 cm | Zarte Halme & Schafgarbe unter Walliser Sonne', en: '30x40 cm | Fine stems & yarrow under Valais sun', fr: '30x40 cm | Tiges fines sous le soleil valaisan' },
+                technique: { de: 'Direkte Sonnenbelichtung', en: 'Direct Solar Exposure', fr: 'Exposition solaire directe' },
+                paper: { de: '300g/m² Baumwolle', en: '300gsm Cotton', fr: 'Papier coton 300g/m²' },
+                dimensions: '30 x 40 cm', origin: { de: 'Zermatt', en: 'Zermatt', fr: 'Zermatt' },
+                basePrice: 275, image: 'images/alpine_fern.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EZermatt Grasses%3C/text%3E%3C/svg%3E', isOriginal: true
+            },
+            {
+                id: 'orig-12', category: 'original', series: 'botanical', isSoldOut: false,
+                badge: { de: '1-of-1 Original', en: '1-of-1 Original', fr: 'Pièce Unique' }, badgeClass: 'badge-gold',
+                title: { de: 'Simmental Mooskomposition', en: 'Simmental Moss Composition', fr: 'Composition de Mousse du Simmental' },
+                details: { de: '30x40 cm | Organische Textur aus Almenmoos & Flechten', en: '30x40 cm | Organic texture of alpine moss & lichen', fr: '30x40 cm | Texture organique de mousse des alpages' },
+                technique: { de: 'Textur-Solar-Cyanotypie', en: 'Texture Solar Cyanotype', fr: 'Cyanotype solaire texturé' },
+                paper: { de: '300g/m² Hahnemühle', en: '300gsm Hahnemühle', fr: 'Papier 300g/m²' },
+                dimensions: '30 x 40 cm', origin: { de: 'Simmental, Berner Oberland', en: 'Simmental, Bernese Oberland', fr: 'Simmental, Oberland bernois' },
+                basePrice: 290, image: 'images/lake_botanicals.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3ESimmental Moss%3C/text%3E%3C/svg%3E', isOriginal: true
+            },
+
+            // --- 12 PRINTS ---
+            {
+                id: 'print-1', category: 'print', series: 'alpine', studioStock: 25, isSoldOut: false,
+                badge: { de: 'Bestseller', en: 'Bestseller', fr: 'Succès' }, badgeClass: '',
+                title: { de: 'Das Matterhorn, Blau', en: 'The Matterhorn, Blue', fr: 'Le Cervin, Bleu' },
+                details: { de: 'Museumswürdiger Giclée-Druck des ikonischen Cyanotypie-Kunstwerks', en: 'Museum-grade Giclée print of iconic cyanotype artwork', fr: 'Tirage Giclée d\'art du cyanotype emblématique' },
+                technique: { de: '12-Farben Pigmentdruck', en: '12-Color Pigment Giclée', fr: 'Impression giclée 12 couleurs' },
+                paper: { de: '290g/m² Hahnemühle Bamboo', en: '290gsm Hahnemühle Bamboo', fr: 'Papier Bamboo 290g/m²' },
+                dimensions: 'A4 / A3 / A2', origin: { de: 'Gedruckt in Zürich, CH', en: 'Printed in Zurich, CH', fr: 'Imprimé à Zurich, CH' },
+                basePrice: 75, image: 'images/matterhorn.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EThe Matterhorn, Blue%3C/text%3E%3C/svg%3E', isOriginal: false,
+                sizes: [{ name: 'A4 (21x29.7 cm)', price: 55, qtyCount: 1 }, { name: 'A3 (29.7x42 cm)', price: 75, qtyCount: 1 }, { name: 'A2 (42x59.4 cm)', price: 110, qtyCount: 1 }]
+            },
+            {
+                id: 'print-2', category: 'print', series: 'botanical', studioStock: 10, isSoldOut: false,
+                badge: { de: 'Archivarischer Giclée', en: 'Archival Giclée', fr: 'Giclée d\'Art' }, badgeClass: '',
+                title: { de: 'Genfersee Botanik', en: 'Lake Geneva Botanicals', fr: 'Botanique du Lac Léman' },
+                details: { de: 'Botanische Rasterkomposition gepresster Waadtländer See-Blätter', en: 'Botanical grid composition of pressed Vaudois lake leaves', fr: 'Composition botanique de feuilles du lac Léman' },
+                technique: { de: 'Kunstdruck-Reproduktion', en: 'Fine Art Reproduction', fr: 'Reproduction d\'art' },
+                paper: { de: '300g/m² Baumwollkarton', en: '300gsm Cotton Smooth', fr: 'Papier coton 300g/m²' },
+                dimensions: 'A4 / A3 / A2', origin: { de: 'Gedruckt in CH', en: 'Printed in CH', fr: 'Imprimé en CH' },
+                basePrice: 75, image: 'images/lake_botanicals.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3ELake Geneva Botanicals%3C/text%3E%3C/svg%3E', isOriginal: false,
+                sizes: [{ name: 'A4 (21x29.7 cm)', price: 55, qtyCount: 1 }, { name: 'A3 (29.7x42 cm)', price: 75, qtyCount: 1 }, { name: 'A2 (42x59.4 cm)', price: 110, qtyCount: 1 }]
+            },
+            {
+                id: 'print-3', category: 'print', series: 'botanical', studioStock: 8, isSoldOut: false,
+                badge: { de: 'Limitierte Edition', en: 'Limited Edition', fr: 'Édition Limitée' }, badgeClass: '',
+                title: { de: 'Alpenfarn Kunstdruck-Edition', en: 'Alpine Fern Fine Art Edition', fr: 'Édition Fougère Alpine' },
+                details: { de: 'Limitierter archivarischer Giclée-Druck unseres Originalwerks', en: 'Limited run archival giclée print of flagship original', fr: 'Tirage giclée d\'art limité de notre œuvre' },
+                technique: { de: 'UltraChrome Pro Druck', en: 'UltraChrome Pro Print', fr: 'Impression UltraChrome Pro' },
+                paper: { de: '310g/m² German Etching', en: '310gsm German Etching', fr: 'Papier German Etching 310g/m²' },
+                dimensions: 'A4 / A3 / A2', origin: { de: 'Auflage von 50 Stück', en: 'Edition of 50', fr: 'Édition de 50' },
+                basePrice: 70, image: 'images/alpine_fern.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EAlpine Fern Edition%3C/text%3E%3C/svg%3E', isOriginal: false,
+                sizes: [{ name: 'A4 (21x29.7 cm)', price: 50, qtyCount: 1 }, { name: 'A3 (29.7x42 cm)', price: 70, qtyCount: 1 }, { name: 'A2 (42x59.4 cm)', price: 105, qtyCount: 1 }]
+            },
+            {
+                id: 'print-4', category: 'print', series: 'postcard', studioStock: 15, isSoldOut: false,
+                badge: { de: 'A6 Postkarten-Set', en: 'A6 Postcard Set', fr: 'Set Cartes A6' }, badgeClass: '',
                 title: { de: 'Schweizer Alpen-Postkarten Set (A6)', en: 'Swiss Alpine Postcard Set (A6)', fr: 'Set de Cartes Postales Alpines (A6)' },
-                details: {
-                    de: 'Set aus 5 feinsten Cyanotypie-Kunstkarten auf 350g/m² Naturpapier',
-                    en: 'Set of 5 fine art cyanotype postcards on 350gsm natural paper',
-                    fr: 'Set de 5 cartes d\'art cyanotype sur papier naturel 350g/m²'
-                },
-                technique: { de: 'Giclée-Kunstdruck auf Naturkarton', en: 'Fine Art Giclée on Natural Cardboard', fr: 'Impression Giclée d\'art sur carton naturel' },
-                paper: { de: '350g/m² Feinstpapier Ungestrichen', en: '350gsm Uncoated Fine Art Card', fr: 'Papier d\'art non couché 350g/m²' },
-                dimensions: 'A6 (10.5 x 14.8 cm)',
-                origin: { de: 'Gedruckt in der Schweiz', en: 'Printed in Switzerland', fr: 'Imprimé en Suisse' },
-                basePrice: 18,
-                image: 'images/lake_botanicals.jpg',
-                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EA6 Postcard Set%3C/text%3E%3C/svg%3E',
-                isOriginal: false,
+                details: { de: 'Set aus 5 feinsten Cyanotypie-Kunstkarten auf 350g/m² Naturpapier', en: 'Set of 5 fine art cyanotype postcards on 350gsm paper', fr: 'Set de 5 cartes d\'art cyanotype sur papier 350g/m²' },
+                technique: { de: 'Giclée-Kunstdruck', en: 'Fine Art Giclée', fr: 'Impression Giclée' },
+                paper: { de: '350g/m² Feinstpapier', en: '350gsm Fine Art Card', fr: 'Papier d\'art 350g/m²' },
+                dimensions: 'A6 (10.5 x 14.8 cm)', origin: { de: 'Gedruckt in der Schweiz', en: 'Printed in Switzerland', fr: 'Imprimé en Suisse' },
+                basePrice: 18, image: 'images/lake_botanicals.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EA6 Postcards%3C/text%3E%3C/svg%3E', isOriginal: false,
                 sizes: [
                     { name: '1 Set (5 Karten) - Ab Lager', price: 18, qtyCount: 1 },
                     { name: '5 Sets (25 Karten) - Ab Lager', price: 75, qtyCount: 5 },
@@ -2922,88 +2795,92 @@
                 ]
             },
             {
-                id: 'print-1',
-                category: 'print',
-                series: 'alpine',
-                studioStock: 25,
-                isSoldOut: false,
-                badge: { de: 'Bestseller', en: 'Bestseller', fr: 'Succès' },
-                badgeClass: '',
-                title: { de: 'Das Matterhorn, Blau', en: 'The Matterhorn, Blue', fr: 'Le Cervin, Bleu' },
-                details: {
-                    de: 'Museumswürdiger Giclée-Druck des ikonischen Cyanotypie-Kunstwerks',
-                    en: 'Museum-grade Giclée print of iconic cyanotype artwork',
-                    fr: 'Tirage Giclée d\'art de qualité musée du cyanotype emblématique'
-                },
-                technique: { de: '12-Farben Archivarischer Pigmentdruck', en: '12-Color Archival Pigment Giclée Print', fr: 'Impression d\'art giclée 12 couleurs' },
-                paper: { de: '290g/m² Hahnemühle Bamboo FineArt', en: '290gsm Hahnemühle Bamboo FineArt', fr: 'Papier Hahnemühle Bamboo 290g/m²' },
-                dimensions: 'Mehrere Formate verfügbar',
-                origin: { de: 'Gedruckt in Zürich, Schweiz', en: 'Printed in Zurich, Switzerland', fr: 'Imprimé à Zurich, Suisse' },
-                basePrice: 75,
-                image: 'images/matterhorn.jpg',
-                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Cpolygon points=\'100,400 230,100 320,400\' fill=\'%23EBF1F8\' opacity=\'0.2\'/%3E%3Ctext x=\'50%25\' y=\'92%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3EThe Matterhorn, Blue%3C/text%3E%3C/svg%3E',
-                isOriginal: false,
-                sizes: [
-                    { name: 'A4 (21x29.7 cm)', price: 55, qtyCount: 1 },
-                    { name: 'A3 (29.7x42 cm)', price: 75, qtyCount: 1 },
-                    { name: 'A2 (42x59.4 cm)', price: 110, qtyCount: 1 }
-                ]
+                id: 'print-5', category: 'print', series: 'alpine', studioStock: 12, isSoldOut: false,
+                badge: { de: 'Kunstdruck', en: 'Fine Art Print', fr: 'Tirage d\'Art' }, badgeClass: '',
+                title: { de: 'Eiger Nordwand Blaupausen-Druck', en: 'Eiger North Face Blueprint', fr: 'Tirage Face Nord de l\'Eiger' },
+                details: { de: 'Archivarischer Giclée-Druck des legendären Eiger-Massivs in Preussischblau', en: 'Archival Giclée print of the legendary Eiger face in Prussian blue', fr: 'Tirage Giclée de la face nord de l\'Eiger en bleu de Prusse' },
+                technique: { de: '12-Farben Pigmentdruck', en: '12-Color Pigment Print', fr: 'Impression 12 couleurs' },
+                paper: { de: '290g/m² Bamboo FineArt', en: '290gsm Bamboo FineArt', fr: 'Papier Bamboo 290g/m²' },
+                dimensions: 'A4 / A3 / A2', origin: { de: 'Zürich, CH', en: 'Zurich, CH', fr: 'Zurich, CH' },
+                basePrice: 65, image: 'images/bernese_peak.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EEiger Print%3C/text%3E%3C/svg%3E', isOriginal: false,
+                sizes: [{ name: 'A4 (21x29.7 cm)', price: 45, qtyCount: 1 }, { name: 'A3 (29.7x42 cm)', price: 65, qtyCount: 1 }, { name: 'A2 (42x59.4 cm)', price: 95, qtyCount: 1 }]
             },
             {
-                id: 'print-2',
-                category: 'print',
-                series: 'botanical',
-                studioStock: 10,
-                isSoldOut: false,
-                badge: { de: 'Archivarischer Giclée', en: 'Archival Giclée', fr: 'Giclée d\'Art' },
-                badgeClass: '',
-                title: { de: 'Genfersee Botanik', en: 'Lake Geneva Botanicals', fr: 'Botanique du Lac Léman' },
-                details: {
-                    de: 'Botanische Rasterkomposition gepresster Waadtländer See-Blätter',
-                    en: 'Botanical grid composition of pressed Vaudois lake leaves',
-                    fr: 'Composition botanique de feuilles pressées du lac Léman'
-                },
-                technique: { de: 'Archivarische Kunstdruck-Reproduktion', en: 'Archival Fine Art Reproduction', fr: 'Reproduction d\'art archivistique' },
-                paper: { de: '300g/m² Glatter Baumwollkarton', en: '300gsm Cotton Smooth Rag', fr: 'Papier coton lisse 300g/m²' },
-                dimensions: 'Mehrere Formate verfügbar',
-                origin: { de: 'Entworfen in Bern, gedruckt in der Schweiz', en: 'Designed in Bern, Printed in CH', fr: 'Conçu à Berne, imprimé en Suisse' },
-                basePrice: 75,
-                image: 'images/lake_botanicals.jpg',
-                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Crect x=\'60\' y=\'80\' width=\'120\' height=\'150\' fill=\'none\' stroke=\'%23FBF9F5\' stroke-width=\'1\'/%3E%3Crect x=\'220\' y=\'80\' width=\'120\' height=\'150\' fill=\'none\' stroke=\'%23FBF9F5\' stroke-width=\'1\'/%3E%3Ctext x=\'50%25\' y=\'92%25\' fill=\'%23FBF9F5\' font-family=\'sans-serif\' font-size=\'14\' text-anchor=\'middle\'%3ELake Geneva Botanicals%3C/text%3E%3C/svg%3E',
-                isOriginal: false,
-                sizes: [
-                    { name: 'A4 (21x29.7 cm)', price: 55, qtyCount: 1 },
-                    { name: 'A3 (29.7x42 cm)', price: 75, qtyCount: 1 },
-                    { name: 'A2 (42x59.4 cm)', price: 110, qtyCount: 1 }
-                ]
+                id: 'print-6', category: 'print', series: 'botanical', studioStock: 15, isSoldOut: false,
+                badge: { de: 'Kunstdruck', en: 'Fine Art Print', fr: 'Tirage d\'Art' }, badgeClass: '',
+                title: { de: 'Berner Oberland Botanisches Triptychon', en: 'Bernese Oberland Triptych', fr: 'Triptyque Botanique de l\'Oberland' },
+                details: { de: 'Drei harmonische Pflanzenmotive auf museumswürdigem Papier', en: 'Three harmonious botanical motifs on museum-grade paper', fr: 'Trois motifs botaniques sur papier de qualité musée' },
+                technique: { de: 'Archivarischer Giclée-Druck', en: 'Archival Giclée', fr: 'Tirage Giclée' },
+                paper: { de: '300g/m² Cotton Rag', en: '300gsm Cotton Rag', fr: 'Papier coton 300g/m²' },
+                dimensions: 'A4 / A3', origin: { de: 'Bern / Zürich', en: 'Bern / Zurich', fr: 'Berne / Zurich' },
+                basePrice: 80, image: 'images/alpine_fern.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EOberland Triptych%3C/text%3E%3C/svg%3E', isOriginal: false,
+                sizes: [{ name: 'A4 Set (3x A4)', price: 80, qtyCount: 1 }, { name: 'A3 Set (3x A3)', price: 130, qtyCount: 1 }]
             },
             {
-                id: 'print-3',
-                category: 'print',
-                series: 'botanical',
-                studioStock: 8,
-                isSoldOut: false,
-                badge: { de: 'Limitierte Edition', en: 'Limited Edition', fr: 'Édition Limitée' },
-                badgeClass: '',
-                title: { de: 'Alpenfarn Kunstdruck-Edition', en: 'Alpine Fern Fine Art Edition', fr: 'Édition Fougère Alpine' },
-                details: {
-                    de: 'Limitierter archivarischer Giclée-Druck unseres Originalwerks',
-                    en: 'Limited run archival giclée print of our flagship original',
-                    fr: 'Tirage giclée d\'art limité de notre œuvre originale'
-                },
-                technique: { de: 'UltraChrome Pro 10-Farben Druck', en: 'UltraChrome Pro 10-Color Print', fr: 'Impression 10 couleurs UltraChrome Pro' },
-                paper: { de: '310g/m² German Etching FineArt Papier', en: '310gsm German Etching FineArt', fr: 'Papier German Etching 310g/m²' },
-                dimensions: 'Mehrere Formate verfügbar',
-                origin: { de: 'Handsignierte Auflage von 50 Stück', en: 'Hand-numbered edition of 50', fr: 'Édition numérotée à la main de 50' },
-                basePrice: 70,
-                image: 'images/alpine_fern.jpg',
-                fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EAlpine Fern Edition%3C/text%3E%3C/svg%3E',
-                isOriginal: false,
-                sizes: [
-                    { name: 'A4 (21x29.7 cm)', price: 50, qtyCount: 1 },
-                    { name: 'A3 (29.7x42 cm)', price: 70, qtyCount: 1 },
-                    { name: 'A2 (42x59.4 cm)', price: 105, qtyCount: 1 }
-                ]
+                id: 'print-7', category: 'print', series: 'alpine', studioStock: 10, isSoldOut: false,
+                badge: { de: 'Kunstdruck', en: 'Fine Art Print', fr: 'Tirage d\'Art' }, badgeClass: '',
+                title: { de: 'Engadiner Lärchen im Herbst', en: 'Engadin Larch Pines', fr: 'Mélèzes de l\'Engadine' },
+                details: { de: 'Stimmungsvolle Cyanotypie-Reproduktion der Bündner Bergwälder', en: 'Atmospheric cyanotype reproduction of Graubünden forest', fr: 'Reproduction d\'ambiance des forêts des Grisons' },
+                technique: { de: 'Pigment-Giclée', en: 'Pigment Giclée', fr: 'Giclée pigmentaire' },
+                paper: { de: '300g/m² Hahnemühle', en: '300gsm Hahnemühle', fr: 'Papier 300g/m²' },
+                dimensions: 'A4 / A3 / A2', origin: { de: 'Gedruckt in CH', en: 'Printed in CH', fr: 'Imprimé en CH' },
+                basePrice: 65, image: 'images/engadin_pine.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EEngadin Larch%3C/text%3E%3C/svg%3E', isOriginal: false,
+                sizes: [{ name: 'A4 (21x29.7 cm)', price: 45, qtyCount: 1 }, { name: 'A3 (29.7x42 cm)', price: 65, qtyCount: 1 }, { name: 'A2 (42x59.4 cm)', price: 95, qtyCount: 1 }]
+            },
+            {
+                id: 'print-8', category: 'print', series: 'alpine', studioStock: 14, isSoldOut: false,
+                badge: { de: 'Kunstdruck', en: 'Fine Art Print', fr: 'Tirage d\'Art' }, badgeClass: '',
+                title: { de: 'Lauterbrunnen Wasserfall Cyanotypie', en: 'Lauterbrunnen Waterfall Print', fr: 'Tirage Cascade de Lauterbrunnen' },
+                details: { de: 'Vertikale Wasserfall-Silhouette im tiefen Indigotextur-Druck', en: 'Vertical waterfall silhouette in deep indigo texture print', fr: 'Silhouette de cascade verticale en impression indigo' },
+                technique: { de: 'Pigmentdruck', en: 'Pigment Print', fr: 'Impression pigmentaire' },
+                paper: { de: '290g/m² FineArt', en: '290gsm FineArt', fr: 'Papier FineArt 290g/m²' },
+                dimensions: 'A4 / A3', origin: { de: 'Zürich, CH', en: 'Zurich, CH', fr: 'Zurich, CH' },
+                basePrice: 60, image: 'images/bernese_peak.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3ELauterbrunnen Print%3C/text%3E%3C/svg%3E', isOriginal: false,
+                sizes: [{ name: 'A4 (21x29.7 cm)', price: 40, qtyCount: 1 }, { name: 'A3 (29.7x42 cm)', price: 60, qtyCount: 1 }]
+            },
+            {
+                id: 'print-9', category: 'print', series: 'alpine', studioStock: 9, isSoldOut: false,
+                badge: { de: 'Kunstdruck', en: 'Fine Art Print', fr: 'Tirage d\'Art' }, badgeClass: '',
+                title: { de: 'Jungfrau Sternennacht', en: 'Jungfrau Starry Night', fr: 'Nuit Étoilée de la Jungfrau' },
+                details: { de: 'Nachtblaue Komposition der Jungfrauregion mit natürlichen Mineralspuren', en: 'Night-blue composition of the Jungfrau region', fr: 'Composition bleu nuit de la région de la Jungfrau' },
+                technique: { de: 'Giclée-Kunstdruck', en: 'Giclée Print', fr: 'Impression Giclée' },
+                paper: { de: '300g/m² Cotton', en: '300gsm Cotton', fr: 'Papier coton 300g/m²' },
+                dimensions: 'A4 / A3 / A2', origin: { de: 'Gedruckt in CH', en: 'Printed in CH', fr: 'Imprimé en CH' },
+                basePrice: 70, image: 'images/matterhorn.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EJungfrau Night%3C/text%3E%3C/svg%3E', isOriginal: false,
+                sizes: [{ name: 'A4 (21x29.7 cm)', price: 50, qtyCount: 1 }, { name: 'A3 (29.7x42 cm)', price: 70, qtyCount: 1 }, { name: 'A2 (42x59.4 cm)', price: 100, qtyCount: 1 }]
+            },
+            {
+                id: 'print-10', category: 'print', series: 'botanical', studioStock: 18, isSoldOut: false,
+                badge: { de: 'Kunstdruck', en: 'Fine Art Print', fr: 'Tirage d\'Art' }, badgeClass: '',
+                title: { de: 'Brienzersee Ruhe', en: 'Lake Brienz Serenity', fr: 'Sérénité du Lac de Brienz' },
+                details: { de: 'Sanfter Cyanotypie-Farbverlauf inspiriert vom türkisen Wasser des Brienzersees', en: 'Soft cyanotype gradient inspired by turquoise Lake Brienz', fr: 'Dégradé cyanotype inspiré des eaux du lac de Brienz' },
+                technique: { de: '12-Farben Giclée', en: '12-Color Giclée', fr: 'Giclée 12 couleurs' },
+                paper: { de: '290g/m² Bamboo', en: '290gsm Bamboo', fr: 'Papier Bamboo 290g/m²' },
+                dimensions: 'A4 / A3', origin: { de: 'Zürich, CH', en: 'Zurich, CH', fr: 'Zurich, CH' },
+                basePrice: 65, image: 'images/lake_botanicals.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3ELake Brienz Print%3C/text%3E%3C/svg%3E', isOriginal: false,
+                sizes: [{ name: 'A4 (21x29.7 cm)', price: 45, qtyCount: 1 }, { name: 'A3 (29.7x42 cm)', price: 65, qtyCount: 1 }]
+            },
+            {
+                id: 'print-11', category: 'print', series: 'botanical', studioStock: 11, isSoldOut: false,
+                badge: { de: 'Kunstdruck', en: 'Fine Art Print', fr: 'Tirage d\'Art' }, badgeClass: '',
+                title: { de: 'Gotthard Pass Botanische Studie', en: 'Gotthard Pass Botanical Study', fr: 'Étude Botanique du Saint-Gothard' },
+                details: { de: 'Alpine Gräserkomposition gesammelt auf der Passhöhe des Gotthards', en: 'Alpine grass composition collected at Gotthard pass height', fr: 'Composition d\'herbes alpines du col du Gothard' },
+                technique: { de: 'Archivarischer Pigmentdruck', en: 'Archival Pigment Print', fr: 'Impression pigmentaire' },
+                paper: { de: '300g/m² Cotton Rag', en: '300gsm Cotton Rag', fr: 'Papier coton 300g/m²' },
+                dimensions: 'A4 / A3', origin: { de: 'Gedruckt in CH', en: 'Printed in CH', fr: 'Imprimé en CH' },
+                basePrice: 65, image: 'images/alpine_fern.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EGotthard Pass Print%3C/text%3E%3C/svg%3E', isOriginal: false,
+                sizes: [{ name: 'A4 (21x29.7 cm)', price: 45, qtyCount: 1 }, { name: 'A3 (29.7x42 cm)', price: 65, qtyCount: 1 }]
+            },
+            {
+                id: 'print-12', category: 'print', series: 'postcard', studioStock: 20, isSoldOut: false,
+                badge: { de: 'Mini-Druck Set', en: 'Mini Print Set', fr: 'Set Mini Tirages' }, badgeClass: '',
+                title: { de: 'Schweizer Moos & Flechten Mini-Prints', en: 'Swiss Moss & Lichen Mini Prints', fr: 'Mini-Tirages Mousse & Lichen Suisse' },
+                details: { de: 'Set aus 4 quadratischen Kunst-Prints (15x15 cm) auf Naturkarton', en: 'Set of 4 square fine art prints (15x15 cm) on natural card', fr: 'Set de 4 mini tirages carrés (15x15 cm)' },
+                technique: { de: 'Giclée-Druck', en: 'Giclée Print', fr: 'Tirage Giclée' },
+                paper: { de: '350g/m² Naturpapier', en: '350gsm Fine Art Card', fr: 'Papier naturel 350g/m²' },
+                dimensions: '15 x 15 cm (Set of 4)', origin: { de: 'Bern, CH', en: 'Bern, CH', fr: 'Berne, CH' },
+                basePrice: 35, image: 'images/lake_botanicals.jpg', fallbackSvg: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%231B365D\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23FBF9F5\' font-family=\'serif\' font-size=\'18\' text-anchor=\'middle\'%3EMini Prints Set%3C/text%3E%3C/svg%3E', isOriginal: false,
+                sizes: [{ name: '1 Set (4 Mini-Drucke)', price: 35, qtyCount: 1 }, { name: '3 Sets (12 Mini-Drucke)', price: 90, qtyCount: 3 }]
             }
         ];
 
@@ -3026,6 +2903,8 @@
         const originalsGrid = document.getElementById('originalsGrid');
         const printsGrid = document.getElementById('printsGrid');
         const fullCategoryGrid = document.getElementById('fullCategoryGrid');
+        const mainFooter = document.getElementById('mainFooter');
+        const categoryFooter = document.getElementById('categoryFooter');
 
         const cartOverlay = document.getElementById('cartOverlay');
         const cartItemsList = document.getElementById('cartItemsList');
@@ -3073,7 +2952,6 @@
             initEventListeners();
             updateCartUI();
             
-            // Route initial view based on URL hash
             handleHashRoute();
         });
 
@@ -3089,11 +2967,10 @@
 
         window.addEventListener('hashchange', handleHashRoute);
 
-        // View Controller (Home Showcase vs Category Views)
+        // View Controller (Home Showcase vs Category Views & Footer Toggle)
         function switchView(viewName) {
             currentView = viewName;
 
-            // Update Desktop Nav Active Links
             document.querySelectorAll('.desktop-nav a').forEach(a => a.classList.remove('active'));
             const activeNav = document.getElementById(`nav-link-${viewName}`);
             if (activeNav) activeNav.classList.add('active');
@@ -3107,6 +2984,8 @@
                 originalsShowcaseSection.style.display = 'block';
                 printsShowcaseSection.style.display = 'block';
                 fullCategorySection.style.display = 'none';
+                mainFooter.style.display = 'block';
+                categoryFooter.style.display = 'none';
                 renderShowcaseGrids();
             } else if (viewName === 'originals') {
                 heroSection.style.display = 'none';
@@ -3117,6 +2996,8 @@
                 printsShowcaseSection.style.display = 'none';
                 fullCategorySection.style.display = 'block';
                 fullCategoryTitle.innerText = t.originals_title;
+                mainFooter.style.display = 'none';
+                categoryFooter.style.display = 'flex';
                 renderCategoryGrid(PRODUCTS.filter(p => p.category === 'original'));
             } else if (viewName === 'prints') {
                 heroSection.style.display = 'none';
@@ -3127,6 +3008,8 @@
                 printsShowcaseSection.style.display = 'none';
                 fullCategorySection.style.display = 'block';
                 fullCategoryTitle.innerText = t.prints_title;
+                mainFooter.style.display = 'none';
+                categoryFooter.style.display = 'flex';
                 renderCategoryGrid(PRODUCTS.filter(p => p.category === 'print'));
             } else if (viewName === 'story' || viewName === 'custom' || viewName === 'contact') {
                 heroSection.style.display = 'none';
@@ -3136,6 +3019,8 @@
                 originalsShowcaseSection.style.display = 'none';
                 printsShowcaseSection.style.display = 'none';
                 fullCategorySection.style.display = 'none';
+                mainFooter.style.display = 'block';
+                categoryFooter.style.display = 'none';
 
                 const targetElem = document.getElementById(viewName);
                 if (targetElem) {
@@ -3159,7 +3044,7 @@
             renderGridInto(printsGrid, topPrints);
         }
 
-        // Render Full Category View Grid
+        // Render Full Category View Grid (Displays all 12 items)
         function renderCategoryGrid(productsList) {
             renderGridInto(fullCategoryGrid, productsList);
         }
@@ -3294,7 +3179,7 @@
             }
         }
 
-        // Filter Nav Event Handler (Switch to Full Category Grid when filtering)
+        // Filter Nav Event Handler
         function initFilterNav() {
             const filterBtns = document.querySelectorAll('.filter-btn');
             filterBtns.forEach(btn => {
@@ -3313,6 +3198,8 @@
                         printsShowcaseSection.style.display = 'none';
                         fullCategorySection.style.display = 'block';
                         fullCategoryTitle.innerText = btn.innerText;
+                        mainFooter.style.display = 'none';
+                        categoryFooter.style.display = 'flex';
 
                         const filtered = PRODUCTS.filter(p => {
                             if (activeFilter === 'original') return p.category === 'original';
