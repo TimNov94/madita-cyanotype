@@ -169,20 +169,19 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 16px;
         }
 
         /* Language Switcher */
         .lang-switcher {
             display: flex;
             align-items: center;
-            gap: 4px;
-            background: rgba(255, 255, 255, 0.6);
+            gap: 3px;
+            background: rgba(255, 255, 255, 0.65);
             border: 1px solid var(--border-soft);
-            padding: 4px 8px;
+            padding: 3px 6px;
             border-radius: var(--radius-pill);
-            font-size: 0.75rem;
-            letter-spacing: 1px;
+            box-shadow: var(--shadow-subtle);
         }
 
         .lang-btn {
@@ -190,22 +189,28 @@
             border: none;
             color: var(--text-muted);
             cursor: pointer;
-            padding: 3px 7px;
-            border-radius: 12px;
+            padding: 4px 8px;
+            border-radius: 14px;
+            font-size: 0.72rem;
+            letter-spacing: 1px;
             font-weight: 500;
             transition: all 0.2s ease;
             width: auto;
             margin-top: 0;
         }
 
-        .lang-btn:hover, .lang-btn.active {
+        .lang-btn:hover {
             color: var(--accent-color);
-            font-weight: 700;
-            background-color: rgba(27, 54, 93, 0.08);
+        }
+
+        .lang-btn.active {
+            color: #FFFFFF;
+            font-weight: 600;
+            background-color: var(--accent-color);
         }
 
         .cart-trigger {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.75);
             border: 1px solid var(--border-soft);
             cursor: pointer;
             display: flex;
@@ -777,7 +782,7 @@
             line-height: 1.7;
         }
 
-        /* Streamlined Slide-over Shopping Cart Drawer (Clean & Serene) */
+        /* Streamlined Slide-over Shopping Cart Drawer */
         .cart-drawer-overlay {
             position: fixed;
             top: 0;
@@ -1372,7 +1377,7 @@
 
             <a href="#" class="logo-group">
                 <span class="logo">Madita</span>
-                <span class="logo-tagline">Swiss Cyanotype Art</span>
+                <span class="logo-tagline" data-i18n="logo_tagline">Schweizer Cyanotypie-Kunst</span>
             </a>
 
             <nav class="desktop-nav">
@@ -1383,7 +1388,7 @@
             </nav>
 
             <div class="header-actions">
-                <!-- Multi-Language Switcher -->
+                <!-- Multi-Language Switcher [ DE | FR | EN ] -->
                 <div class="lang-switcher">
                     <button class="lang-btn active" onclick="setLanguage('de')" id="lang-de">DE</button>
                     <button class="lang-btn" onclick="setLanguage('fr')" id="lang-fr">FR</button>
@@ -1495,7 +1500,7 @@
         </section>
     </div>
 
-    <!-- Slide-over Shopping Cart Drawer (Streamlined & Minimal) -->
+    <!-- Slide-over Shopping Cart Drawer -->
     <div class="cart-drawer-overlay" id="cartOverlay">
         <div class="cart-drawer">
             <div class="cart-header">
@@ -1638,9 +1643,9 @@
                 <div class="footer-col">
                     <h4 data-i18n="footer_newsletter">Newsletter</h4>
                     <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 14px;" data-i18n="footer_news_sub">Erhalten Sie seltene Benachrichtigungen bei neuen Originalveröffentlichungen.</p>
-                    <form onsubmit="event.preventDefault(); showToast('Vielen Dank für Ihre Anmeldung!'); this.reset();">
+                    <form onsubmit="event.preventDefault(); showToast(currentLang === 'de' ? 'Vielen Dank für Ihre Anmeldung!' : (currentLang === 'fr' ? 'Merci pour votre inscription!' : 'Thank you for subscribing!')); this.reset();">
                         <div class="newsletter-input-group">
-                            <input type="email" placeholder="Ihre E-Mail-Adresse" required>
+                            <input type="email" data-i18n-placeholder="newsletter_placeholder" placeholder="Ihre E-Mail-Adresse" required>
                             <button type="submit" data-i18n="footer_join">Beitreten</button>
                         </div>
                     </form>
@@ -1656,10 +1661,11 @@
 
     <!-- Vanilla JavaScript Implementation -->
     <script>
-        // Multi-Language Translation Dictionaries (DE, EN, FR)
+        // Multi-Language Translation Dictionaries (DE, EN, FR) - GERMAN DEFAULT
         const TRANSLATIONS = {
             de: {
                 announcement: "Kostenloser versicherter Versand in der Schweiz ab <span>CHF 150</span>",
+                logo_tagline: "Schweizer Cyanotypie-Kunst",
                 nav_gallery: "Galerie",
                 nav_originals: "Originale",
                 nav_prints: "Kunstdrucke",
@@ -1715,12 +1721,14 @@
                 footer_care: "Kundenservice",
                 footer_newsletter: "Newsletter",
                 footer_news_sub: "Erhalten Sie seltene Benachrichtigungen bei neuen Originalveröffentlichungen.",
+                newsletter_placeholder: "Ihre E-Mail-Adresse",
                 footer_join: "Beitreten",
                 footer_rights: "© 2026 Madita Cyanotype Art. Handgefertigt in Bern, Schweiz.",
                 footer_tag: "Alle Rechte vorbehalten. Für Sammler & Naturliebhaber."
             },
             en: {
                 announcement: "Free Insured Shipping Across Switzerland on Orders Over <span>CHF 150</span>",
+                logo_tagline: "Swiss Cyanotype Art",
                 nav_gallery: "Gallery",
                 nav_originals: "Originals",
                 nav_prints: "Prints",
@@ -1776,12 +1784,14 @@
                 footer_care: "Customer Care",
                 footer_newsletter: "Newsletter",
                 footer_news_sub: "Receive rare drop notices for 1-of-1 original releases.",
+                newsletter_placeholder: "Your email address",
                 footer_join: "Join",
                 footer_rights: "© 2026 Madita Cyanotype Art. Handcrafted in Bern, Switzerland.",
                 footer_tag: "All rights reserved. Designed for collectors & nature lovers."
             },
             fr: {
                 announcement: "Livraison assurée gratuite en Suisse dès <span>CHF 150</span>",
+                logo_tagline: "Art du Cyanotype Suisse",
                 nav_gallery: "Galerie",
                 nav_originals: "Originaux",
                 nav_prints: "Tirages",
@@ -1837,6 +1847,7 @@
                 footer_care: "Service Client",
                 footer_newsletter: "Lettre d'Information",
                 footer_news_sub: "Recevez les annonces rares des nouvelles parutions d'originaux.",
+                newsletter_placeholder: "Votre adresse e-mail",
                 footer_join: "S'inscrire",
                 footer_rights: "© 2026 Madita Cyanotype Art. Fait main à Berne, Suisse.",
                 footer_tag: "Tous droits réservés. Pour collectionneurs et amoureux de la nature."
@@ -1858,7 +1869,7 @@
                     fr: '30x40 cm | Cyanotype original sur papier coton Hahnemühle'
                 },
                 technique: { de: 'Sonnenbelichtete Preussischblau-Cyanotypie', en: 'Sun-exposed Prussian Blue Cyanotype', fr: 'Cyanotype bleu de Prusse exposé au soleil' },
-                paper: { de: '300g/m² Hahnemühle Baumwollkarton', en: '300gsm Hahnemühle Mould-made Rag', fr: 'Paper coton Hahnemühle 300g/m²' },
+                paper: { de: '300g/m² Hahnemühle Baumwollkarton', en: '300gsm Hahnemühle Mould-made Rag', fr: 'Papier coton Hahnemühle 300g/m²' },
                 dimensions: '30 x 40 cm',
                 origin: { de: 'Handgefertigt & belichtet in Bern, CH', en: 'Hand-pressed & developed in Bern, CH', fr: 'Fait main & développé à Berne, CH' },
                 basePrice: 280,
@@ -1988,7 +1999,7 @@
             }
         ];
 
-        // Global Application State (German as Primary Default)
+        // Global Application State (German Primary Default)
         let currentLang = 'de';
         let cart = [];
         let activeFilter = 'all';
@@ -2082,6 +2093,14 @@
                 const key = elem.getAttribute('data-i18n-html');
                 if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
                     elem.innerHTML = TRANSLATIONS[lang][key];
+                }
+            });
+
+            // Translate Placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n-placeholder');
+                if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+                    elem.placeholder = TRANSLATIONS[lang][key];
                 }
             });
         }
@@ -2248,7 +2267,7 @@
             triggerBadgePulse();
         }
 
-        // Update Cart Drawer & Badge UI (Streamlined & Minimal)
+        // Update Cart Drawer UI
         function updateCartUI() {
             const t = TRANSLATIONS[currentLang];
             const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -2257,7 +2276,6 @@
             const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             cartSubtotal.innerText = `CHF ${subtotal.toFixed(2)}`;
 
-            // Render Streamlined Cart Body Items
             if (cart.length === 0) {
                 cartItemsList.innerHTML = `
                     <div class="cart-empty-state">
