@@ -77,7 +77,7 @@
             height: auto;
         }
 
-        /* Language Fade & Hyphenation Stabilization */
+        /* Language Fade & Hyphenation Protection */
         [data-i18n], [data-i18n-html] {
             transition: opacity 0.15s ease-in-out;
             hyphens: auto;
@@ -89,12 +89,12 @@
             opacity: 0 !important;
         }
 
-        /* Spacious & Fixed-Grid Header Layout for Zero Shift */
+        /* Sticky Semi-Transparent Glassmorphism Header Bar */
         header {
-            background-color: rgba(253, 251, 247, 0.92);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(239, 236, 230, 0.75);
+            background: rgba(253, 251, 247, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(27, 54, 93, 0.06);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -105,11 +105,11 @@
         .header-container {
             max-width: 1320px;
             margin: 0 auto;
-            padding: 16px 48px;
+            padding: 14px 36px;
             display: grid;
-            grid-template-columns: 220px 1fr auto;
+            grid-template-columns: 200px 1fr auto;
             align-items: center;
-            gap: 24px;
+            gap: 20px;
             width: 100%;
             box-sizing: border-box;
         }
@@ -121,45 +121,49 @@
             align-items: flex-start;
             text-decoration: none;
             color: var(--text-color);
-            min-width: 200px;
+            min-width: 180px;
         }
 
         .logo {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: 300;
-            letter-spacing: 5px;
+            letter-spacing: 4px;
             line-height: 1;
             text-transform: uppercase;
         }
 
         .logo-tagline {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.6rem;
-            letter-spacing: 3.5px;
+            font-size: 0.58rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--text-muted);
-            margin-top: 4px;
+            margin-top: 3px;
             white-space: nowrap;
         }
 
+        /* Compact Desktop Navigation with Strict Single-Line Rules */
         nav.desktop-nav {
             grid-column: 2;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 28px;
+            gap: 22px;
         }
 
         nav.desktop-nav a {
             text-decoration: none;
             color: var(--text-color);
-            font-size: 0.8rem;
+            font-size: 0.76rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             font-weight: 500;
             position: relative;
             padding: 4px 6px;
-            min-width: 80px;
+            white-space: nowrap !important;
+            hyphens: none !important;
+            -webkit-hyphens: none !important;
+            word-break: normal !important;
             text-align: center;
             transition: color 0.25s ease;
             cursor: pointer;
@@ -187,22 +191,28 @@
             grid-column: 3;
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
             justify-self: end;
         }
 
-        /* Fixed-Width Language Switcher Container */
+        /* Minimal Globe-Pill Language Selector */
         .lang-switcher {
             display: flex;
             align-items: center;
             gap: 2px;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.75);
             border: 1px solid var(--border-soft);
-            padding: 3px;
+            padding: 3px 6px;
             border-radius: var(--radius-pill);
             box-shadow: var(--shadow-subtle);
-            width: 108px;
-            justify-content: space-between;
+            width: auto;
+        }
+
+        .globe-icon {
+            font-size: 0.75rem;
+            opacity: 0.75;
+            margin-right: 2px;
+            user-select: none;
         }
 
         .lang-btn {
@@ -211,12 +221,12 @@
             color: var(--text-muted);
             cursor: pointer;
             padding: 0;
-            width: 32px;
-            height: 32px;
-            min-width: 32px;
-            border-radius: 14px;
-            font-size: 0.72rem;
-            letter-spacing: 1px;
+            width: 26px;
+            height: 26px;
+            min-width: 26px;
+            border-radius: 12px;
+            font-size: 0.68rem;
+            letter-spacing: 0.5px;
             font-weight: 500;
             transition: all 0.2s ease;
             display: inline-flex;
@@ -236,42 +246,42 @@
         }
 
         .cart-trigger {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             border: 1px solid var(--border-soft);
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             color: var(--text-color);
-            font-size: 0.8rem;
+            font-size: 0.76rem;
             font-weight: 500;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
-            padding: 8px 16px;
-            min-height: 42px;
-            min-width: 130px;
+            padding: 6px 14px;
+            min-height: 38px;
             border-radius: var(--radius-pill);
             box-shadow: var(--shadow-subtle);
             transition: all 0.25s var(--transition-smooth);
             width: auto;
             margin-top: 0;
+            white-space: nowrap;
         }
 
         .cart-trigger:hover {
             border-color: var(--text-color);
             background-color: #FFFFFF;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
             box-shadow: var(--shadow-card);
         }
 
         .cart-count-badge {
             background-color: var(--accent-color);
             color: #FFFFFF;
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             font-weight: 600;
-            width: 20px;
-            height: 20px;
+            width: 19px;
+            height: 19px;
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
@@ -290,8 +300,8 @@
             border: none;
             cursor: pointer;
             padding: 6px;
-            min-height: 42px;
-            min-width: 42px;
+            min-height: 40px;
+            min-width: 40px;
             align-items: center;
             justify-content: center;
             flex-direction: column;
@@ -312,7 +322,7 @@
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 60px;
+            top: 58px;
             left: 0;
             right: 0;
             width: 100%;
@@ -1765,18 +1775,21 @@
             }
 
             .lang-switcher {
-                padding: 2px;
+                padding: 2px 4px;
                 gap: 1px;
-                width: 90px;
+            }
+
+            .globe-icon {
+                font-size: 0.65rem;
             }
 
             .lang-btn {
                 padding: 0;
                 font-size: 0.6rem;
-                min-width: 24px;
-                width: 24px;
-                height: 28px;
-                min-height: 28px;
+                min-width: 22px;
+                width: 22px;
+                height: 24px;
+                min-height: 24px;
             }
 
             .cart-trigger {
@@ -2021,7 +2034,7 @@
 </head>
 <body>
 
-    <!-- Spacious & Clean Desktop Header -->
+    <!-- Sticky Semi-Transparent Glassmorphism Header Bar -->
     <header>
         <div class="header-container">
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
@@ -2045,15 +2058,16 @@
             </nav>
 
             <div class="header-actions">
-                <!-- Multi-Language Switcher [ DE | FR | EN ] -->
+                <!-- Minimal Globe-Pill Language Selector [ DE | FR | EN ] -->
                 <div class="lang-switcher">
+                    <span class="globe-icon">🌐</span>
                     <button class="lang-btn active" onclick="setLanguage('de')" id="lang-de" aria-label="Deutsch">DE</button>
                     <button class="lang-btn" onclick="setLanguage('fr')" id="lang-fr" aria-label="Français">FR</button>
                     <button class="lang-btn" onclick="setLanguage('en')" id="lang-en" aria-label="English">EN</button>
                 </div>
 
                 <button class="cart-trigger" id="cartTriggerBtn" aria-label="Shopping Cart">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <path d="M16 10a4 4 0 0 1-8 0"></path>
@@ -2233,7 +2247,7 @@
             <button class="btn-primary" onclick="openCustomModal()" data-i18n="btn_custom_request">Persönliche Cyanotypie Anfragen</button>
         </section>
 
-        <!-- Ultra-Clean Email Contact Section (No WhatsApp) -->
+        <!-- Ultra-Clean Email Contact Section -->
         <section class="contact-section" id="contactSection">
             <div class="contact-grid">
                 <div class="contact-info">
