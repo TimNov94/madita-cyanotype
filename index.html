@@ -1239,10 +1239,13 @@
         .studio-workspace {
             display: grid;
             grid-template-columns: 1.1fr 1fr;
-            gap: 40px;
+            gap: 36px;
             margin-top: 36px;
             align-items: start;
             text-align: left;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .studio-controls-panel {
@@ -1254,12 +1257,16 @@
             border-radius: 20px;
             border: 1px solid var(--border-soft);
             box-shadow: var(--shadow-subtle);
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .control-group {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .control-label {
@@ -1274,6 +1281,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
         }
 
         .studio-count-badge {
@@ -1289,10 +1297,13 @@
             padding: 5px;
             border-radius: var(--radius-pill);
             border: 1px solid var(--border-soft);
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .studio-pill-btn {
-            flex: 1;
+            flex: 1 1 0%;
+            min-width: 0;
             background: none;
             border: none;
             padding: 8px 12px;
@@ -1304,6 +1315,9 @@
             transition: all 0.25s ease;
             text-align: center;
             margin-top: 0;
+            white-space: normal;
+            word-break: break-word;
+            line-height: 1.35;
         }
 
         .studio-pill-btn.active {
@@ -1313,58 +1327,106 @@
             box-shadow: 0 4px 12px rgba(27, 54, 93, 0.15);
         }
 
-    @media (max-width: 768px) {
-    .custom-banner-section {
-        padding: 24px 14px !important;
-        max-width: 100vw !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-
-    .studio-workspace {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-        margin-top: 20px !important;
-        width: 100% !important;
-        max-width: 100vw !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-
-    .studio-controls-panel {
-        padding: 18px 12px !important;
-        border-radius: 16px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    .botanical-selector-grid {
-        grid-template-columns: repeat(5, 1fr) !important;
-        gap: 6px !important;
-    }
-
-    .paper-sheet-wrapper {
-        padding: 16px 8px !important;
-        min-height: 320px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    .paper-sheet.format-a6 {
-        width: 200px !important;
-        height: 282px !important;
-    }
-
-    .paper-sheet.format-a5 {
-        width: 240px !important;
-        height: 338px !important;
-    }
-}
-
         .botanical-selector-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .custom-banner-section {
+                padding: 24px 12px !important;
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
+                box-sizing: border-box !important;
+            }
+
+            .studio-workspace {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+                margin-top: 16px !important;
+                width: 100% !important;
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
+                box-sizing: border-box !important;
+            }
+
+            .studio-controls-panel {
+                padding: 16px 12px !important;
+                border-radius: 16px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                gap: 18px !important;
+            }
+
+            .toggle-pill-group {
+                flex-direction: column !important;
+                border-radius: 16px !important;
+                padding: 6px !important;
+                gap: 6px !important;
+            }
+
+            .studio-pill-btn {
+                border-radius: 12px !important;
+                padding: 10px 12px !important;
+                font-size: 0.78rem !important;
+                width: 100% !important;
+            }
+
+            .botanical-selector-grid {
+                grid-template-columns: repeat(5, 1fr) !important;
+                gap: 5px !important;
+                width: 100% !important;
+            }
+
+            .botanical-item-btn {
+                padding: 6px 2px !important;
+                border-radius: 10px !important;
+            }
+
+            .botanical-item-icon {
+                width: 28px !important;
+                height: 28px !important;
+                padding: 4px !important;
+            }
+
+            .botanical-item-name {
+                font-size: 0.58rem !important;
+                line-height: 1.1 !important;
+            }
+
+            .paper-sheet-wrapper {
+                padding: 16px 8px !important;
+                min-height: 290px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                border-radius: 18px !important;
+            }
+
+            .paper-sheet.format-a6 {
+                width: 190px !important;
+                height: 268px !important;
+            }
+
+            .paper-sheet.format-a5 {
+                width: 230px !important;
+                height: 324px !important;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .botanical-selector-grid {
+                grid-template-columns: repeat(5, 1fr) !important;
+                gap: 4px !important;
+            }
+            .botanical-item-btn {
+                padding: 5px 1px !important;
+            }
+            .botanical-item-name {
+                font-size: 0.54rem !important;
+            }
         }
 
         .botanical-item-btn {
